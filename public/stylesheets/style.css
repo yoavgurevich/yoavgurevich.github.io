@@ -1,0 +1,95 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(to top, #0F0F0F 0%, #000000 100%);
+}
+
+#cont1 {
+  width: 100%;
+  height: 100%;
+  margin: 0em;
+  left: 0em;
+  top: 0em;
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+}
+
+.vertical .carousel-inner {
+  width: 100%;
+  height: 100%;
+  margin: 0em;
+  left: 0em;
+  top: 0em;
+  position: inherit;
+}
+
+.carousel-indicators{
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  left: initial;
+}
+.carousel-indicators li {
+  display:block;
+}
+.carousel-indicators{
+  width: auto;
+}
+
+.carousel.vertical .item {
+  width: 100%;
+  height: 100%;
+  margin: 0em;
+  left: 0em;
+  top: 0em;
+  position: fixed;
+  -webkit-transition: 0.9s ease-in-out top;
+     -moz-transition: 0.9s ease-in-out top;
+      -ms-transition: 0.9s ease-in-out top;
+       -o-transition: 0.9s ease-in-out top;
+          transition: 0.9s ease-in-out background;
+}
+
+.carousel.vertical .active {
+  background: 0;
+}
+
+.carousel.vertical .next {
+  background: 100%;
+}
+
+.carousel.vertical .prev {
+  background: -100%;
+}
+
+.carousel.vertical .next.left,
+.carousel.vertical .prev.right {
+  background: 0;
+}
+
+.carousel.vertical .active.left {
+  background: -100%;
+}
+
+.carousel.vertical .active.right {
+  background: 100%;
+}
+
+.carousel.vertical .item {
+    left: 0;
+}
+
+#slid1 {
+  background-image: url('https://dl-web.dropbox.com/get/Photos/settledinedit.png?_subject_uid=50606837&w=AACISVGPCJBfzSMzIduC-BEqXEx8f_Dh1jYmHfjdJBu13A');
+}
+
+#slid2 {
+  background-image: url('https://dl-web.dropbox.com/get/Photos/CasaLoma.png?_subject_uid=50606837&w=AAA0g68h5proixJL5321sVYDcCFXMLTUEd6bYyMy1tMBbQ')
+}
+
+#slid3 {
+  background-image: url('https://dl-web.dropbox.com/get/Photos/filosofemdarker.png?_subject_uid=50606837&w=AAAMrLpLZNF9LOd-0Z0EOSc_GQrz-GFTI2QfkdCPRozaUQ');
+}
