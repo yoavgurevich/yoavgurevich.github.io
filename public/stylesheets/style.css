@@ -3,6 +3,7 @@ html, body {
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-image: linear-gradient(to top, #0F0F0F 0%, #000000 100%);
 }
 
 #cont1 {
@@ -25,17 +26,16 @@ html, body {
   position: inherit;
 }
 
-.carousel-indicators{
+.carousel-indicators {
   position: fixed;
   top: 50%;
   right: 10px;
   left: initial;
+  width: auto;
 }
+
 .carousel-indicators li {
   display:block;
-}
-.carousel-indicators{
-  width: auto;
 }
 
 .carousel.vertical .item {
@@ -67,6 +67,7 @@ html, body {
 .carousel.vertical .next.left {
   top: 0;
 }
+
 .carousel.vertical .prev.right {
   top: 0;
 }
