@@ -3,7 +3,6 @@ html, body {
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-image: linear-gradient(to top, #0F0F0F 0%, #000000 100%);
 }
 
 #cont1 {
@@ -50,32 +49,32 @@ html, body {
      -moz-transition: 0.9s ease-in-out top;
       -ms-transition: 0.9s ease-in-out top;
        -o-transition: 0.9s ease-in-out top;
-          transition: 0.9s ease-in-out background;
+          transition: 0.9s ease-in-out top;
 }
 
 .carousel.vertical .active {
-  background: 0;
+  top: 0;
 }
 
 .carousel.vertical .next {
-  background: 100%;
+  top: 100%;
 }
 
 .carousel.vertical .prev {
-  background: -100%;
+  top: -100%;
 }
 
 .carousel.vertical .next.left,
 .carousel.vertical .prev.right {
-  background: 0;
+  top: 0;
 }
 
 .carousel.vertical .active.left {
-  background: -100%;
+  top: -100%;
 }
 
 .carousel.vertical .active.right {
-  background: 100%;
+  top: 100%;
 }
 
 .carousel.vertical .item {
