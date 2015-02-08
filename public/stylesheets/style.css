@@ -65,10 +65,10 @@ html, body {
 }
 
 .carousel.vertical .next.left {
-  top: 100%;
+  top: 0;
 }
 .carousel.vertical .prev.right {
-  top: -100%;
+  top: 0;
 }
 
 .carousel.vertical .active.left {
