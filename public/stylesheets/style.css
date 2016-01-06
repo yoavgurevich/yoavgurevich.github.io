@@ -1,14 +1,28 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+body {
+  max-height: 99% !important;
   background-image: linear-gradient(to top, #0F0F0F 0%, #000000 100%);
+}
+
+div[class=card] {
+  top: -1vh;
+}
+
+.card-image {
+  max-height: 90vh !important;
+  background-color: black;
+}
+
+.card-content {
+  background-color: darkgray;
+}
+
+a {
+  color: mediumblue;
 }
 
 .swiper-container {
   width: 100vw;
-  height: 100vh;
+  height: inherit;
 }
 
 #slid1 {
