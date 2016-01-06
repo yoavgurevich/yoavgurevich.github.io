@@ -1,12 +1,11 @@
-$(document).ready(function() {
-  $('#myCarousel').carousel({
-    interval: 0
-  }).on('wheel', function(e) {
-    if(e.originalEvent.wheelDelta < 0){
-      $(this).carousel('next');
-    }
-    if(e.originalEvent.wheelDelta > 0){
-      $(this).carousel('prev');
-    }
-  });
+var mySwiper = new Swiper ('.swiper-container', {
+  // Optional parameters
+  direction: 'vertical',
+  // If we need pagination
+  pagination: '.swiper-pagination',
+  // Navigation arrows
+  nextButton: '.swiper-button-next',
+  prevButton: '.swiper-button-prev',
+  // And if we need scrollbar
+  scrollbar: '.swiper-scrollbar'
 });
