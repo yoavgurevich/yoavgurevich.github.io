@@ -16,50 +16,77 @@
     <![endif]-->
   </head>
   <body>
-    <div class="card">
-      <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src="http://i.imgur.com/NfuDXoN.png">
+    <!-- Swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="http://i.imgur.com/NfuDXoN.png">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator">Wellpad Survey/Follow-up Platform<i class="material-icons right">more_vert</i></span>
+              <p><a href="http://blog.humphd.org/thimble-and-bramble/">Play with the survey...</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title activator">Wellpad Survey/Follow-up Platform<i class="material-icons right">close</i></span>
+              <p>My primary role throughout the duration of this project was to implement front-end views and components for the patient-intake and follow-up survey slides...</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="http://i.imgur.com/OcBwIXt.png">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator">OpenDojo CMS<i class="material-icons right">more_vert</i></span>
+              <p><a href="http://blog.humphd.org/thimble-and-bramble/">View the code...</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title activator">OpenDojo CMS<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="http://i.imgur.com/zMQDdAl.png">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator">Seneca CDOT's Webmaker Project<i class="material-icons right">more_vert</i></span>
+              <p><a href="http://blog.humphd.org/thimble-and-bramble/">The Thimble/Bramble Blog by David Humphrey</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title activator">Seneca CDOT's Webmaker Project<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
       </div>
-      <div class="card-content">
-        <span class="card-title activator">Wellpad Survey/Follow-up Platform<i class="material-icons right">more_vert</i></span>
-        <p><a href="http://blog.humphd.org/thimble-and-bramble/">Play with the survey...</a></p>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title activator">Wellpad Survey/Follow-up Platform<i class="material-icons right">close</i></span>
-        <p>My primary role throughout the duration of this project was to implement front-end views and components for the patient-intake and follow-up survey slides...</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src="http://i.imgur.com/OcBwIXt.png">
-      </div>
-      <div class="card-content">
-        <span class="card-title activator">OpenDojo CMS<i class="material-icons right">more_vert</i></span>
-        <p><a href="http://blog.humphd.org/thimble-and-bramble/">View the code...</a></p>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title activator">OpenDojo CMS<i class="material-icons right">close</i></span>
-        <p>Here is some more information about this product that is only revealed once clicked on.</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src="http://i.imgur.com/zMQDdAl.png">
-      </div>
-      <div class="card-content">
-        <span class="card-title activator">Seneca CDOT's Webmaker Project<i class="material-icons right">more_vert</i></span>
-        <p><a href="http://blog.humphd.org/thimble-and-bramble/">The Thimble/Bramble Blog by David Humphrey</a></p>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title activator">Seneca CDOT's Webmaker Project<i class="material-icons right">close</i></span>
-        <p>Here is some more information about this product that is only revealed once clicked on.</p>
-      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
     </div>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/js/swiper.jquery.min.js" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/js/swiper.min.js" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/js/swiper.jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        speed: 600,
+        paginationClickable: true,
+        mousewheelControl: true,
+        keyboardControl: true,
+        direction: 'vertical'
+      });
+    </script>
   </body>
 </html>
