@@ -65,6 +65,11 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   background: cornflowerblue;
 }
 
+.page-footer {
+  padding-top: 30vh !important;
+  background-color: transparent !important;
+}
+
 @keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
