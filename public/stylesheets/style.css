@@ -8,11 +8,19 @@ a {
   color: cornflowerblue;
 }
 
-h1 {
-  padding: 10vw;
+h1, h4 {
+  padding-top: 10vw;
   text-align: center;
   animation: fadein 2s;
   font-weight: 100;
+}
+
+h4 {
+  padding: 0 25vw !important;
+}
+
+body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > h4 > i {
+  font-size: 6vh;
 }
 
 .card-image {
@@ -28,6 +36,10 @@ h1 {
 
 .card .card-reveal > p {
   padding: 0 4vw !important;
+}
+
+body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > div.card-reveal > span > i {
+  padding-right: 2.5vw;
 }
 
 .swiper-container {
@@ -64,5 +76,8 @@ h1 {
   }
   .card-content, .card .card-reveal {
     max-height: 50vh !important; max-width: 82vw !important;
+  }
+  body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > div.card-reveal > span > i {
+    padding-right: 2vw;
   }
 }
