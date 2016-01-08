@@ -4,33 +4,41 @@ html, body {
   background-image: linear-gradient(to top, #0F0F0F 0%, #000000 100%);
 }
 
-div[class=card] {
-  max-height: 85vh !important; max-width: 85vw !important;
-}
-.card-image {
-  background-color: black;
-  max-height: 80vh !important;
-}
-
-.card-content, .card .card-reveal {
-  max-height: 80vh !important; max-width: 85vw !important;
-  background-color: darkslategrey;
-  color: azure;
-}
-
 a {
   color: cornflowerblue;
 }
 
+h1 {
+  padding: 10vw;
+  text-align: center;
+  animation: fadein 2s;
+  font-weight: 100;
+}
+
+.card-image {
+  background-color: black;
+  max-height: 80vh;
+}
+
+.card-content, .card .card-reveal {
+  background-color: #222;
+  color: azure;
+  max-height: 85vh !important;
+}
+
+.card .card-reveal > p {
+  padding: 0 4vw !important;
+}
+
 .swiper-container {
   width: 95vw;
-  height: inherit;
+  height: 100vh;
 }
 
 .swiper-slide {
   color: white;
   width: 85vw;
-  padding-left: 3vw;
+  padding-left: 4vw;
 }
 
 .swiper-pagination {
@@ -43,4 +51,18 @@ a {
 
 .swiper-pagination-bullet-active {
   background: cornflowerblue;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (orientation: portrait) {
+  .swiper-container {
+    padding-top: 15vh;
+  }
+  .card-content, .card .card-reveal {
+    max-height: 50vh !important; max-width: 82vw !important;
+  }
 }
