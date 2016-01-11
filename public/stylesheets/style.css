@@ -4,6 +4,17 @@ html, body {
   background-image: linear-gradient(to top, #0F0F0F 0%, #000000 100%);
 }
 
+.parallax-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 130%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
 a {
   color: cornflowerblue;
 }
@@ -23,8 +34,18 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 }
 
 #arrow {
-  -webkit-animation-iteration-count: 2;
-  -moz-animation-iteration-count: 2;
+  -webkit-animation-iteration-count: 3;
+  -moz-animation-iteration-count: 3;
+}
+
+#p1 {
+  -webkit-animation-delay: 0.25s;
+  -moz-animation-delay: 0.25s;
+}
+
+#p2 {
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
 }
 
 .card-image {
@@ -47,18 +68,20 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 }
 
 .swiper-container {
-  width: 95vw;
+  width: 100vw;
   height: 100vh;
 }
 
 .swiper-slide {
   color: white;
   width: 85vw;
-  padding-left: 4vw;
+  padding-left: 5vw;
+  padding-top: 1vh;
 }
 
 .swiper-pagination {
   zoom: 2.5;
+  padding-right: 1vw;
 }
 
 .swiper-pagination-bullet {
@@ -70,7 +93,7 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 }
 
 .page-footer {
-  padding-top: 30vh !important;
+  padding-top: 25vh !important;
   background-color: transparent !important;
 }
 
