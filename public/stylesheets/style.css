@@ -11,7 +11,6 @@ a {
 h1, h4 {
   padding-top: 10vw;
   text-align: center;
-  animation: fadein 2s;
   font-weight: 100;
 }
 
@@ -19,8 +18,13 @@ h4 {
   padding: 0 25vw !important;
 }
 
-body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > h4 > i {
+body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > h4 > span > i {
   font-size: 6vh;
+}
+
+#arrow {
+  -webkit-animation-iteration-count: 2;
+  -moz-animation-iteration-count: 2;
 }
 
 .card-image {
@@ -68,11 +72,6 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 .page-footer {
   padding-top: 30vh !important;
   background-color: transparent !important;
-}
-
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
 }
 
 @media (orientation: portrait) {
