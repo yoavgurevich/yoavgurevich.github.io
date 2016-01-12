@@ -131,11 +131,8 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 }
 
 @media (orientation: portrait) {
-  .swiper-container {
-    padding-top: 15vh;
-  }
   .card-content, .card .card-reveal {
-    max-height: 50vh !important; max-width: 82vw !important;
+    max-height: 45vh !important; max-width: 82vw !important;
   }
   body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > div.card-reveal > span > i {
     padding-right: 2vw;
