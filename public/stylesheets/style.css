@@ -20,32 +20,34 @@ a {
 }
 
 h1, h4 {
-  padding-top: 10vw;
   text-align: center;
   font-weight: 100;
 }
 
 h4 {
-  padding: 0 25vw !important;
+  padding: 0 !important;
 }
 
-body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > h4 > span > i {
+body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div.card-panel > h4 > span > i {
   font-size: 6vh;
+  margin: 0 auto !important;
 }
 
 #arrow {
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
   -webkit-animation-iteration-count: 3;
   -moz-animation-iteration-count: 3;
 }
 
 #p1 {
-  -webkit-animation-delay: 0.25s;
-  -moz-animation-delay: 0.25s;
+  -webkit-animation-delay: 0.75s;
+  -moz-animation-delay: 0.75s;
 }
 
 #p2 {
-  -webkit-animation-delay: 0.5s;
-  -moz-animation-delay: 0.5s;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
 }
 
 .card-image {
@@ -63,6 +65,14 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   padding: 0 4vw !important;
 }
 
+.card-panel {
+  max-width: 33vw;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  opacity: 0.8;
+  display: inline-block !important;
+}
+
 body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > div.card-reveal > span > i {
   padding-right: 2.5vw;
 }
@@ -76,16 +86,22 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   color: white;
   width: 85vw;
   padding-left: 5vw;
-  padding-top: 1vh;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#intro {
+  align-items: center;
 }
 
 .swiper-pagination {
-  zoom: 2.5;
-  padding-right: 1vw;
+  zoom: 3;
+  padding-right: 0.5vw;
 }
 
 .swiper-pagination-bullet {
-  background: #f5f5f5;
+  background: white;
 }
 
 .swiper-pagination-bullet-active {
@@ -93,8 +109,10 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 }
 
 .page-footer {
-  padding-top: 25vh !important;
-  background-color: transparent !important;
+  max-width: 60vw;
+  padding-bottom: 5vh;
+  background-color: black !important;
+  opacity: 0.8 !important;
 }
 
 @media (orientation: portrait) {

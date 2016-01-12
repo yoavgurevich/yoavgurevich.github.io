@@ -22,13 +22,15 @@
     <div class="swiper-container">
       <div class="parallax-bg" style="background-image:url(http://i.imgur.com/tuHCDqL.jpg)" data-swiper-parallax="-23%"></div>
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <h1 class="animated fadeInLeft" data-swiper-parallax="-100">Welcome.</h1>
-          <h4 data-swiper-parallax="-200">
-            <p class="animated fadeInRight" id="p1">Simply swipe, scroll, or keyboard press up/down to view the slides.</p>
-            <span class="animated flash" id="arrow"><i class="material-icons">arrow_downward</i><i class="material-icons">arrow_upward</i></span>
-            <p class="animated fadeInLeft" id="p2">Pagination buttons are conveniently located on your right side as well.</p>
-          </h4>
+        <div class="swiper-slide" id="intro">
+          <div class="card-panel black animated pulse">
+            <h1 class="animated fadeInLeft" data-swiper-parallax="-100">Welcome.</h1>
+            <h4 data-swiper-parallax="-200">
+              <p class="animated fadeInRight" id="p1">Simply swipe, scroll, or keyboard press up/down to view the slides.</p>
+              <span class="animated flash" id="arrow"><i class="material-icons">arrow_downward</i><i class="material-icons">arrow_upward</i></span>
+              <p class="animated fadeInLeft" id="p2">Pagination buttons are conveniently located on your right side as well.</p>
+            </h4>
+          </div>
         </div>
         <div class="swiper-slide">
           <div class="card" data-swiper-parallax="-100">
@@ -75,7 +77,9 @@
             </div>
             <div class="card-reveal">
               <span class="card-title activator">Seneca CDOT's Webmaker Project<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              <div class="video-container" data-swiper-parallax="-100">
+                <iframe src="https://www.youtube.com/embed/2SLiaaiqAVc" frameborder="0" allowfullscreen></iframe>
+              </div>
             </div>
           </div>
         </div>
