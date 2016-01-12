@@ -33,6 +33,18 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   margin: 0 auto !important;
 }
 
+#opendojo {
+  width: 75% !important;
+  padding: 5% 0 !important;
+  margin: 0 auto;
+}
+
+#cdot {
+  width: 35% !important;
+  padding: 7.5% 0 !important;
+  margin: 0 auto;
+}
+
 #arrow {
   -webkit-animation-delay: 0.5s;
   -moz-animation-delay: 0.5s;
@@ -50,8 +62,11 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   -moz-animation-delay: 1s;
 }
 
-.card-image {
+.card, .card-image {
   background-color: black;
+}
+
+.card-image {
   max-height: 80vh;
 }
 
