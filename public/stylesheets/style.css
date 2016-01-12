@@ -137,4 +137,7 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > div.card-reveal > span > i {
     padding-right: 2vw;
   }
+  .swiper-pagination {
+    padding-left: 0.5vw;
+  }
 }
