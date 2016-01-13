@@ -46,27 +46,38 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 }
 
 #arrow {
-  -webkit-animation-delay: 0.5s;
-  -moz-animation-delay: 0.5s;
-  -webkit-animation-iteration-count: 3;
-  -moz-animation-iteration-count: 3;
+  -webkit-animation-delay: 2.25s;
+  -moz-animation-delay: 2.25s;
+  -webkit-animation-iteration-count: 2;
+  -moz-animation-iteration-count: 2;
 }
 
-#p1 {
+#aIcon {
+  -webkit-animation-delay: 1.75s;
+  -moz-animation-delay: 1.75s;
+}
+
+#a1 {
   -webkit-animation-delay: 0.75s;
   -moz-animation-delay: 0.75s;
 }
 
-#p2 {
+#a2 {
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
 }
 
-.card, .card-image {
-  background-color: black;
+#a3 {
+  -webkit-animation-delay: 1.25s;
+  -moz-animation-delay: 1.25s;
+}
+
+.card {
+  background-color: transparent;
 }
 
 .card-image {
+  background-color: rgba(0, 0, 0, 0.8);
   max-height: 80vh;
 }
 
@@ -81,9 +92,8 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 }
 
 .card-panel {
+  background-color: rgba(0, 0, 0, 0.8);
   max-width: 33vw;
-  -webkit-animation-duration: 2s;
-  -moz-animation-duration: 2s;
   opacity: 0.8;
   display: inline-block !important;
 }
@@ -124,7 +134,7 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 }
 
 .page-footer {
-  max-width: 60vw;
+  max-width: 66vw;
   padding-bottom: 5vh;
   background-color: black !important;
   opacity: 0.8 !important;
@@ -134,10 +144,14 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   .card-content, .card .card-reveal {
     max-height: 45vh !important; max-width: 82vw !important;
   }
+  .card-panel {
+    max-width: 50vw;
+  }
   body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > div.card-reveal > span > i {
     padding-right: 2vw;
   }
   .swiper-pagination {
+    zoom: 2.5;
     padding-left: 0.5vw;
   }
 }
