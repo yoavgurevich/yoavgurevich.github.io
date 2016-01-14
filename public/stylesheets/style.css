@@ -33,6 +33,12 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   margin: 0 auto !important;
 }
 
+#wellpad {
+  width: 47.5% !important;
+  padding: 15% 0 !important;
+  margin: 0 auto;
+}
+
 #opendojo {
   width: 75% !important;
   padding: 5% 0 !important;
@@ -40,8 +46,8 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 }
 
 #cdot {
-  width: 35% !important;
-  padding: 7.5% 0 !important;
+  width: 30% !important;
+  padding: 10% 0 !important;
   margin: 0 auto;
 }
 
@@ -72,6 +78,10 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   -moz-animation-delay: 1.25s;
 }
 
+body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > div.card-reveal > span > i {
+  padding-right: 2.5vw;
+}
+
 .card {
   background-color: transparent;
 }
@@ -87,7 +97,7 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   max-height: 85vh !important;
 }
 
-.card .card-reveal > p {
+.card .card-reveal > p, iframe {
   padding: 0 4vw !important;
 }
 
@@ -98,8 +108,20 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   display: inline-block !important;
 }
 
-body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > div.card-reveal > span > i {
-  padding-right: 2.5vw;
+iframe {
+  max-height: 75% !important;
+  max-width: 90% !important;
+}
+
+#intro {
+  align-items: center;
+}
+
+.page-footer {
+  max-width: 66vw;
+  padding-bottom: 5vh;
+  background-color: black !important;
+  opacity: 0.8 !important;
 }
 
 .swiper-container {
@@ -116,10 +138,6 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   justify-content: center;
 }
 
-#intro {
-  align-items: center;
-}
-
 .swiper-pagination {
   zoom: 3;
   padding-right: 0.5vw;
@@ -131,13 +149,6 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 
 .swiper-pagination-bullet-active {
   background: cornflowerblue;
-}
-
-.page-footer {
-  max-width: 66vw;
-  padding-bottom: 5vh;
-  background-color: black !important;
-  opacity: 0.8 !important;
 }
 
 @media (orientation: portrait) {
