@@ -51,31 +51,36 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   margin: 0 auto;
 }
 
-#arrow {
-  -webkit-animation-delay: 2.25s;
-  -moz-animation-delay: 2.25s;
-  -webkit-animation-iteration-count: 2;
-  -moz-animation-iteration-count: 2;
+#introPanel {
+  -webkit-animation-delay: 1.25s;
+  -moz-animation-delay: 1.25s;
 }
 
-#aIcon {
+#a1 {
   -webkit-animation-delay: 1.75s;
   -moz-animation-delay: 1.75s;
 }
 
-#a1 {
-  -webkit-animation-delay: 0.75s;
-  -moz-animation-delay: 0.75s;
-}
-
 #a2 {
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
 }
 
 #a3 {
-  -webkit-animation-delay: 1.25s;
-  -moz-animation-delay: 1.25s;
+  -webkit-animation-delay: 2.25s;
+  -moz-animation-delay: 2.25s;
+}
+
+#aIcon {
+  -webkit-animation-delay: 2.75s;
+  -moz-animation-delay: 2.75s;
+}
+
+#arrow {
+  -webkit-animation-delay: 3.25s;
+  -moz-animation-delay: 3.25s;
+  -webkit-animation-iteration-count: 2;
+  -moz-animation-iteration-count: 2;
 }
 
 body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > div.card-reveal > span > i {
@@ -130,7 +135,7 @@ iframe {
 }
 
 .swiper-slide {
-  color: white;
+  color: azure;
   width: 85vw;
   padding-left: 5vw;
   display: inline-flex;
