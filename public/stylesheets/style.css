@@ -15,21 +15,21 @@ html, body {
   background-position: center;
 }
 
-a {
+a, .btn-flat {
   color: cornflowerblue;
 }
 
-h1, h4 {
+h1, h5 {
   text-align: center;
   font-weight: 100;
 }
 
-h4 {
-  padding: 0 !important;
+h5 {
+  padding: 0 5vw !important;
 }
 
-body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div.card-panel > h4 > span > i {
-  font-size: 6vh;
+body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div.card-panel > h5 > span > i {
+  font-size: 5vh;
   margin: 0 auto !important;
 }
 
@@ -107,10 +107,28 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 }
 
 .card-panel {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
   max-width: 33vw;
   opacity: 0.8;
   display: inline-block !important;
+}
+
+.card-title {
+  padding-left: 1.5vw !important;
+}
+
+.grow {
+  transform: scale(1.0);
+  transition: all 0.2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > div.card-content > span > i {
+  padding-right: 1.5vw;
 }
 
 iframe {
@@ -126,7 +144,20 @@ iframe {
   max-width: 66vw;
   padding-bottom: 5vh;
   background-color: black !important;
-  opacity: 0.8 !important;
+  opacity: 0.85 !important;
+}
+
+.pop-up {
+  position: relative;
+  top: 50vh !important;
+  right: 33vw;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 25vw;
+  background-color: rgba(34, 139, 34, 0.85);
+  font-size: x-large;
+  font-weight: 300;
 }
 
 .swiper-container {
@@ -144,16 +175,25 @@ iframe {
 }
 
 .swiper-pagination {
-  zoom: 3;
-  padding-right: 0.5vw;
+  padding-right: 1.5vw;
 }
 
 .swiper-pagination-bullet {
   background: white;
+  width: 2.5vh; height: 2.5vh;
+  font-size: medium;
+  font-weight: 300;
 }
 
 .swiper-pagination-bullet-active {
   background: cornflowerblue;
+  color: azure;
+}
+
+#toastIcon {
+  font-size: 5vh;
+  display: flex;
+  justify-content: center;
 }
 
 @media (orientation: portrait) {
@@ -167,7 +207,7 @@ iframe {
     padding-right: 2vw;
   }
   .swiper-pagination {
-    zoom: 2.5;
+    zoom: 1.25;
     padding-left: 0.5vw;
   }
 }
