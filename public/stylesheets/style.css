@@ -150,12 +150,12 @@ iframe {
 .pop-up {
   position: relative;
   top: 50vh !important;
-  right: 33vw;
+  right: 20vw;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 25vw;
   background-color: rgba(34, 139, 34, 0.85);
+  text-align: center;
   font-size: x-large;
   font-weight: 300;
 }
@@ -209,5 +209,20 @@ iframe {
   .swiper-pagination {
     zoom: 1.25;
     padding-left: 0.5vw;
+  }
+  .pop-up {
+    top: -30vh !important;
+    left: 10vw !important;
+    max-width: 75vw !important;
+  }
+}
+
+@media (min-width: 1400px) and (min-aspect-ratio: 4/2) {
+  .swiper-pagination {
+    zoom: 1.25;
+    padding-left: 0.5vw;
+  }
+  .card-content, .card .card-reveal {
+    max-height: 50vh !important; max-width: 82vw !important;
   }
 }

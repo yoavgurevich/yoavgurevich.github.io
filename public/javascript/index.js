@@ -24,7 +24,8 @@ var swiper = new Swiper('.swiper-container', {
 });
 
 $(document).ready(function() {
-    var $toastContent = $('<span><p><i id="toastIcon" class="material-icons">info</i></p>Click on the images or their bottom tabs to view more information...</span>');
+    var toastText = "Click on the center of the images \n or their bottom tabs \n to view more information...";
+    var $toastContent = $('<span><p><i id="toastIcon" class="material-icons">info_outline</i></p>' + toastText + '</span>');
     swiper.once('slideChangeEnd', function(){
         Materialize.toast($toastContent, 5000, 'pop-up');
     });
