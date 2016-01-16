@@ -133,7 +133,6 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 
 iframe {
   max-height: 75% !important;
-  max-width: 90% !important;
 }
 
 #intro {
@@ -150,11 +149,12 @@ iframe {
 .pop-up {
   position: relative;
   top: 50vh !important;
-  right: 20vw;
+  right: 22vw;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgba(34, 139, 34, 0.85);
+  background-color: rgba(153, 255, 255, 0.85);
+  color: black;
   text-align: center;
   font-size: x-large;
   font-weight: 300;
@@ -197,14 +197,23 @@ iframe {
 }
 
 @media (orientation: portrait) {
+  .activator {
+    top: 20% !important;
+  }
+  .card {
+    height: 85vh !important;
+  }
+  .card-image {
+    height: 70vh !important;
+  }
   .card-content, .card .card-reveal {
-    max-height: 45vh !important; max-width: 82vw !important;
+    max-height: 75vh !important; max-width: 85vw !important;
   }
   .card-panel {
     max-width: 50vw;
   }
   body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > div.card-reveal > span > i {
-    padding-right: 2vw;
+    padding-right: 5vw !important;
   }
   .swiper-pagination {
     zoom: 1.25;
