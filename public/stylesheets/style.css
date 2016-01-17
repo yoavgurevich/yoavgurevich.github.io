@@ -13,6 +13,7 @@ html, body {
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .8);
 }
 
 a, .btn-flat {
@@ -37,18 +38,21 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   width: 47.5% !important;
   padding: 15% 0 !important;
   margin: 0 auto;
+  opacity: 0.8;
 }
 
 #opendojo {
   width: 75% !important;
   padding: 5% 0 !important;
   margin: 0 auto;
+  opacity: 0.7;
 }
 
 #cdot {
   width: 30% !important;
   padding: 10% 0 !important;
   margin: 0 auto;
+  opacity: 0.85;
 }
 
 #introPanel {
@@ -92,7 +96,7 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 }
 
 .card-image {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(102, 153, 204, 0.2);
   max-height: 80vh;
 }
 
@@ -107,7 +111,7 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 }
 
 .card-panel {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(153, 153, 153, 0.2);
   max-width: 33vw;
   opacity: 0.8;
   display: inline-block !important;
@@ -115,6 +119,10 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 
 .card-title {
   padding-left: 1.5vw !important;
+}
+
+.carousel {
+  zoom: 1.4;
 }
 
 .grow {
@@ -142,8 +150,7 @@ iframe {
 .page-footer {
   max-width: 66vw;
   padding-bottom: 5vh;
-  background-color: black !important;
-  opacity: 0.85 !important;
+  background-color: transparent !important;
 }
 
 .pop-up {
@@ -153,7 +160,7 @@ iframe {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgba(153, 255, 255, 0.85);
+  background-color: rgba(0, 153, 51, 0.85);
   color: black;
   text-align: center;
   font-size: x-large;
@@ -166,6 +173,7 @@ iframe {
 }
 
 .swiper-slide {
+  z-index: 4 !important;
   color: azure;
   width: 85vw;
   padding-left: 5vw;
@@ -179,7 +187,7 @@ iframe {
 }
 
 .swiper-pagination-bullet {
-  background: white;
+  background: ghostwhite;
   width: 2.5vh; height: 2.5vh;
   font-size: medium;
   font-weight: 300;
@@ -200,6 +208,9 @@ iframe {
   .activator {
     top: 20% !important;
   }
+  body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > div.card-reveal > span > i {
+    padding-right: 5vw !important;
+  }
   .card {
     height: 85vh !important;
   }
@@ -212,17 +223,17 @@ iframe {
   .card-panel {
     max-width: 50vw;
   }
-  body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > div.card-reveal > span > i {
-    padding-right: 5vw !important;
+  .pop-up {
+    top: -30vh !important;
+    left: 2.5vw !important;
+    max-width: 80vw !important;
+  }
+  #ribbon {
+    zoom: 0.75 !important;
   }
   .swiper-pagination {
     zoom: 1.25;
     padding-left: 0.5vw;
-  }
-  .pop-up {
-    top: -30vh !important;
-    left: 10vw !important;
-    max-width: 75vw !important;
   }
 }
 
