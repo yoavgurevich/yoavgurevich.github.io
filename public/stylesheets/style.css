@@ -161,10 +161,14 @@ iframe {
   flex-direction: column;
   justify-content: center;
   background-color: rgba(0, 153, 51, 0.85);
-  color: black;
+  color: azure;
   text-align: center;
   font-size: x-large;
   font-weight: 300;
+}
+
+#profile, #staggered-item {
+  opacity: 0;
 }
 
 .swiper-container {
@@ -222,6 +226,9 @@ iframe {
   }
   .card-panel {
     max-width: 50vw;
+  }
+  .carousel {
+    zoom: 0.8;
   }
   .pop-up {
     top: -30vh !important;
