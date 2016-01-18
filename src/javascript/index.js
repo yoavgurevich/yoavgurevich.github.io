@@ -28,7 +28,7 @@ var swiper = new Swiper('.swiper-container', {
 
 $(document).ready(function() {
     $('.carousel').carousel();
-    var toastText = " Click on the center of the images \n or their bottom tabs \n to view more information...";
+    var toastText = " Click on the center of the images \n or their bottom tabs \n to view more information";
     var $toastContent = $('<span><i id="toastIcon" class="material-icons">info_outline</i>' + toastText + '</span>');
     var hasFired = false;
     swiper.once('slideChangeStart', function(){

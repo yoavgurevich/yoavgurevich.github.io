@@ -202,6 +202,10 @@ iframe {
   color: azure;
 }
 
+#tabletWarn {
+  display: none;
+}
+
 #toastIcon {
   font-size: 5vh;
   display: flex;
@@ -222,7 +226,7 @@ iframe {
     height: 70vh !important;
   }
   .card-content, .card .card-reveal {
-    max-height: 75vh !important; max-width: 85vw !important;
+    max-height: 80vh !important; max-width: 85vw !important;
   }
   .card-panel {
     max-width: 50vw;
@@ -250,10 +254,28 @@ and (max-device-width: 1024px)
 and (orientation: landscape)
 and (-webkit-min-device-pixel-ratio: 1) {
   .swiper-pagination {
-    zoom: 1.25;
+    zoom: 1.5;
     padding-left: 0.5vw;
   }
   .card-content, .card .card-reveal {
-    max-height: 50vh !important; max-width: 82vw !important;
+    max-height: 75vh !important; max-width: 82vw !important;
+  }
+  .pop-up {
+    right: 2.5vw !important;
+  }
+  #profile {
+    position: relative;
+    top: 5vh !important;
+    left: 7.5vw !important;
+    width: 66%;
+  }
+  #ribbon {
+    zoom: 0.75 !important;
+  }
+  .carousel, #carouselInfo {
+    display: none !important;
+  }
+  #tabletWarn {
+    display: inherit !important;
   }
 }
