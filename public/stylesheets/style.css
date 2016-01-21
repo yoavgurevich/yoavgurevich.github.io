@@ -122,7 +122,7 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 }
 
 .carousel {
-  zoom: 1.4;
+  max-height: 40vh !important;
 }
 
 .grow {
@@ -230,9 +230,6 @@ iframe {
   }
   .card-panel {
     max-width: 50vw;
-  }
-  .carousel {
-    zoom: 0.8;
   }
   .pop-up {
     top: -30vh !important;
