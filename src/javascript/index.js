@@ -15,7 +15,7 @@ var swiper = new Swiper('.swiper-container', {
     speed: 600,
     paginationClickable: true,
     paginationBulletRender: function (index, className) {
-        return '<span class="' + className + '">' + roman[index] + '</span>';
+        return '<span class="' + className + ' grow">' + roman[index] + '</span>';
     },
     mousewheelControl: true,
     keyboardControl: true,
@@ -27,20 +27,12 @@ var swiper = new Swiper('.swiper-container', {
 });
 
 $(document).ready(function() {
+    $('.modal-trigger').leanModal();
     $('.carousel').carousel();
-    var toastText = " Click on the center of the images \n or their bottom tabs \n to view more information";
-    var $toastContent = $('<span><i id="toastIcon" class="material-icons">info_outline</i>' + toastText + '</span>');
-    var hasFired = false;
     swiper.once('slideChangeStart', function(){
         Materialize.fadeInImage('#profile');
     });
     swiper.once('slideChangeEnd', function(){
         Materialize.showStaggeredList('#staggered-list');
-    });
-    swiper.on('slideChangeEnd', function(){
-        if(swiper.previousIndex == 1 && !swiper.isBeginning && !hasFired) {
-            Materialize.toast($toastContent, 6000, 'pop-up');
-            hasFired = true;
-        }
     });
 });

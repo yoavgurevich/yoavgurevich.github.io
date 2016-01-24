@@ -20,6 +20,13 @@ a, .btn-flat {
   color: cornflowerblue;
 }
 
+.btn-floating {
+  z-index: 3;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+}
+
 h1, h5 {
   text-align: center;
   font-weight: 100;
@@ -97,7 +104,7 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 
 .card-image {
   background-color: rgba(102, 153, 204, 0.2);
-  max-height: 80vh;
+  max-height: 85vh;
 }
 
 .card-content, .card .card-reveal {
@@ -147,24 +154,14 @@ iframe {
   align-items: center;
 }
 
+.material-tooltip {
+  font-size: large;
+}
+
 .page-footer {
   max-width: 66vw;
   padding-bottom: 5vh;
   background-color: transparent !important;
-}
-
-.pop-up {
-  position: relative;
-  top: 50vh !important;
-  right: 22vw;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgba(0, 153, 51, 0.85);
-  color: azure;
-  text-align: center;
-  font-size: x-large;
-  font-weight: 300;
 }
 
 #profile, #staggered-item {
@@ -198,18 +195,14 @@ iframe {
 }
 
 .swiper-pagination-bullet-active {
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
   background: cornflowerblue;
   color: azure;
 }
 
 #tabletWarn {
   display: none;
-}
-
-#toastIcon {
-  font-size: 5vh;
-  display: flex;
-  justify-content: center;
 }
 
 @media (orientation: portrait) {
