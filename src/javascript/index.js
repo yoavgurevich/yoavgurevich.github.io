@@ -5,7 +5,16 @@ window.addEventListener('DOMContentLoaded', function() {
         barColor: "#f0ffff",
         backgroundColor: "#000",
         barHeight: 1,
-        minimumTime: 300
+        minimumTime: 300,
+        onComplete: function() {
+            $('#introPanel')
+                .addClass('animated bounceIn')
+                .find('.material-icons').addClass('animated fadeIn');
+            $('#a1').addClass('animated fadeInLeft');
+            $('#a2').addClass('animated fadeInRight');
+            $('#a3').addClass('animated fadeInLeft');
+            $('#arrow').addClass('animated flash');
+        }
     });
 });
 
@@ -34,5 +43,18 @@ $(document).ready(function() {
     });
     swiper.once('slideChangeEnd', function(){
         Materialize.showStaggeredList('#staggered-list');
+    });
+    swiper.on('slideChangeEnd', function(){
+       switch(swiper.activeIndex) {
+           case 2:
+               $('#wellpad').addClass('magictime vanishIn');
+               break;
+           case 3:
+               $('#opendojo').addClass('magictime swap');
+               break;
+           case 4:
+               $('#cdot').addClass('magictime swashIn');
+               break;
+       }
     });
 });

@@ -41,6 +41,10 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   margin: 0 auto !important;
 }
 
+#wellpad, #opendojo, #cdot, #introPanel {
+  visibility: hidden;
+}
+
 #wellpad {
   width: 47.5% !important;
   padding: 15% 0 !important;
@@ -62,34 +66,29 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
   opacity: 0.85;
 }
 
-#introPanel {
-  -webkit-animation-delay: 1.25s;
-  -moz-animation-delay: 1.25s;
-}
-
 #a1 {
-  -webkit-animation-delay: 1.75s;
-  -moz-animation-delay: 1.75s;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
 }
 
 #a2 {
-  -webkit-animation-delay: 2s;
-  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 0.75s;
+  -moz-animation-delay: 0.75s;
 }
 
 #a3 {
-  -webkit-animation-delay: 2.25s;
-  -moz-animation-delay: 2.25s;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
 }
 
 #aIcon {
-  -webkit-animation-delay: 2.75s;
-  -moz-animation-delay: 2.75s;
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
 }
 
 #arrow {
-  -webkit-animation-delay: 3.25s;
-  -moz-animation-delay: 3.25s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
   -webkit-animation-iteration-count: 2;
   -moz-animation-iteration-count: 2;
 }
@@ -129,7 +128,7 @@ body > div.swiper-container.swiper-container-vertical > div.swiper-wrapper > div
 }
 
 .carousel {
-  max-height: 40vh !important;
+  max-height: 40% !important;
 }
 
 .grow {
@@ -152,6 +151,10 @@ iframe {
 
 #intro {
   align-items: center;
+}
+
+.magictime, .animated {
+  visibility: visible !important;
 }
 
 .material-tooltip {
