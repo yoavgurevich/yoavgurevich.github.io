@@ -1,5 +1,3 @@
-var roman = ['i', 'ii', 'iii', 'iv', 'v', 'vi'];
-
 window.addEventListener('DOMContentLoaded', function() {
     QueryLoader2(document.querySelector("body"), {
         barColor: "#f0ffff",
@@ -9,7 +7,8 @@ window.addEventListener('DOMContentLoaded', function() {
         onComplete: function() {
             $('#introPanel')
                 .addClass('animated bounceIn')
-                .find('.material-icons').addClass('animated fadeIn');
+                .find('.material-icons')
+                .addClass('animated fadeIn');
             $('#a1').addClass('animated fadeInLeft');
             $('#a2').addClass('animated fadeInRight');
             $('#a3').addClass('animated fadeInLeft');
@@ -24,7 +23,7 @@ var swiper = new Swiper('.swiper-container', {
     speed: 600,
     paginationClickable: true,
     paginationBulletRender: function (index, className) {
-        return '<span class="' + className + ' grow">' + roman[index] + '</span>';
+        return '<span class="' + className + ' tooltipped grow""></span>';
     },
     mousewheelControl: true,
     keyboardControl: true,
