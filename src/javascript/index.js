@@ -18,6 +18,7 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 $(document).ready(function() {
+  $(this).scrollTop(0);
   $('.scrollspy').scrollSpy();
   $('.parallax').parallax();
   $('.modal-trigger').leanModal();

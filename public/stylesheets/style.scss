@@ -35,6 +35,7 @@ a, .btn-flat {
 }
 
 .back {
+  margin-top: 10%;
   padding: 0 10%;
 
   a {
@@ -56,7 +57,7 @@ h5 {
 }
 
 #wellpad {
-  width: 80%;
+  width: 85%;
 
   @media(max-width: 500px) {
     width: 50vw;
@@ -65,6 +66,11 @@ h5 {
 
 #introPanel, #profile, #staggered-list > #staggered-item {
   opacity: 0;
+}
+
+#profile {
+  max-width: 75%;
+  min-height: 225px;
 }
 
 .carousel {
@@ -121,8 +127,6 @@ h5 {
 }
 
 .page-footer {
-  position: absolute;
-  bottom: 0;
   background-color: transparent !important;
 }
 

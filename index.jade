@@ -50,22 +50,25 @@ html
         ul.section
           li
             a.btn-floating.tooltipped.black(href='#intro-section', data-position='left', data-delay='50', data-tooltip='Intro')
-              i.material-icons email
+              i.material-icons palette
           li
-            a.btn-floating.tooltipped.grey.darken-1(href='#profile-section', data-position='left', data-delay='50', data-tooltip='Profile')
-              i.material-icons phone
+            a.btn-floating.tooltipped.purple.lighten-1(href='#profile-section', data-position='left', data-delay='50', data-tooltip='Profile')
+              i.material-icons fingerprint
           li
-            a.btn-floating.tooltipped.black(href='#engage-section', data-position='left', data-delay='50', data-tooltip='Engage People')
-              i.material-icons insert_chart
+            a.btn-floating.tooltipped.red(href='#engage-section', data-position='left', data-delay='50', data-tooltip='Engage People')
+              i.material-icons filter_1
           li
-            a.btn-floating.tooltipped.red.darken-1(href='#wellpad-section', data-position='left', data-delay='50', data-tooltip='Wellpad')
-              i.material-icons format_quote
+            a.btn-floating.tooltipped.green.darken-1(href='#wellpad-section', data-position='left', data-delay='50', data-tooltip='Wellpad')
+              i.material-icons filter_2
           li
-            a.btn-floating.tooltipped.green(href='#opendojo-section', data-position='left', data-delay='50', data-tooltip='OpenDojo')
-              i.material-icons publish
+            a.btn-floating.tooltipped.orange(href='#opendojo-section', data-position='left', data-delay='50', data-tooltip='OpenDojo')
+              i.material-icons filter_3
           li
-            a.btn-floating.tooltipped.blue(href='#cdot-section', data-position='left', data-delay='50', data-tooltip='Seneca CDOT')
-              i.material-icons attach_file
+            a.btn-floating.tooltipped.brown(href='#cdot-section', data-position='left', data-delay='50', data-tooltip='Seneca CDOT')
+              i.material-icons filter_4
+          li
+            a.btn-floating.tooltipped.blue(href='#footer-section', data-position='left', data-delay='50', data-tooltip='Contact')
+              i.material-icons person_pin
               
       // Begin Content
       .container.fs-container.section.scrollspy#intro-section
@@ -104,17 +107,17 @@ html
                 i very
                 |  contagious.
       
-      .container.fs-containe
+      .container.fs-container
         .row
           #wellpad-flip
             .front
-              .row.ctr-10th.padding-left-20
+              .row.ctr-3rd.padding-left-20
                 .col.s4.offset-s2.offset-m4.section.scrollspy#wellpad-section
                   img.hover-img#wellpad(src='https://s3.amazonaws.com/wellpad-img/Wellpad-logo-teal_500x194.png')
-                .col.s4.offset-s3.offset-m5
+                .col.s4.offset-s3.offset-m4.center-align
                   a.btn-flat(href='https://praxisholistic.ca/wellpad/', target='_blank') Project Details
             .back
-              span Wellpad Survey/Follow-up Platform
+              h5 Wellpad Survey/Follow-up Platform
               p
                 | This iPad-centric solution was commissioned in order to ameliorate an older system used for managing a health clinic's
                 | patient and staff data. It provides an intuitive survey platform, as well as an administrative interface for viewing current information and trends
@@ -147,18 +150,14 @@ html
                   img(src='https://i.imgur.com/osl2TbD.png')
       //- .row
       //-   .card
-      //-     .card-image.waves-effect.waves-block.waves-light
-      //-       img#opendojo.activator(src='https://i.imgur.com/OcBwIXt.png')
+      //-     .front
+      //-       img.hover-img#opendojo(src='https://i.imgur.com/OcBwIXt.png')
       //-     .card-content
-      //-       span.card-title.activator
+      //-       span
       //-         | OpenDojo CMS
-      //-         i.material-icons.right more_vert
       //-       p
       //-         a.waves-effect.waves-teal.btn-flat.grow(href='https://github.com/sedge/opendojo/graphs/contributors') View the code
-      //-     .card-reveal
-      //-       span.card-title.activator
-      //-         | OpenDojo CMS
-      //-         i.material-icons.right close
+      //-     .back
       //-       p
       //-         | OpenDojo is a now open-sourced codebase that was implemented to create a content management system for a local karate club.
       //-         | Its features include a real-time reminder of the upcoming classes, a searchable/filterable student list with detailed
@@ -207,21 +206,21 @@ html
       //-         .col.s12
       //-           .video-container
       //-             iframe(src='https://www.youtube.com/embed/2SLiaaiqAVc', frameborder='0', height='40%', width='50%', allowfullscreen='')
-    footer.page-footer.section.scrollspy
       .container
-        .row
-          .col.l6.s12
-            h3 Stay In Touch...
-            p.text-lighten-2 Have feedback to give? Project offer? Chat? Check out any of these options:
-        div
-          h4 Links
-          ul
-            li
-              a(href='https://ca.linkedin.com/in/yoav-gurevich-42415886', target='_blank') LinkedIn
-            li
-              a(href='https://twitter.com/ygdot14', target='_blank') Twitter
-            li
-              a(href='https://stackoverflow.com/users/5411556/progretarian', target='_blank') Stack Overflow
+        .page-footer.section.scrollspy#footer-section
+          .row
+            .col.l6.s12
+              h3 Stay In Touch...
+              p.text-lighten-2 Have feedback to give? Project offer? Chat? Check out any of these options:
+          div
+            h4 Links
+            ul
+              li
+                a(href='https://ca.linkedin.com/in/yoav-gurevich-42415886', target='_blank') LinkedIn
+              li
+                a(href='https://twitter.com/ygdot14', target='_blank') Twitter
+              li
+                a(href='https://stackoverflow.com/users/5411556/progretarian', target='_blank') Stack Overflow
 
     // Compiled and minified JavaScript
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js')
