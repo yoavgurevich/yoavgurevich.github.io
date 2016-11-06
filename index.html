@@ -19,8 +19,8 @@
   </head>
   <body>
     <header>
-      <!-- Github Ribbon--><a href="https://github.com/yoavgurevich"><img id="ribbon" style="z-index: 3; position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
-      <!-- Modal Link--><a data-target="modal1" data-position="right" data-delay="50" data-tooltip="Browsing Help" class="help-link btn-floating tooltipped modal-trigger waves-effect waves-light"><i style="font-size: xx-large; color: forestgreen" class="material-icons">help_outline</i></a>
+      <!-- Github Ribbon--><a href="https://github.com/yoavgurevich"><img id="ribbon" style="z-index: 3; position: fixed; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+      <!-- Modal Link--><a data-target="modal1" data-position="right" data-delay="50" data-tooltip="Browsing Help" class="help-link btn-floating tooltipped modal-trigger waves-effect waves-light"><i style="font-size: xx-large; color: cyan" class="material-icons">help_outline</i></a>
       <!-- Modal Structure-->
       <div id="modal1" class="modal">
         <div class="modal-content">
@@ -39,6 +39,10 @@
       </div>
     </header>
     <main>
+      <!-- Video background-->
+      <video id="my-video" autoplay="autoplay" loop="loop" muted="" width="3840" height="2160" class="video">
+        <source src="./public/assets/rockymnt2.mp4">
+      </video>
       <!-- Navigation Menu-->
       <div style="bottom: 5vh; right: 3vw;" class="fixed-action-btn"><a class="btn-floating btn-large"><i class="large material-icons">list</i></a>
         <ul class="section">
@@ -53,7 +57,7 @@
       </div>
       <!-- Begin Content-->
       <div id="intro-section" class="container fs-container section scrollspy">
-        <div class="row ctr-qtr">
+        <div class="row ctr-10th">
           <div id="intro" class="col s6 offset-s3">
             <div id="introPanel" class="card-panel">
               <h1 id="a1">Welcome.</h1>
@@ -76,11 +80,11 @@
             </li>
             <li id="staggered-item">
               <blockquote class="flow-text">
-                I graduated from computer programming & analysis at Seneca College last year. Studied mixology and wine council studies before that.
-                Dabbled in audio engineering and production before that. I've been a guitar player for nigh on 12 years now, and am a big believer
+                Seneca College computer programming & analysis graduate of 2015. Studied mixology and wine council studies before that.
+                Dabbled in audio engineering and production before that. Guitar player for nigh on 12 years now, and a big believer
                 in the harmony between opposite schools of knowledge and experience. The project overviews below highlight my humble contributions
                 to a few different use cases. If there are two things I've learned about the development process so far, it's that
-                it could be as personal and unique as songwriting, and that passion is<i>very</i> contagious.
+                it could be as personal and unique as songwriting, and that passion is <i>very</i>&nbsp; contagious.
               </blockquote>
             </li>
           </ul>
@@ -90,8 +94,8 @@
         <div class="row">
           <div id="wellpad-flip">
             <div class="front">
-              <div class="row ctr-3rd padding-left-20">
-                <div id="wellpad-section" class="col s4 offset-s2 offset-m4 section scrollspy"><img id="wellpad" src="https://s3.amazonaws.com/wellpad-img/Wellpad-logo-teal_500x194.png" class="hover-img"></div>
+              <div id="wellpad-section" class="row ctr-3rd padding-left-20 section scrollspy">
+                <div class="col s4 offset-s2 offset-m4"><img id="wellpad" src="https://s3.amazonaws.com/wellpad-img/Wellpad-logo-teal_500x194.png" class="hover-img"></div>
                 <div class="col s4 offset-s3 offset-m4 center-align"><a href="https://praxisholistic.ca/wellpad/" target="_blank" class="btn-flat">Project Details</a></div>
               </div>
             </div>
@@ -116,8 +120,10 @@
           </div>
         </div>
       </div>
-      <div class="container">
-        <div id="footer-section" class="page-footer section scrollspy">
+    </main>
+    <footer>
+      <div id="footer-section" class="page-footer section scrollspy">
+        <div class="container">
           <div class="row">
             <div class="col l6 s12">
               <h3>Stay In Touch...</h3>
@@ -125,16 +131,15 @@
             </div>
           </div>
           <div>
-            <h4>Links</h4>
             <ul>
               <li><a href="https://ca.linkedin.com/in/yoav-gurevich-42415886" target="_blank">LinkedIn</a></li>
               <li><a href="https://twitter.com/ygdot14" target="_blank">Twitter</a></li>
               <li><a href="https://stackoverflow.com/users/5411556/progretarian" target="_blank">Stack Overflow</a></li>
             </ul>
-          </div>
+          </div><span>Free Stock Footage by </span><a target="_blank" href="https://www.videezy.com">Videezy</a>
         </div>
       </div>
-    </main>
+    </footer>
     <!-- Compiled and minified JavaScript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>

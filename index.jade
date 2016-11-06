@@ -21,11 +21,11 @@ html
     header
       // Github Ribbon
       a(href='https://github.com/yoavgurevich')
-        img#ribbon(style='z-index: 3; position: absolute; top: 0; right: 0; border: 0;', src='https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67', alt='Fork me on GitHub', data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png')
+        img#ribbon(style='z-index: 3; position: fixed; top: 0; right: 0; border: 0;', src='https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67', alt='Fork me on GitHub', data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png')
       
       // Modal Link
       a.help-link.btn-floating.tooltipped.modal-trigger.waves-effect.waves-light(data-target='modal1', data-position='right', data-delay='50', data-tooltip='Browsing Help')
-        i.material-icons(style='font-size: xx-large; color: forestgreen') help_outline
+        i.material-icons(style='font-size: xx-large; color: cyan') help_outline
 
       // Modal Structure
       #modal1.modal
@@ -43,6 +43,10 @@ html
           a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href='#!') Got it!
 
     main
+      // Video background
+      video#my-video.video(autoplay='autoplay', loop='loop', muted='', width='3840', height='2160')
+        source(src='./public/assets/rockymnt2.mp4')
+
       // Navigation Menu
       .fixed-action-btn(style='bottom: 5vh; right: 3vw;')
         a.btn-floating.btn-large
@@ -72,7 +76,7 @@ html
               
       // Begin Content
       .container.fs-container.section.scrollspy#intro-section
-        .row.ctr-qtr
+        .row.ctr-10th
           #intro.col.s6.offset-s3
             #introPanel.card-panel
               h1#a1 Welcome.
@@ -99,20 +103,20 @@ html
               h3#a1.white-text About Me
             li#staggered-item
               blockquote.flow-text
-                | I graduated from computer programming & analysis at Seneca College last year. Studied mixology and wine council studies before that.
-                | Dabbled in audio engineering and production before that. I've been a guitar player for nigh on 12 years now, and am a big believer
+                | Seneca College computer programming & analysis graduate of 2015. Studied mixology and wine council studies before that.
+                | Dabbled in audio engineering and production before that. Guitar player for nigh on 12 years now, and a big believer
                 | in the harmony between opposite schools of knowledge and experience. The project overviews below highlight my humble contributions
                 | to a few different use cases. If there are two things I've learned about the development process so far, it's that
-                | it could be as personal and unique as songwriting, and that passion is
+                | it could be as personal and unique as songwriting, and that passion is 
                 i very
-                |  contagious.
+                | &nbsp; contagious.
       
       .container.fs-container
         .row
           #wellpad-flip
             .front
-              .row.ctr-3rd.padding-left-20
-                .col.s4.offset-s2.offset-m4.section.scrollspy#wellpad-section
+              .row.ctr-3rd.padding-left-20.section.scrollspy#wellpad-section
+                .col.s4.offset-s2.offset-m4
                   img.hover-img#wellpad(src='https://s3.amazonaws.com/wellpad-img/Wellpad-logo-teal_500x194.png')
                 .col.s4.offset-s3.offset-m4.center-align
                   a.btn-flat(href='https://praxisholistic.ca/wellpad/', target='_blank') Project Details
@@ -206,14 +210,14 @@ html
       //-         .col.s12
       //-           .video-container
       //-             iframe(src='https://www.youtube.com/embed/2SLiaaiqAVc', frameborder='0', height='40%', width='50%', allowfullscreen='')
-      .container
-        .page-footer.section.scrollspy#footer-section
+    footer
+      .page-footer.section.scrollspy#footer-section
+        .container
           .row
             .col.l6.s12
               h3 Stay In Touch...
               p.text-lighten-2 Have feedback to give? Project offer? Chat? Check out any of these options:
           div
-            h4 Links
             ul
               li
                 a(href='https://ca.linkedin.com/in/yoav-gurevich-42415886', target='_blank') LinkedIn
@@ -221,6 +225,8 @@ html
                 a(href='https://twitter.com/ygdot14', target='_blank') Twitter
               li
                 a(href='https://stackoverflow.com/users/5411556/progretarian', target='_blank') Stack Overflow
+          span Free Stock Footage by 
+          a(target="_blank" href="https://www.videezy.com") Videezy
 
     // Compiled and minified JavaScript
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js')

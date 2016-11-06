@@ -1,3 +1,21 @@
+.video {
+  position: fixed;
+  top: 50%; left: 50%;
+  z-index: -100;
+  opacity: 0.7;
+  background: rgba(0,0,0,0.7) !important;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  background: black;
+  color: whitesmoke;
+}
+
 a, .btn-flat {
   white-space: nowrap;
   font-size: large;
@@ -6,7 +24,7 @@ a, .btn-flat {
 
 .help-link {
   z-index: 3;
-  position: absolute;
+  position: fixed;
   top: 1%;
   left: 1%;
   background: transparent;
@@ -16,6 +34,14 @@ a, .btn-flat {
     background: transparent;
     box-shadow: none;
   }
+}
+
+#introPanel, #profile, #staggered-item {
+  opacity: 0;
+}
+
+.card-panel {
+  background: transparent;
 }
 
 .ctr-3rd {
@@ -53,7 +79,13 @@ h5 {
 }
 
 .fs-container {
-  height: 100vh;
+  min-height: 90%;
+  height: auto;
+  margin-bottom: 10%;
+}
+
+.modal-content {
+  color: black;
 }
 
 #wellpad {
@@ -64,13 +96,11 @@ h5 {
   }
 }
 
-#introPanel, #profile, #staggered-list > #staggered-item {
-  opacity: 0;
-}
-
 #profile {
   max-width: 75%;
-  min-height: 225px;
+  min-height: 175px;
+  filter: grayscale(100%);
+  height: auto;
 }
 
 .carousel {
@@ -78,18 +108,18 @@ h5 {
 }
 
 #a1 {
-  -webkit-animation-delay: 0.5s;
-  -moz-animation-delay: 0.5s;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
 }
 
 #a2 {
-  -webkit-animation-delay: 0.75s;
-  -moz-animation-delay: 0.75s;
+  -webkit-animation-delay: 1.1s;
+  -moz-animation-delay: 1.1s;
 }
 
 #a3 {
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1.2s;
+  -moz-animation-delay: 1.2s;
 }
 
 #aIcon {
@@ -124,6 +154,13 @@ h5 {
 
 .material-tooltip {
   font-size: large;
+}
+
+footer {
+  position: absolute;
+  top: 350%;
+  min-width: 100%;
+  width: auto;
 }
 
 .page-footer {
