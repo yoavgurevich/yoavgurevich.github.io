@@ -1,0 +1,19 @@
+{
+  "name": "yoavgurevich.github.io",
+  "version": "1.0.0",
+  "description": "Github pages landing for professional portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoavgurevich/yoavgurevich.github.io.git"
+  },
+  "author": "Yoav Gurevich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yoavgurevich/yoavgurevich.github.io/issues"
+  },
+  "homepage": "https://github.com/yoavgurevich/yoavgurevich.github.io#readme"
+}
