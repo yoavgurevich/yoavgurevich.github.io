@@ -1,1 +1,11 @@
-console.log('Testing React Webpack Setup');
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const title = 'My Minimal React HMR Webpack Babel Setup';
+
+ReactDOM.render(
+  <div>{title}</div>,
+  document.getElementById('app')
+);
+
+module.hot.accept();
