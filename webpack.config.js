@@ -15,6 +15,10 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loaders: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.mp4$/,
+                loaders: 'url?limit=10000&mimetype=video/mp4'
             }
         ]
       },

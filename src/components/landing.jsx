@@ -1,10 +1,12 @@
 import React from 'react';
-import Flexbox from 'flexbox-react';
 
 export default function Landing() {
     return (
-        <Flexbox flexDirection="row" minHeight="100vh" minWidth="100vw">
-            <h1 className='text-center'>This is landing</h1>
-        </Flexbox>
+        <div id='video-viewport'>
+            <video className="video-bg" autoPlay='true' poster="">
+                <source src="./assets/circuits.mp4" type="video/mp4"/>
+            </video>
+            {/* <h1 className='text-center'>This is landing</h1> */}
+        </div>
     );
 }
