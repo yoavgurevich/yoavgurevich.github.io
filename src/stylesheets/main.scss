@@ -10,19 +10,29 @@ body {
     background: black;
 }
 
+.fsh {
+    min-height: 100vh;
+    color: cornsilk !important;
+}
+
+.vertical-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .text-center {
     text-align: center;
 }
 
 #video-viewport {
-    width: 100%; height: 100%; 
     filter: sepia(1);
     overflow: hidden;     
-}
-video 
-{
-    min-width: 100vw;
-    height: auto;
-    max-height: 100vh;
-    transform: scale(1.75);
+
+    video {
+        min-width: 100vw;
+        max-height: 100vh;
+        height: auto;
+        transform: scale(1.75);
+    }
 }
