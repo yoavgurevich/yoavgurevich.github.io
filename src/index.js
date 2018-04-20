@@ -8,9 +8,7 @@ import './stylesheets/main.scss'
 
 ReactDOM.render(
   <div className='currentBg'>
-      <div>
         <Landing />
-      </div>
       <ScrollableAnchor id={'engage-people'}>
         <div className='fsh vertical-align'>
           <h1>engage</h1>
