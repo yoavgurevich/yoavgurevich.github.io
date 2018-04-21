@@ -1,29 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Pacifico|Sanchez|Hind+Siliguri');
 
+$color-collection: (indianred, mediumseagreen, darkslategrey, black);
+
 body {
     background: black;
     margin: 0;
     font-family: 'Nanum Gothic', sans-serif;
 }
 
-.black {
-    background: black;
-    transition: background linear 0.8s;
-}
-
-.red {
-    background: indianred;
-    transition: background linear 0.8s;
-}
-
-.beige {
-    background: mediumseagreen;
-    transition: background linear 0.8s;
-}
-
-.darkslategrey {
-    background: darkslategrey;
-    transition: background linear 0.8s;
+@each $color in $color-collection {
+    .#{$color} {
+        background: nth($color, 1);
+        transition: background linear 0.8s;
+    }
 }
 
 .fsh {

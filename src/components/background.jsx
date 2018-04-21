@@ -26,10 +26,10 @@ export default class Background extends Component {
     
             switch (window.location.hash) {
                 case '#engage-people':
-                    resolvedBackground = 'red';
+                    resolvedBackground = 'indianred';
                     break;
                 case '#wellpad':
-                    resolvedBackground = 'beige';
+                    resolvedBackground = 'mediumseagreen';
                     break;
                 case '#crkf':
                     resolvedBackground = 'darkslategrey';
