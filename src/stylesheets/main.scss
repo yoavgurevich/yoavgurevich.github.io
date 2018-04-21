@@ -8,6 +8,22 @@ body {
 
 .black {
     background: black;
+    transition: background linear 0.8s;
+}
+
+.red {
+    background: indianred;
+    transition: background linear 0.8s;
+}
+
+.beige {
+    background: mediumseagreen;
+    transition: background linear 0.8s;
+}
+
+.darkslategrey {
+    background: darkslategrey;
+    transition: background linear 0.8s;
 }
 
 .fsh {
