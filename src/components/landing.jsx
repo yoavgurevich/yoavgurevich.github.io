@@ -7,7 +7,6 @@ export default function Landing() {
             <video className="video-bg" autoPlay='true' poster="">
                 <source src="./assets/circuits.mp4" type="video/mp4"/>
             </video>
-            {/* <h1 className='text-center'>This is landing</h1> */}
         </div>
     );
 }

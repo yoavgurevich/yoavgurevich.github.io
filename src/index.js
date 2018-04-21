@@ -4,6 +4,7 @@ import ScrollableAnchor from 'react-scrollable-anchor'
 
 import Background from './components/background';
 import Landing from './components/landing';
+import Contact from './components/contact';
 
 import './stylesheets/main.scss'
 
@@ -30,11 +31,7 @@ ReactDOM.render(
         <h1>CDOT</h1>
       </div>
     </ScrollableAnchor>
-    <ScrollableAnchor id={'contact'}>
-      <div className='fsh vertical-align'>
-        <h1>Contact Me</h1>
-      </div>
-    </ScrollableAnchor>
+    <Contact />
   </Background>,
   document.getElementById('app')
 );

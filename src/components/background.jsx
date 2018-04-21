@@ -34,9 +34,6 @@ export default class Background extends Component {
                 case '#crkf':
                     resolvedBackground = 'darkslategrey';
                     break;
-                case '#contact':
-                    resolvedBackground = 'dodgerblue'
-                    break;
                 case '#cdot':
                 default:
                     resolvedBackground = 'black';
@@ -44,7 +41,7 @@ export default class Background extends Component {
             }
     
             this.setState((currentState) => 
-                currentState.currentBg !== resolvedBackground && resolvedBackground.length ?
+                currentState.currentBg !== resolvedBackground ?
                     {
                         currentBg: resolvedBackground,
                         lastHash: window.location.hash

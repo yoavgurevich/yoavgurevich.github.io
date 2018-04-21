@@ -15,9 +15,19 @@ body {
     }
 }
 
+.contact-img {
+    background-image: url('/assets/philly_back.jpg');
+    background-size: cover;
+    filter: hue-rotate(120deg);
+}
+
 .fsh {
     min-height: 100vh;
     color: cornsilk !important;
+
+    h1 {
+        font-size: 3.75vmax;
+}
 }
 
 .vertical-align {
