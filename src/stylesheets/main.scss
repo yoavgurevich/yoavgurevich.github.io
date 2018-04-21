@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Pacifico|Sanchez|Hind+Siliguri');
 
-$color-collection: (indianred, mediumseagreen, darkslategrey, black);
+$color-collection: (indianred, mediumseagreen, darkslategrey, black, dodgerblue);
 
 body {
     background: black;
@@ -11,7 +11,7 @@ body {
 @each $color in $color-collection {
     .#{$color} {
         background: nth($color, 1);
-        transition: background linear 0.8s;
+        transition: background linear 1s;
     }
 }
 
