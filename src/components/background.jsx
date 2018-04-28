@@ -13,19 +13,19 @@ export default class Background extends Component {
     }
 
     componentDidMount() {
-        window.addEventListener('hashchange', this.resolveBg);
+        addEventListener('hashchange', this.resolveBg);
     }
       
     componentWillUnmount() {
-        window.removeEventListener('hashchange', this.resolveBg);
+        removeEventListener('hashchange', this.resolveBg);
     }
 
     resolveBg(e) {
-        if (window.location.hash !== this.state.lastHash) {
+        if (location.hash !== this.state.lastHash) {
             let resolvedBackground = '';
     
-            switch (window.location.hash) {
-                case '#engage-people':
+            switch (location.hash) {
+                case '#engage':
                     resolvedBackground = 'indianred';
                     break;
                 case '#wellpad':
@@ -54,7 +54,6 @@ export default class Background extends Component {
     render() {
         return (
             <div
-                onScroll={this.resolveBg}
                 className={this.state.currentBg}>
                 {this.props.children}
             </div>
