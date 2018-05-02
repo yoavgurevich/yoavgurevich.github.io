@@ -9,7 +9,7 @@ import CDOT from './partials/cdot';
 
 export default class JobList extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.refsList = {
             engage: React.createRef(),
             wellpad: React.createRef(),
@@ -17,14 +17,30 @@ export default class JobList extends Component {
             cdot: React.createRef()
         };
 
-        this.resolveHash.bind(this);
         this.handleEnterViewport.bind(this);
+        this.handleExitViewport.bind(this);
     }
 
     handleEnterViewport (watcher) {
-        if (location.hash !== '#' + watcher.watchItem.id) {
+        if (location.hash !== watcher.watchItem.id) {
+            history.pushState({currentView: watcher.watchItem.id}, '')
             location.hash = watcher.watchItem.id
-            console.log(location.hash)
+        }
+    }
+
+    handleExitViewport (watcher) {
+        if (history.state) {
+            switch(watcher.watchItem.id) {
+                case 'engage':
+                    if (history.state.currentView === 'engage') {
+                        history.pushState({currentView: 'landing'}, '', '#landing')
+                    }
+                    break;
+                default:
+                    if (history.state.currentView === 'cdot') {
+                        history.pushState({currentView: 'contact'}, '', '#contact')
+                    }
+            }
         }
     }
 
@@ -32,13 +48,15 @@ export default class JobList extends Component {
         return (
             <div>
                 <Engage
-                    fullyEnterViewport={this.handleEnterViewport} />
+                    fullyEnterViewport={this.handleEnterViewport}
+                    exitViewport={this.handleExitViewport} />
                 <Wellpad
                     fullyEnterViewport={this.handleEnterViewport} />
                 <CRKF
                     fullyEnterViewport={this.handleEnterViewport} />
                 <CDOT
-                    fullyEnterViewport={this.handleEnterViewport} />
+                    fullyEnterViewport={this.handleEnterViewport}
+                    exitViewport={this.handleExitViewport} />
             </div>
         );
     }
