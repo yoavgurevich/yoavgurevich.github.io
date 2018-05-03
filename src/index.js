@@ -7,6 +7,7 @@ import JobList from './components/joblist';
 import Contact from './components/contact';
 
 import './stylesheets/main.scss'
+import 'font-awesome/css/font-awesome.min.css';
 
 ReactDOM.render(
   <Background>
