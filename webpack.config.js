@@ -22,7 +22,7 @@ module.exports = {
             },
             {
                 test: /\.mp4$/,
-                loaders: 'url-loader?limit=10000&mimetype=video/mp4'
+                loaders: 'url-loader?limit=50000&mimetype=video/mp4'
             },
             {
                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
