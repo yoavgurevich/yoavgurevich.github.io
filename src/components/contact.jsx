@@ -8,8 +8,8 @@ export default function ContactMe() {
                 <ul>
                     <li>
                         <h3>
-                            <a href='mailto:ygurevich@ymail.com' target='_blank'>
-                                <i className='fa fa-envelope'></i> ygurevich@ymail.com
+                            <a href='//ca.linkedin.com/in/yoav-gurevich-42415886' target='_blank'>
+                                <i className='fa fa-linkedin-square'></i> Profile Page
                             </a>
                         </h3>
                     </li>

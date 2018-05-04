@@ -23,9 +23,6 @@
         left: 3%;
         padding-top: 2%;
         z-index: 2;
-        * {
-            color: lightgray !important;
-        }
 
         a {
             text-decoration: none;
@@ -37,7 +34,7 @@
 
             li {
                 &:first-child * {
-                    color: whitesmoke !important;
+                    color: navy !important;
                 }
                 &:nth-child(2) * {
                     color: cornflowerblue !important;
