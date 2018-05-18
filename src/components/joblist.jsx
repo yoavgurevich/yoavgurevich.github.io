@@ -10,12 +10,6 @@ import CDOT from './partials/cdot';
 export default class JobList extends Component {
     constructor(props) {
         super(props)
-        this.refsList = {
-            engage: React.createRef(),
-            wellpad: React.createRef(),
-            crkf: React.createRef(),
-            cdot: React.createRef()
-        };
 
         this.handleEnterViewport.bind(this);
         this.handleExitViewport.bind(this);
@@ -48,9 +42,11 @@ export default class JobList extends Component {
         return (
             <div>
                 <Engage
+                    passedRef={this.props.refsList.engage}
                     fullyEnterViewport={this.handleEnterViewport}
                     exitViewport={this.handleExitViewport} />
                 <Wellpad
+                    passedRef={this.props.refsList.wellpad}
                     fullyEnterViewport={this.handleEnterViewport} />
                 <CRKF
                     fullyEnterViewport={this.handleEnterViewport} />

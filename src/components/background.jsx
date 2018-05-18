@@ -8,6 +8,13 @@ export default class Background extends Component {
             currentBg: '',
             lastHash: ''
         };
+        
+        this.refsList = {
+            engage: React.createRef(),
+            wellpad: React.createRef(),
+            crkf: React.createRef(),
+            cdot: React.createRef()
+        };
 
         this.resolveBg = this.resolveBg.bind(this);
     }
@@ -52,10 +59,14 @@ export default class Background extends Component {
     }
 
     render() {
+        const childrenWithProps = React.Children.map(this.props.children, (child) => {
+            return React.cloneElement(child, {refsList: this.refsList});
+        });        
+
         return (
             <div
                 className={this.state.currentBg}>
-                {this.props.children}
+                {childrenWithProps}
             </div>
         );
     }
