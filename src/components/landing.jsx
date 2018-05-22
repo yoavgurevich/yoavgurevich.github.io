@@ -5,19 +5,11 @@ import scrollToComponent from 'react-scroll-to-component';
 export default class Landing extends Component {
     constructor(props) {
         super(props);
-
-        this.handleOnClick = this.handleOnClick.bind(this);
-    }
-
-    handleOnClick() {
-        if (this.props.refsList.engage && this.props.refsList.engage.current) {
-            scrollToComponent(this.props.refsList.engage.current);
-        }
     }
 
     render() {
         return (
-            <div>
+            <div ref={this.props.refsList.landing}>
                 <div id='video-viewport'>
                     <video className="video-bg" autoPlay='true'>
                         <source src="/assets/circuits.mp4" type="video/mp4"/>
@@ -40,7 +32,7 @@ export default class Landing extends Component {
                             </p>
                         </h5>
                     </blockquote>
-                    <ScrollButton direction='down' handleOnClick={this.handleOnClick} />
+                    <ScrollButton direction='down' refsList={this.props.refsList} currentElm='landing' />
                 </div>
             </div>
         );

@@ -1,47 +1,23 @@
 .contact-img {
-    z-index: 1;
-    background-image: url('/assets/philly_back.jpg');
     background-size: cover;
 
-    .blur-container {
-        position: relative;
-        left: -10px;
-        background: inherit;
-        max-width: 40vw;
-        height: 100vh;
-        filter: blur(10px) brightness(85%);
-        
-        @media only screen and (max-width: 550px) {
-            max-width: 100%;
-            background-position-x: 35%;
-        }
+    a {
+        text-decoration: none;
     }
 
-    .blur-content {
-        position: absolute;
-        max-width: 33vw;
-        left: 3%;
-        padding-top: 2%;
-        z-index: 2;
+    ul {
+        list-style-type: none;
+        padding-left: 5px;
 
-        a {
-            text-decoration: none;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 5px;
-
-            li {
-                &:first-child * {
-                    color: navy !important;
-                }
-                &:nth-child(2) * {
-                    color: cornflowerblue !important;
-                }
-                &:nth-child(3) * {
-                    color: slategrey !important;
-                }
+        li {
+            .fa-linkedin {
+                color: navy !important;
+            }
+            .fa-twitter {
+                color: cornflowerblue !important;
+            }
+            .fa-github {
+                color: slategrey !important;
             }
         }
     }

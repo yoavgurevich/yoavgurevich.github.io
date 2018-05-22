@@ -42,15 +42,17 @@ export default class JobList extends Component {
         return (
             <div>
                 <Engage
-                    passedRef={this.props.refsList.engage}
+                    refsList={this.props.refsList}
                     fullyEnterViewport={this.handleEnterViewport}
                     exitViewport={this.handleExitViewport} />
                 <Wellpad
-                    passedRef={this.props.refsList.wellpad}
+                    refsList={this.props.refsList}
                     fullyEnterViewport={this.handleEnterViewport} />
                 <CRKF
+                    refsList={this.props.refsList}
                     fullyEnterViewport={this.handleEnterViewport} />
                 <CDOT
+                    refsList={this.props.refsList}
                     fullyEnterViewport={this.handleEnterViewport}
                     exitViewport={this.handleExitViewport} />
             </div>

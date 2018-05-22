@@ -10,6 +10,7 @@ export default class Background extends Component {
         };
         
         this.refsList = {
+            landing: React.createRef(),
             engage: React.createRef(),
             wellpad: React.createRef(),
             crkf: React.createRef(),

@@ -3,29 +3,21 @@ import React from 'react';
 export default function ContactMe() {
     return (
         <div className='contact-img fsh'>
-            <div className='blur-content'>
+            <div className='content text-center'>
                 <h2>Stay in touch...</h2>
                 <ul>
                     <li>
-                        <h3>
+                        <h2>
                             <a href='//ca.linkedin.com/in/yoav-gurevich-42415886' target='_blank'>
-                                <i className='fa fa-linkedin-square'></i> Profile Page
+                                <i className='fa fa-linkedin-square'>&nbsp;</i>
                             </a>
-                        </h3>
-                    </li>
-                    <li>
-                        <h3>
                             <a href='//twitter.com/ygdot14' target='_blank'>
-                                <i className='fa fa-twitter'></i> @ygdot14
+                                <i className='fa fa-twitter'>&nbsp;</i>
                             </a>
-                        </h3>
-                    </li>
-                    <li>
-                        <a href='//github.com/yoavgurevich' target='_blank'>
-                            <h3>
-                                <i className='fa fa-github'></i> yoavgurevich
-                            </h3>
-                        </a>
+                            <a href='//github.com/yoavgurevich' target='_blank'>
+                                <i className='fa fa-github'>&nbsp;</i>
+                            </a>
+                        </h2>
                     </li>
                 </ul>
                 <br />

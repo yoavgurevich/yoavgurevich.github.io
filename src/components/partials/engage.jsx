@@ -12,10 +12,10 @@ export default Watch(class Engage extends Component {
             <section 
                 id='engage'
                 className='fsh vertical-align'
-                ref={this.props.passedRef}>
-                <ScrollButton direction='up' />
+                ref={this.props.refsList.engage}>
+                <ScrollButton direction='up' refsList={this.props.refsList} currentElm='engage' />
                 <h1>engage</h1>
-                <ScrollButton direction='down' />
+                <ScrollButton direction='down' refsList={this.props.refsList} currentElm='engage' />
             </section>
         );
     }
