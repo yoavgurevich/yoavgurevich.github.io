@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function ContactMe() {
+export default function ContactMe(props) {
     return (
-        <div className='contact-img fsh'>
-            <div className='content text-center'>
+        <div className='contact-img fsh' ref={props.refsList.contact}>
+            <div className='text-center vertical-align'>
                 <h2>Stay in touch...</h2>
                 <ul>
                     <li>

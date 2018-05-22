@@ -14,7 +14,8 @@ export default class Background extends Component {
             engage: React.createRef(),
             wellpad: React.createRef(),
             crkf: React.createRef(),
-            cdot: React.createRef()
+            cdot: React.createRef(),
+            contact: React.createRef()
         };
 
         this.resolveBg = this.resolveBg.bind(this);
