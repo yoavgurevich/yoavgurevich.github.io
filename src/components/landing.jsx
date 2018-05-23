@@ -12,7 +12,7 @@ export default class Landing extends Component {
             <div ref={this.props.refsList.landing}>
                 <div id='video-viewport'>
                     <video className="video-bg" autoPlay='true'>
-                        <source src="/assets/circuits.mp4" type="video/mp4"/>
+                        <source src="/assets/ink4k_edit.mp4" type="video/mp4"/>
                     </video>
                 </div>
                 <div className='landing-content vertical-align'>

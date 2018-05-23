@@ -35,7 +35,6 @@ body {
 }
 
 #video-viewport {
-    filter: sepia(1) brightness(15%);
     z-index: -1;
     overflow: hidden;   
 
@@ -43,7 +42,7 @@ body {
         min-width: 100vw;
         max-height: 100vh;
         height: auto;
-        transform: scale(1.75);
+        transform: scale(1.15);
     }
 }
 
