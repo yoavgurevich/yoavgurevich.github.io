@@ -14,7 +14,7 @@ export default Watch(class CRKF extends Component {
                 ref={this.props.refsList.crkf}
                 className='fsh vertical-align'>
                 <ScrollButton direction='up' refsList={this.props.refsList} currentElm='crkf' />
-                <h1>Chito-Ryu Karate & Fitness</h1>
+                <h1 className='hind-siliguri'>Chito-Ryu Karate & Fitness</h1>
                 <ScrollButton direction='down' refsList={this.props.refsList} currentElm='crkf' />
             </section>
         );

@@ -14,7 +14,7 @@ export default Watch(class CDOT extends Component {
                 ref={this.props.refsList.cdot}
                 className='fsh vertical-align'>
                 <ScrollButton direction='up' refsList={this.props.refsList} currentElm='cdot' />
-                <h1>CDOT</h1>
+                <h1 className='sanchez'>CDOT</h1>
                 <ScrollButton direction='down' refsList={this.props.refsList} currentElm='cdot' />
             </section>
         );

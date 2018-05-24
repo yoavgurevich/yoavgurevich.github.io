@@ -11,7 +11,7 @@ export default class Landing extends Component {
         return (
             <div ref={this.props.refsList.landing}>
                 <div id='video-viewport'>
-                    <video className="video-bg" autoPlay='true'>
+                    <video className="video-bg" autoPlay='true' muted='true'>
                         <source src="/assets/ink4k_edit.mp4" type="video/mp4"/>
                     </video>
                 </div>

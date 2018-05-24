@@ -15,7 +15,7 @@ export default Watch(class Wellpad extends Component {
                 ref={this.props.refsList.wellpad}
                 className='fsh vertical-align'>
                 <ScrollButton direction='up' refsList={this.props.refsList} currentElm='wellpad' />
-                <h1>Wellpad.io</h1>
+                <h1 className='dancing-script'>Wellpad.io</h1>
                 <ScrollButton direction='down' refsList={this.props.refsList} currentElm='wellpad' />
             </section>
         );
