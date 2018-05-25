@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import scrollToComponent from 'react-scroll-to-component';
 
 import Engage from './partials/engage';
 import Wellpad from './partials/wellpad';
@@ -17,24 +16,22 @@ export default class JobList extends Component {
 
     handleEnterViewport (watcher) {
         if (location.hash !== watcher.watchItem.id) {
-            history.pushState({currentView: watcher.watchItem.id}, '')
             location.hash = watcher.watchItem.id
         }
     }
 
     handleExitViewport (watcher) {
-        if (history.state) {
-            switch(watcher.watchItem.id) {
-                case 'engage':
-                    if (history.state.currentView === 'engage') {
-                        history.pushState({currentView: 'landing'}, '', '#landing')
-                    }
-                    break;
-                default:
-                    if (history.state.currentView === 'cdot') {
-                        history.pushState({currentView: 'contact'}, '', '#contact')
-                    }
-            }
+        switch(watcher.watchItem.id) {
+            case 'engage':
+                if (document.body.scrollTop === 0 && location.hash.indexOf('engage') !== -1) {
+                    location.hash = 'landing';
+                }
+                break;
+            case 'cdot':
+                if ((innerHeight + scrollY) >= document.body.offsetHeight && location.hash.indexOf('cdot') !== -1) {
+                    location.hash = 'contact';
+                }                
+                break;
         }
     }
 

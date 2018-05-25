@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ScrollButton from './scrollButton';
-import scrollToComponent from 'react-scroll-to-component';
 
 export default class Landing extends Component {
     constructor(props) {
@@ -31,8 +30,8 @@ export default class Landing extends Component {
                                 it could be as personal and unique as songwriting, and that passion is <i>very</i> contagious.
                             </p>
                         </h5>
+                        <ScrollButton direction='down' refsList={this.props.refsList} currentElm='landing' />
                     </blockquote>
-                    <ScrollButton direction='down' refsList={this.props.refsList} currentElm='landing' />
                 </div>
             </div>
         );

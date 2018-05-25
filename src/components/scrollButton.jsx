@@ -15,7 +15,12 @@ export default class ScrollButton extends Component {
             const resolvedRef = this.props.direction === 'up' ?
                 refKeys[refKeys.indexOf(this.props.currentElm) - 1] : refKeys[refKeys.indexOf(this.props.currentElm) + 1];
 
-            scrollToComponent(this.props.refsList[resolvedRef].current);
+            scrollToComponent(this.props.refsList[resolvedRef].current)
+                .on('end', () => {
+                    if (location.hash.indexOf(resolvedRef) === -1) {
+                        location.hash = resolvedRef
+                    }
+                });
         }
     }
 

@@ -22,6 +22,7 @@ export default class Background extends Component {
     }
 
     componentDidMount() {
+        this.resolveBg();
         addEventListener('hashchange', this.resolveBg);
     }
       
@@ -29,7 +30,7 @@ export default class Background extends Component {
         removeEventListener('hashchange', this.resolveBg);
     }
 
-    resolveBg(e) {
+    resolveBg() {
         if (location.hash !== this.state.lastHash) {
             let resolvedBackground = '';
     
@@ -43,7 +44,6 @@ export default class Background extends Component {
                 case '#crkf':
                     resolvedBackground = 'darkslategrey';
                     break;
-                case '#cdot':
                 default:
                     resolvedBackground = 'black';
                     break;
@@ -57,7 +57,6 @@ export default class Background extends Component {
                     } : null
             );
         }
-
     }
 
     render() {
