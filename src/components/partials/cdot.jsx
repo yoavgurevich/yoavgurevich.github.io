@@ -15,11 +15,13 @@ export default Watch(class CDOT extends Component {
                 className='fsh vertical-align'>
                 <ScrollButton direction='up' refsList={this.props.refsList} currentElm='cdot' />
                 <svg width="650" height="250">
-                    <text x="178" y="140" class="h0 sanchez" fill="white">CD</text>
-                    <circle cx="320" cy="115" r="35" fill="red" />
-                    <circle cx="327" cy="114" r="27" fill="#400000" stroke="white" stroke-width="3" />
-                    <circle cx="330" cy="113" r="15" fill="#EEEEEE" stroke="red" stroke-width="2" />
-                    <text x="359" y="140" class="h0 sanchez" fill="white">T</text>
+                    <g>
+                        <text dx="162" dy="142" className="svg-xxl eb-garamond" fill="white">CD</text>
+                        <circle cx="320" cy="115" r="35" fill="red" />
+                        <circle cx="327" cy="114" r="27" fill="#400000" stroke="white" strokeWidth="3" />
+                        <circle cx="330" cy="113" r="15" fill="#EEEEEE" stroke="red" strokeWidth="2" />
+                        <text dx="359" dy="142" className="svg-xxl eb-garamond" fill="white">T</text>
+                    </g>
                 </svg>
                 <ScrollButton direction='down' refsList={this.props.refsList} currentElm='cdot' />
             </section>
