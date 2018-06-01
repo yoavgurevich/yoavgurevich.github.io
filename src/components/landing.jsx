@@ -20,7 +20,7 @@ export default class Landing extends Component {
         const loadedContent = this.state.loadContent ? (
             <div className='landing-content vertical-align'>
                 <h1 className='text-center'>Yoav Gurevich</h1>
-                <div className='landing-img'></div>
+                <div className='landing-img animated fadeIn'></div>
                 <blockquote>
                     <h5>
                         <p>

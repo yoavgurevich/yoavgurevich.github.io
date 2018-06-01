@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function ContactMe(props) {
     return (
-        <div className='contact-img fsh' ref={props.refsList.contact}>
-            <div className='text-center vertical-align'>
+        <div className='contact-bg fsh' ref={props.refsList.contact}>
+            <div className='bottom-fixed'>
                 <h2>Stay in touch...</h2>
                 <ul>
                     <li>
@@ -29,7 +29,6 @@ export default function ContactMe(props) {
                     <a href='//idangero.us/swiper/' target='_blank'><img src='/assets/swiper.png' alt='Swiper' /></a>
                 </div>
             </div>
-            <div className='blur-container'></div>
         </div>
     );
 }

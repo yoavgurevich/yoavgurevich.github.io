@@ -3,7 +3,7 @@
 @import './contact.scss';
 @import '~animate.css';
 
-$color-collection: (indianred, mediumseagreen, darkslategrey, black, dodgerblue);
+$color-collection: (indianred, mediumseagreen, darkslategrey, black, midnightblue);
 
 body {
     background: black;
@@ -83,5 +83,12 @@ body {
         background-color: darken(crimson, 30%);
         background-position-y: 65%;
         background-position-x: 44%;
+        animation-delay: 5s;
+    }
+}
+
+#cdot {
+    svg {
+        margin-left: 70px;
     }
 }

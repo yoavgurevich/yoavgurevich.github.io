@@ -1,6 +1,14 @@
-.contact-img {
-    background-size: cover;
+.fa-bg {
+    font-family: FontAwesome;
+    content: '\f2b5\f258\f25b\f257\f087\f256\f0a5\f0a4\f259\f255';
+}
 
+.contact-bg {
+    position: relative;
+    .bottom-fixed {
+        position: absolute;
+        bottom: 25px; left: 25px;
+    }
     a {
         text-decoration: none;
     }
@@ -9,15 +17,11 @@
         list-style-type: none;
         padding-left: 5px;
 
-        li {
-            .fa-linkedin {
-                color: navy !important;
-            }
-            .fa-twitter {
-                color: cornflowerblue !important;
-            }
-            .fa-github {
-                color: slategrey !important;
+        a {
+            margin-right: 20px;
+            i {
+                color: cornsilk;
+                font-size: 50pt;
             }
         }
     }
@@ -25,11 +29,9 @@
 
 .flex {
     width: inherit;
-    display: flex;
-    justify-content: center;
 
     img {
-        padding: 0 20px;
-        max-height: 10vh; max-width: 20vw;
+        margin: 20px;
+        max-height: 45px;
     }
 }
