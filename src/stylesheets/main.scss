@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|EB+Garamond:800|Hind+Siliguri|Rouge+Script');
 @import './typography.scss';
 @import './contact.scss';
+@import './landing.scss';
 @import '~animate.css';
 
 $color-collection: (indianred, mediumseagreen, darkslategrey, black, midnightblue);
@@ -12,9 +13,16 @@ body {
 }
 
 @each $color in $color-collection {
-    .#{$color} {
-        background: nth($color, 1);
-        transition: background linear 1s;
+    @if nth($color, 1) == midnightblue {
+        .#{$color} {
+            background: #191930;
+            transition: background linear 1s;
+        }
+    } @else {
+        .#{$color} {
+            background: nth($color, 1);
+            transition: background linear 1s;
+        }
     }
 }
 
@@ -34,18 +42,6 @@ body {
     text-align: center;
 }
 
-#video-viewport {
-    z-index: -1;
-    overflow: hidden;   
-
-    video {
-        min-width: 100vw;
-        max-height: 100vh;
-        height: auto;
-        transform: scale(1.15);
-    }
-}
-
 .slide-link-container {
     min-width: inherit;
     cursor: pointer;
@@ -58,32 +54,6 @@ body {
             opacity: 0.7;
             transition: all 0.5s ease;
         }
-    }
-}
-
-.landing-content {
-    position: absolute;
-    top: 0;
-    overflow: hidden;
-    color: white;
-
-    blockquote {
-        padding: 0 20%;
-        text-align: center;
-
-        h5 {
-            text-align: left;
-        }
-    }
-
-    .landing-img {
-        filter: saturate(100%);
-        height: 250px; width: 250px;
-        border-radius: 50%;
-        background-color: darken(crimson, 30%);
-        background-position-y: 65%;
-        background-position-x: 44%;
-        animation-delay: 5s;
     }
 }
 

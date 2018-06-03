@@ -1,0 +1,42 @@
+@for $i from 1 through 5 {
+    .yg#{$i} {
+        background-image: url('/assets/yg' + $i + '.png');
+        transition: background linear 0.2s;
+    }
+}
+
+#video-viewport {
+    z-index: -1;
+    overflow: hidden;   
+
+    video {
+        min-width: 100vw;
+        max-height: 100vh;
+        height: auto;
+        transform: scale(1.15);
+    }
+}
+
+.landing-content {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    color: white;
+
+    blockquote {
+        padding: 0 20%;
+        text-align: center;
+
+        h5 {
+            text-align: left;
+        }
+    }
+
+    .landing-img {
+        height: 250px; width: 250px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position-x: 50%;        
+        animation-delay: 5s;
+    }
+}

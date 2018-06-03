@@ -30,7 +30,7 @@ export default class JobList extends Component {
             case 'cdot':
                 if ((innerHeight + scrollY) >= document.body.offsetHeight && location.hash.indexOf('cdot') !== -1) {
                     location.hash = 'contact';
-                }                
+                }
                 break;
         }
     }

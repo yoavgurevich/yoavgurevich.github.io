@@ -6,21 +6,45 @@ export default class Landing extends Component {
         super(props);
 
         this.state = {
-            loadContent: false
+            loadContent: false,
+            currentPic: 'yg1',
+            currentIterator: 1
         }
 
         this.handlePlay = this.handlePlay.bind(this);
+        this.cyclePics = this.cyclePics.bind(this);
     }
 
     handlePlay(e) {
-        setTimeout(() => this.setState({loadContent: true}), 250);
+        if (!this.state.loadContent) {
+            setTimeout(() => {
+                this.setState({loadContent: true});
+                this.cyclePics();            
+            }, 250);
+        }
+    }
+
+    cyclePics() {
+        const resolvedDelay = this.state.currentIterator === 1 ? 5000 : 1200;
+
+        if (this.state.currentPic !== 'yg5') {
+            setTimeout(() => {
+                this.setState((prevState, props) => {
+                    return {
+                        currentPic: `yg${prevState.currentIterator}`,
+                        currentIterator: prevState.currentIterator + 1
+                    }
+                });
+                this.cyclePics();
+            }, resolvedDelay);
+        }
     }
 
     render() {
         const loadedContent = this.state.loadContent ? (
             <div className='landing-content vertical-align'>
                 <h1 className='text-center'>Yoav Gurevich</h1>
-                <div className='landing-img animated fadeIn'></div>
+                <div className={'landing-img animated fadeIn ' + this.state.currentPic}></div>
                 <blockquote>
                     <h5>
                         <p>

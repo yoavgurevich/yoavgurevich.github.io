@@ -3,7 +3,7 @@ import React from 'react';
 export default function ContactMe(props) {
     return (
         <div className='contact-bg fsh' ref={props.refsList.contact}>
-            <div className='bottom-fixed'>
+            <main>
                 <h2>Stay in touch...</h2>
                 <ul>
                     <li>
@@ -21,14 +21,17 @@ export default function ContactMe(props) {
                     </li>
                 </ul>
                 <br />
-                <h4>This portfolio was made possible thanks to these great projects:</h4>
+                <h4 className='margin-bottom-5'>This portfolio was made possible thanks to these great projects:</h4>
                 <div className='flex'>
                     <a href='//reactjs.org/' target='_blank'><img src='/assets/react.png' alt='React.js' /></a>
                     <a href='//webpack.js.org' target='_blank'><img src='/assets/webpack.png' alt='Webpack' /></a>
                     <a href='//sass-lang.com' target='_blank'><img src='/assets/sass.png' alt='Sass' /></a>
                     <a href='//idangero.us/swiper/' target='_blank'><img src='/assets/swiper.png' alt='Swiper' /></a>
                 </div>
-            </div>
+            </main>
+            <footer>
+                <small>Landing page clip courtesy of Mitch Martinez<sup>&trade;</sup>. Click here to view usage license.</small>
+            </footer>
         </div>
     );
 }

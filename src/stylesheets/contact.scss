@@ -5,10 +5,16 @@
 
 .contact-bg {
     position: relative;
-    .bottom-fixed {
-        position: absolute;
-        bottom: 25px; left: 25px;
+    background-image: url('/assets/rotary.svg');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 100% 92%;
+
+    main {
+        padding-top: 0.1px;
+        margin-left: 25px;
     }
+
     a {
         text-decoration: none;
     }
@@ -25,13 +31,22 @@
             }
         }
     }
+
+    footer {
+        position: absolute;
+        bottom: 25px; left: 25px;
+    }
+}
+
+.margin-bottom-5 {
+    margin-bottom: 5px;
 }
 
 .flex {
     width: inherit;
 
     img {
-        margin: 20px;
-        max-height: 45px;
+        margin: 15px;
+        max-height: 40px;
     }
 }
