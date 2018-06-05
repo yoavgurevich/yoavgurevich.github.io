@@ -1,18 +1,32 @@
-.fa-bg {
-    font-family: FontAwesome;
-    content: '\f2b5\f258\f25b\f257\f087\f256\f0a5\f0a4\f259\f255';
-}
-
 .contact-bg {
     position: relative;
     background-image: url('/assets/rotary.svg');
-    background-size: 50%;
+    background-size: 48%;
     background-repeat: no-repeat;
     background-position: 100% 92%;
 
     main {
         padding-top: 0.1px;
         margin-left: 25px;
+
+        display: flex;
+        flex-flow: wrap;
+
+        .left, .right {
+            width: 50%;
+
+            .fa-level-up {
+                margin-left: 15%;
+                cursor: pointer;
+                opacity: 0.2;
+                transition: all 0.3s ease-out;
+
+                &:hover {
+                    transition: all 0.3s ease-in;
+                    opacity: 1;
+                }
+            }
+        }
     }
 
     a {
@@ -35,6 +49,11 @@
     footer {
         position: absolute;
         bottom: 25px; left: 25px;
+
+        a {
+            color: inherit;
+            font-style: italic;
+        }
     }
 }
 
@@ -42,11 +61,8 @@
     margin-bottom: 5px;
 }
 
-.flex {
-    width: inherit;
 
-    img {
-        margin: 15px;
-        max-height: 40px;
-    }
+img {
+    margin: 15px;
+    max-height: 40px;
 }
