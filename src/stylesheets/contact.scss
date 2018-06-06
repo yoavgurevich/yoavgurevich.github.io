@@ -1,26 +1,16 @@
 .contact-bg {
     position: relative;
-    background-image: url('/assets/rotary.svg');
-    background-size: 48%;
-    background-repeat: no-repeat;
-    background-position: 100% 92%;
 
-    main {
-        padding-top: 0.1px;
-        margin-left: 25px;
+    header {
+        position: absolute;
+        right: 50px;
 
-        display: flex;
-        flex-flow: wrap;
-
-        .left, .right {
-            width: 50%;
-
+        h2 {
             .fa-level-up {
-                margin-left: 15%;
                 cursor: pointer;
                 opacity: 0.2;
                 transition: all 0.3s ease-out;
-
+    
                 &:hover {
                     transition: all 0.3s ease-in;
                     opacity: 1;
@@ -29,40 +19,48 @@
         }
     }
 
-    a {
-        text-decoration: none;
-    }
-
-    ul {
-        list-style-type: none;
-        padding-left: 5px;
+    main {
+        padding-top: 0.1px;
 
         a {
-            margin-right: 20px;
-            i {
-                color: cornsilk;
-                font-size: 50pt;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 5px;
+    
+            a {
+                margin-right: 20px;
+                i {
+                    color: cornsilk;
+                    font-size: 50pt;
+                }
             }
         }
-    }
+    
+        .rotary {
+            width: 35%;
+            margin-right: 100px;
+            padding-bottom: 40px;
+        }
+    
+        .vendor-imgs {
+            img {
+                margin: 15px;
+                max-height: 40px;
+            }
+        }
 
-    footer {
-        position: absolute;
-        bottom: 25px; left: 25px;
-
-        a {
-            color: inherit;
-            font-style: italic;
+        small {
+            a {
+                color: inherit;
+                font-style: italic;
+            }
         }
     }
 }
 
 .margin-bottom-5 {
     margin-bottom: 5px;
-}
-
-
-img {
-    margin: 15px;
-    max-height: 40px;
 }
