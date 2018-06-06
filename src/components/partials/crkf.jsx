@@ -15,7 +15,7 @@ export default Watch(class CRKF extends Component {
                 className='fsh vertical-align'>
                 <ScrollButton direction='up' refsList={this.props.refsList} currentElm='crkf' />
                 <h1 className='aldrich text-center'>
-                    空 手 道
+                    実 道 空 手
                     <br />
                     Chito-Ryu Karate
                 </h1>
