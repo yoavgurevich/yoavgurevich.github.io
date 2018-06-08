@@ -32,7 +32,6 @@ export default function ContactMe(props) {
                     <a href='//reactjs.org/' target='_blank'><img src='/assets/react.png' alt='React.js' /></a>
                     <a href='//webpack.js.org' target='_blank'><img src='/assets/webpack.png' alt='Webpack' /></a>
                     <a href='//sass-lang.com' target='_blank'><img src='/assets/sass.png' alt='Sass' /></a>
-                    <a href='//idangero.us/swiper/' target='_blank'><img src='/assets/swiper.png' alt='Swiper' /></a>
                 </section>
                 <img src='/assets/rotary.svg' className='rotary' />
                 <br />
