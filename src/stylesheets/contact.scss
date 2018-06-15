@@ -2,7 +2,6 @@
     position: relative;
     background-image: url('/assets/smartphone_hold.svg');
     background-repeat: no-repeat;
-    background-position: 85% 70%;
     background-size: 90rem;
 
     header {
@@ -26,7 +25,6 @@
     main {
         padding-top: 11vh;
         line-height: 1.25;
-        max-width: 19%;
         margin: 0 auto;
 
         a {
@@ -73,4 +71,25 @@
 
 .margin-bottom-5 {
     margin-bottom: 5px;
+}
+
+
+@media only screen and (min-width: 992px) {
+    .contact-bg {
+        background-position: 85% 70%;
+    }
+
+    main {
+        max-width: 19%;
+    }
+}
+
+@media only screen and (max-width: 667px) {
+    .contact-bg {
+        background-size: 0;
+    }
+
+    main {
+        max-width: 90%;
+    } 
 }
