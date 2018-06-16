@@ -7,13 +7,17 @@
 
 #video-viewport {
     z-index: -1;
-    overflow: hidden;   
+    overflow: hidden;
 
     video {
         min-width: 100vw;
         max-height: 100vh;
         height: auto;
         transform: scale(1.15);
+        @media only screen and (max-width: 823px) {
+            margin-left: -100%;
+            margin-top: -20%;
+        }
     }
 }
 
@@ -25,15 +29,17 @@
 
     blockquote {
         padding: 0 20%;
-        text-align: center;
+        text-align: justify;
 
-        h5 {
-            text-align: left;
+        @media only screen and (max-width: 667px) {
+            max-height: 33vh;
+            overflow-y: scroll;
+            padding: 0 5%;
         }
     }
 
     .landing-img {
-        height: 250px; width: 250px;
+        height: 13rem; width: 13rem;
         border-radius: 50%;
         background-size: cover;
         background-position-x: 50%;        

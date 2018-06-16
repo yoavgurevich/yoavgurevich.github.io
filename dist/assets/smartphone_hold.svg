@@ -7,9 +7,9 @@
      viewBox="0 0 5472 3648">
   <style type='text/css'>
     #Selection {
-      stroke-dasharray: 104070;
-      stroke-dashoffset: 104070;
-      animation: dash 100s linear forwards;
+      stroke-dasharray: 104071;
+      stroke-dashoffset: 104071;
+      animation: dash 80s linear forwards;
     }
 
     @keyframes dash {
