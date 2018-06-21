@@ -41,10 +41,18 @@ body {
 
         .front, .back {
             backface-visibility: hidden;
+
+            .fa-rotate-right, .fa-rotate-left {
+                cursor: pointer;
+                transition: transform .3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
         }
         
         .front {
-            z-index: 2;
             transform: rotateY(0deg);
         }
     

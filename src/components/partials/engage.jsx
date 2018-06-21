@@ -29,10 +29,12 @@ export default Watch(class Engage extends Component {
                 ref={this.props.refsList.engage}>
                 <ScrollButton direction='up' refsList={this.props.refsList} currentElm='engage' />
                 <div className={'flipper text-center' + this.state.flipClass}>
-                    <article className='front' onClick={this.toggleClass}>
+                    <article className='front inline-grid'>
                         <h1>engage</h1>
+                        <i className='fa fa-2x fa-rotate-left' onClick={this.toggleClass}></i>
                     </article>
-                    <article className='back' onClick={this.toggleClass}>
+                    <article className='back grid-container'>
+                        <i className='fa fa-2x fa-rotate-right' onClick={this.toggleClass}></i>
                         <h5>Lorem Ipsum Dolores fuck</h5>
                     </article>
                 </div>
