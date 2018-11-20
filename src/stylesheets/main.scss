@@ -10,6 +10,10 @@ body {
     background: black;
     margin: 0;
     font-family: 'Nanum Gothic', sans-serif;
+
+    * {
+        overflow: hidden;
+    }
 }
 
 @each $color in $color-collection {
@@ -26,47 +30,37 @@ body {
     }
 }
 
+// SCSS extendible blocks
+%relative-center {
+    position: relative;
+    top: 47.5% !important;
+}
+
 .fsh {
     min-height: 100vh;
     color: cornsilk;
 }
 
-.flip-container {
-    perspective: 1000px;
-
-    .flipper {
-        transition: 0.5s;
-        transform-style: preserve-3d;
-        position: relative;
-
-        .front, .back {
-            backface-visibility: hidden;
-
-            .fa-rotate-right, .fa-rotate-left {
-                cursor: pointer;
-                transition: transform .3s ease-in-out;
-
-                &:hover {
-                    transform: scale(1.1);
-                }
-            }
-        }
-        
-        .front {
-            transform: rotateY(0deg);
-        }
-    
-        .back {
-            transform: rotateY(180deg);
-        }
-    }
-
-    .flip {
-        transform: rotateY(180deg);
-    }
+.rfp-touchZone-next:before, .rfp-touchZone-previous:before {
+    font-size: 36px;
+    color: black;
 }
 
-.vertical-align {
+.rfp-touchZone-previous:before {
+    content: '<';
+}
+
+.rfp-touchZone-next:before {
+    content: '>';
+}
+
+.rfp-touchZone {
+    cursor: pointer;
+    @extend %relative-center;
+    height: fit-content !important;
+}
+
+.vertical-align, article {
     display: flex;
     flex-direction: column;
     align-items: center;

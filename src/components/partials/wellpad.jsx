@@ -9,14 +9,14 @@ export default Watch(class Wellpad extends Component {
  
     render () {
         return (
-            <section 
+            <article 
                 id='wellpad'
                 ref={this.props.refsList.wellpad}
                 className='fsh vertical-align'>
                 <ScrollButton direction='up' refsList={this.props.refsList} currentElm='wellpad' />
                 <h1 className='rouge-script h0'>Wellpad.io</h1>
                 <ScrollButton direction='down' refsList={this.props.refsList} currentElm='wellpad' />
-            </section>
+            </article>
         );
     }
 })

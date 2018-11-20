@@ -1,7 +1,7 @@
 @for $i from 1 through 5 {
     .yg#{$i} {
         background-image: url('/assets/yg' + $i + '.png');
-        transition: background linear 0.2s;
+        transition: background linear 0.15s;
     }
 }
 
@@ -24,11 +24,11 @@
 .landing-content {
     position: absolute;
     top: 0;
-    overflow: hidden;
+    max-height: 100vh;
     color: white;
 
     blockquote {
-        padding: 0 20%;
+        padding: 0 15%;
         text-align: justify;
 
         @media only screen and (max-width: 667px) {
@@ -39,7 +39,7 @@
     }
 
     .landing-img {
-        height: 13rem; width: 13rem;
+        height: 50vh; width: 38vh;
         border-radius: 50%;
         background-size: cover;
         background-position-x: 50%;        

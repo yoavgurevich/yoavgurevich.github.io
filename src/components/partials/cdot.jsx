@@ -9,7 +9,7 @@ export default Watch(class CDOT extends Component {
  
     render () {
         return (
-            <section 
+            <article
                 id='cdot'
                 ref={this.props.refsList.cdot}
                 className='fsh vertical-align'>
@@ -24,7 +24,7 @@ export default Watch(class CDOT extends Component {
                     </g>
                 </svg>
                 <ScrollButton direction='down' refsList={this.props.refsList} currentElm='cdot' />
-            </section>
+            </article>
         );
     }
 })

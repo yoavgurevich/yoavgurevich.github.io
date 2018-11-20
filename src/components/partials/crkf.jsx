@@ -9,7 +9,7 @@ export default Watch(class CRKF extends Component {
  
     render () {
         return (
-            <section 
+            <article 
                 id='crkf' 
                 ref={this.props.refsList.crkf}
                 className='fsh vertical-align'>
@@ -20,7 +20,7 @@ export default Watch(class CRKF extends Component {
                     Chito-Ryu Karate
                 </h1>
                 <ScrollButton direction='down' refsList={this.props.refsList} currentElm='crkf' />
-            </section>
+            </article>
         );
     }
 })
