@@ -5,62 +5,58 @@ export default class Background extends Component {
         super(props);
 
         this.state = {
-            currentBg: '',
-            lastHash: ''
+            currentBg: ''
         };
         
         this.refsList = {
             landing: React.createRef(),
-            engage: React.createRef(),
-            wellpad: React.createRef(),
-            crkf: React.createRef(),
-            cdot: React.createRef(),
+            joblist: React.createRef(),
             contact: React.createRef()
         };
 
-        this.resolveBg = this.resolveBg.bind(this);
+        // this.resolveBg = this.resolveBg.bind(this);
     }
 
     componentDidMount() {
-        this.resolveBg();
-        addEventListener('hashchange', this.resolveBg);
+        // this.resolveBg();
+        addEventListener('mouseout mouseleave', (event) => event.preventDefault());
     }
       
     componentWillUnmount() {
-        removeEventListener('hashchange', this.resolveBg);
+        removeEventListener('mouseout mouseleave', this.resolveBg);
     }
 
-    resolveBg() {
-        if (location.hash !== this.state.lastHash) {
-            let resolvedBackground = '';
+    // resolveBg() {
+    //     if (location.hash !== this.state.lastHash) {
+    //         let resolvedBackground = '';
     
-            switch (location.hash) {
-                case '#engage':
-                    resolvedBackground = 'indianred';
-                    break;
-                case '#wellpad':
-                    resolvedBackground = 'mediumseagreen';
-                    break;
-                case '#crkf':
-                    resolvedBackground = 'darkslategrey';
-                    break;
-                case '#contact':
-                    resolvedBackground = 'midnightblue';
-                    break;
-                default:
-                    resolvedBackground = 'black';
-                    break;
-            }
+    //         switch (location.hash) {
+    //             case '#engage':
+    //                 resolvedBackground = 'indianred';
+    //                 break;
+    //             case '#wellpad':
+    //                 resolvedBackground = 'mediumseagreen';
+    //                 break;
+    //             case '#crkf':
+    //                 resolvedBackground = 'darkslategrey';
+    //                 break;
+    //             case '#contact':
+    //                 resolvedBackground = 'midnightblue';
+    //                 break;
+    //             default:
+    //                 resolvedBackground = 'black';
+    //                 break;
+    //         }
     
-            this.setState((currentState) => 
-                currentState.currentBg !== resolvedBackground ?
-                    {
-                        currentBg: resolvedBackground,
-                        lastHash: window.location.hash
-                    } : null
-            );
-        }
-    }
+    //         this.setState((currentState) => 
+    //             currentState.currentBg !== resolvedBackground ?
+    //                 {
+    //                     currentBg: resolvedBackground,
+    //                     lastHash: window.location.hash
+    //                 } : null
+    //         );
+    //     }
+    // }
 
     render() {
         const childrenWithProps = React.Children.map(this.props.children, (child) => {

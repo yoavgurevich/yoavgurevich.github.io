@@ -42,8 +42,8 @@ body {
 }
 
 .rfp-touchZone-next:before, .rfp-touchZone-previous:before {
-    font-size: 36px;
-    color: black;
+    font-size: 48px;
+    color: rgba(255,255,255,0.2);
 }
 
 .rfp-touchZone-previous:before {
@@ -58,6 +58,14 @@ body {
     cursor: pointer;
     @extend %relative-center;
     height: fit-content !important;
+}
+
+.rfp-touchZone-previous {
+    margin-left: 60px;
+}
+
+.rfp-touchZone-next {
+    margin-right: -60px;
 }
 
 .vertical-align, article {

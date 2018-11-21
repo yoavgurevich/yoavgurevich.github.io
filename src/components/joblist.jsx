@@ -1,98 +1,79 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import FlipPage from 'react-flip-page';
+import { Watch } from 'scrollmonitor-react';
 
 import Engage from './partials/engage';
 import Wellpad from './partials/wellpad';
 import CRKF from './partials/crkf';
 import CDOT from './partials/cdot';
 
-export default class JobList extends Component {
+export default Watch(class JobList extends Component {
     constructor(props) {
         super(props);
 
         this.state = {currentBg: 'indianred'};
 
-        this.handleEnterViewport.bind(this);
-        this.handleExitViewport.bind(this);
+        this.resolveBg.bind(this);
     }
 
     resolveBg(i, d) {
-        let resolvedBackground = '';
-
-        switch (i) {
-            case 0:
-                resolvedBackground = 'indianred';
-                break;
-            case 1:
-                resolvedBackground = 'mediumseagreen';
-                break;
-            case 2:
-                resolvedBackground = 'darkslategrey';
-                break;
-            case 3:
-                resolvedBackground = 'midnightblue';
-                break;
-            default:
-                resolvedBackground = 'black';
-                break;
+        console.log(i, d);
+        const backgrounds = ['indianred', 'mediumseagreen', 'darkslategrey', 'black'];
+        let resolvedBg = '';
+        if (!i && d == 'prev') {
+            resolvedBg = 'indianred';
+        } else {
+            resolvedBg = d == 'next' ? backgrounds[i+1] : backgrounds[i];
         }
 
-        this.setState((currentState) => 
-            currentState.currentBg !== resolvedBackground ?
-                {
-                    currentBg: resolvedBackground
-                } : null
-        );
+        console.log(resolvedBg);
+
+        this.setState(() => {currentBg: resolvedBg});
     }
 
     handleEnterViewport (watcher) {
-        if (location.hash !== watcher.watchItem.id) {
-            location.hash = watcher.watchItem.id
-        }
+        // if (location.hash !== watcher.watchItem.id) {
+        //     location.hash = watcher.watchItem.id
+        // }
     }
 
     handleExitViewport (watcher) {
-        switch(watcher.watchItem.id) {
-            case 'engage':
-                if (document.body.scrollTop === 0 && location.hash.indexOf('engage') !== -1) {
-                    location.hash = 'landing';
-                }
-                break;
-            case 'cdot':
-                if ((innerHeight + scrollY) >= document.body.offsetHeight && location.hash.indexOf('cdot') !== -1) {
-                    location.hash = 'contact';
-                }
-                break;
-        }
+        // switch(watcher.watchItem.id) {
+        //     case 'engage':
+        //         if (document.body.scrollTop === 0 && location.hash.indexOf('engage') !== -1) {
+        //             location.hash = 'landing';
+        //         }
+        //         break;
+        //     case 'cdot':
+        //         if ((innerHeight + scrollY) >= document.body.offsetHeight && location.hash.indexOf('cdot') !== -1) {
+        //             location.hash = 'contact';
+        //         }
+        //         break;
+        // }
     }
 
     render() {
         return (
             <FlipPage
+                ref={this.props.refsList.joblist}
                 orientation='horizontal'
                 pageBackground={this.state.currentBg}
-                flipOnTouch='true'
+                flipOnTouch
+                flipOnLeave
                 onStartPageChange={(pageIndex, direction) => this.resolveBg(pageIndex, direction)}
-                animationDuration={400}
-                perspective="40em"
+                perspective='40em'
                 width={window.innerWidth}
                 height={window.innerHeight}>
                 <Engage
-                    refsList={this.props.refsList}
-                    fullyEnterViewport={this.handleEnterViewport}
-                    exitViewport={this.handleExitViewport} />
+                    refsList={this.props.refsList} />
                 <Wellpad
-                    refsList={this.props.refsList}
-                    fullyEnterViewport={this.handleEnterViewport} />
+                    refsList={this.props.refsList} />
                 <CRKF
-                    refsList={this.props.refsList}
-                    fullyEnterViewport={this.handleEnterViewport} />
+                    refsList={this.props.refsList} />
                 <CDOT
-                    refsList={this.props.refsList}
-                    fullyEnterViewport={this.handleEnterViewport}
-                    exitViewport={this.handleExitViewport} />
+                    refsList={this.props.refsList} />
             </FlipPage>
         );
     }
-}
+})

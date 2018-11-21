@@ -9,18 +9,15 @@ export default class ScrollButton extends Component {
     }
 
     handleClick() {
-        if (this.props.refsList && this.props.currentElm) {
-            const refKeys = Object.keys(this.props.refsList);
+        if (this.props.refsList) {
+            let resolvedRef = this.props.direction === 'up' ?
+                'landing' : 'contact';
 
-            const resolvedRef = this.props.direction === 'up' ?
-                refKeys[refKeys.indexOf(this.props.currentElm) - 1] : refKeys[refKeys.indexOf(this.props.currentElm) + 1];
+            if (this.props.currentElm) {
+                resolvedRef = 'joblist'
+            }
 
-            scrollToComponent(this.props.refsList[resolvedRef].current)
-                .on('end', () => {
-                    if (location.hash.indexOf(resolvedRef) === -1) {
-                        location.hash = resolvedRef
-                    }
-                });
+            scrollToComponent(this.props.refsList[resolvedRef].current);
         }
     }
 

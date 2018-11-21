@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Watch } from 'scrollmonitor-react';
 import ScrollButton from '../scrollButton';
  
-export default Watch(class CDOT extends Component {
+export default class CDOT extends Component {
     constructor(props) {
         super(props);
     }
@@ -13,7 +12,7 @@ export default Watch(class CDOT extends Component {
                 id='cdot'
                 ref={this.props.refsList.cdot}
                 className='fsh vertical-align'>
-                <ScrollButton direction='up' refsList={this.props.refsList} currentElm='cdot' />
+                <ScrollButton direction='up' refsList={this.props.refsList} />
                 <svg width="650" height="250">
                     <g>
                         <text dx="162" dy="142" className="svg-xxl eb-garamond" fill="white">CD</text>
@@ -23,8 +22,8 @@ export default Watch(class CDOT extends Component {
                         <text dx="359" dy="142" className="svg-xxl eb-garamond" fill="white">T</text>
                     </g>
                 </svg>
-                <ScrollButton direction='down' refsList={this.props.refsList} currentElm='cdot' />
+                <ScrollButton direction='down' refsList={this.props.refsList} />
             </article>
         );
     }
-})
+}
