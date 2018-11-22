@@ -33,7 +33,17 @@ body {
 // SCSS extendible blocks
 %relative-center {
     position: relative;
-    top: 47.5% !important;
+    top: 47% !important;
+}
+
+%slide-link-style {
+    opacity: 0.15;
+    transition: all 0.5s ease;
+
+    &:hover{
+        opacity: 0.7;
+        transition: all 0.5s ease;
+    }
 }
 
 .fsh {
@@ -41,13 +51,8 @@ body {
     color: cornsilk;
 }
 
-.rfp-touchZone-next:before, .rfp-touchZone-previous:before {
-    font-size: 48px;
-    color: rgba(255,255,255,0.2);
-}
-
-.rfp-touchZone-previous:before {
-    content: '<';
+.container {
+    width: 100%; height: 100vh;
 }
 
 .rfp-touchZone-next:before {
@@ -56,16 +61,27 @@ body {
 
 .rfp-touchZone {
     cursor: pointer;
+    font-family: FontAwesome;
+    font-size: 60pt;
+    color: white;
+
     @extend %relative-center;
+    @extend %slide-link-style;
     height: fit-content !important;
 }
 
 .rfp-touchZone-previous {
     margin-left: 60px;
+    &:before {
+        content: '\f104';
+    }
 }
 
 .rfp-touchZone-next {
-    margin-right: -60px;
+    margin-right: -70px;
+    &:before {
+        content: '\f105';
+    }
 }
 
 .vertical-align, article {
@@ -83,15 +99,7 @@ body {
     min-width: inherit;
     cursor: pointer;
 
-    i {
-        opacity: 0.1;
-        transition: all 0.5s ease;
-
-        &:hover{
-            opacity: 0.7;
-            transition: all 0.5s ease;
-        }
-    }
+    @extend %slide-link-style;
 }
 
 #cdot {

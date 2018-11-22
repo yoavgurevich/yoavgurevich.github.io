@@ -18,7 +18,6 @@ export default Watch(class JobList extends Component {
     }
 
     resolveBg(i, d) {
-        console.log(i, d);
         const backgrounds = ['indianred', 'mediumseagreen', 'darkslategrey', 'black'];
         let resolvedBg = '';
         if (!i && d == 'prev') {
@@ -26,8 +25,6 @@ export default Watch(class JobList extends Component {
         } else {
             resolvedBg = d == 'next' ? backgrounds[i+1] : backgrounds[i];
         }
-
-        console.log(resolvedBg);
 
         this.setState(() => {currentBg: resolvedBg});
     }
@@ -55,25 +52,24 @@ export default Watch(class JobList extends Component {
 
     render() {
         return (
-            <FlipPage
-                ref={this.props.refsList.joblist}
-                orientation='horizontal'
-                pageBackground={this.state.currentBg}
-                flipOnTouch
-                flipOnLeave
-                onStartPageChange={(pageIndex, direction) => this.resolveBg(pageIndex, direction)}
-                perspective='40em'
-                width={window.innerWidth}
-                height={window.innerHeight}>
-                <Engage
-                    refsList={this.props.refsList} />
-                <Wellpad
-                    refsList={this.props.refsList} />
-                <CRKF
-                    refsList={this.props.refsList} />
-                <CDOT
-                    refsList={this.props.refsList} />
-            </FlipPage>
+            <div className='container'>
+                <FlipPage
+                    ref={this.props.refsList.joblist}
+                    orientation='horizontal'
+                    flipOnTouch
+                    pageBackground={this.state.currentBg}
+                    perspective='40em'
+                    responsive>
+                    <Engage
+                        refsList={this.props.refsList} />
+                    <Wellpad
+                        refsList={this.props.refsList} />
+                    <CRKF
+                        refsList={this.props.refsList} />
+                    <CDOT
+                        refsList={this.props.refsList} />
+                </FlipPage>
+            </div>
         );
     }
 })

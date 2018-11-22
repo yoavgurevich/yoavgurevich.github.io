@@ -10,14 +10,30 @@ export default class ScrollButton extends Component {
 
     handleClick() {
         if (this.props.refsList) {
-            let resolvedRef = this.props.direction === 'up' ?
-                'landing' : 'contact';
+            switch(this.props.direction) {
+                case 'up':
+                case 'down':
+                    let resolvedRef = this.props.direction === 'up' ?
+                        'landing' : 'contact';
+        
+                    if (this.props.currentElm) {
+                        resolvedRef = 'joblist'
+                    }
+        
+                    scrollToComponent(this.props.refsList[resolvedRef].current);
+                    break;
+                case 'right':
+                case 'left':
+                    const flipComponent = this.props.refsList.joblist.current;
+                    console.log(flipComponent);
 
-            if (this.props.currentElm) {
-                resolvedRef = 'joblist'
+                    if (this.props.direction == 'right') {
+                        flipComponent.incrementPage();
+                    } else {
+                        flipComponent.decrementPage();
+                    }
+                    break;
             }
-
-            scrollToComponent(this.props.refsList[resolvedRef].current);
         }
     }
 

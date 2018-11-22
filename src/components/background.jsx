@@ -17,14 +17,14 @@ export default class Background extends Component {
         // this.resolveBg = this.resolveBg.bind(this);
     }
 
-    componentDidMount() {
-        // this.resolveBg();
-        addEventListener('mouseout mouseleave', (event) => event.preventDefault());
-    }
+    // componentDidMount() {
+    //     // this.resolveBg();
+    //     addEventListener('mouseout mouseleave', (event) => event.preventDefault());
+    // }
       
-    componentWillUnmount() {
-        removeEventListener('mouseout mouseleave', this.resolveBg);
-    }
+    // componentWillUnmount() {
+    //     removeEventListener('mouseout mouseleave', this.resolveBg);
+    // }
 
     // resolveBg() {
     //     if (location.hash !== this.state.lastHash) {
