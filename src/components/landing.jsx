@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ScrollButton from './scrollButton';
+import { Watch } from 'scrollmonitor-react';
 
-export default class Landing extends Component {
+export default Watch(class Landing extends Component {
     constructor(props) {
         super(props);
 
@@ -59,9 +60,13 @@ export default class Landing extends Component {
                         </p>
                     </h5>
                 </blockquote>
-                <ScrollButton direction='down' refsList={this.props.refsList} currentElm='landing' />
+                <ScrollButton direction='down' refsList={this.props.refsList} currentElm='landing'  resolveBg={this.props.resolveBg} />
             </div>
         ) : <div></div>;
+
+        if (this.props.isFullyInViewport){
+            this.props.resolveBg('landing');
+        }
 
         return (
             <div ref={this.props.refsList.landing}>
@@ -74,4 +79,4 @@ export default class Landing extends Component {
             </div>
         );
     }
-}
+})

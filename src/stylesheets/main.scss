@@ -30,10 +30,14 @@ body {
     }
 }
 
+.flipContainer * {
+    transition: background linear 1s;
+}
+
 // SCSS extendible blocks
 %relative-center {
     position: relative;
-    top: 47% !important;
+    top: 45% !important;
 }
 
 %slide-link-style {

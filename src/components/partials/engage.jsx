@@ -11,9 +11,9 @@ export default class Engage extends Component {
             <article
                 id='engage'
                 className='fsh vertical-align'>
-                <ScrollButton direction='up' refsList={this.props.refsList} />
+                <ScrollButton direction='up' refsList={this.props.refsList} resolveBg={this.props.resolveBg} />
                 <h1>engage</h1>
-                <ScrollButton direction='down' refsList={this.props.refsList} />
+                <ScrollButton direction='down' refsList={this.props.refsList} resolveBg={this.props.resolveBg} />
             </article>
         );
     }

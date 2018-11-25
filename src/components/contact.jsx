@@ -1,7 +1,12 @@
 import React from 'react';
 import scrollToComponent from 'react-scroll-to-component';
+import { Watch } from 'scrollmonitor-react';
 
-export default function ContactMe(props) {
+export default Watch(function ContactMe(props) {
+    if (props.isFullyInViewport){
+        props.resolveBg('contact');
+    }
+
     return (
         <div className='contact-bg fsh' ref={props.refsList.contact}>
             <header>
@@ -38,4 +43,4 @@ export default function ContactMe(props) {
             </main>
         </div>
     );
-}
+})

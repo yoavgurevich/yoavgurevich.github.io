@@ -1,8 +1,5 @@
 .contact-bg {
     position: relative;
-    background-image: url('/assets/smartphone_hold.svg');
-    background-repeat: no-repeat;
-    background-size: 90rem;
 
     header {
         position: absolute;
@@ -43,14 +40,7 @@
                 }
             }
         }
-    
-        .rotary {
-            width: 75vmax;
-            margin-right: 90px;
-            margin-top: -50px;
-            padding-bottom: 40px;
-        }
-    
+
         .vendor-imgs {
             img {
                 margin: 15px;
