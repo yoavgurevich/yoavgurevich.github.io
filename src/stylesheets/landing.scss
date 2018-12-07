@@ -1,7 +1,7 @@
 @for $i from 1 through 5 {
     .yg#{$i} {
         background-image: url('/assets/yg' + $i + '.png');
-        transition: background linear 0.15s;
+        transition: background ease-in 0.3s;
     }
 }
 

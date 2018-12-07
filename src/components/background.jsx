@@ -32,6 +32,9 @@ export default class Background extends Component {
                 case 'crkf':
                     resolvedBackground = 'darkslategrey';
                     break;
+                case 'cdot':
+                    resolvedBackground = 'maroon';
+                    break;
                 case 'contact':
                     resolvedBackground = 'midnightblue';
                     break;

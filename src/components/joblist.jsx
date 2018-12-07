@@ -23,7 +23,7 @@ export default Watch(class JobList extends Component {
                 <FlipPage
                     orientation='horizontal'
                     className='flipContainer'
-                    flipOnTouch
+                    showSwipeHint
                     pageBackground={this.props.currentBg}   
                     perspective='40em'
                     responsive>
