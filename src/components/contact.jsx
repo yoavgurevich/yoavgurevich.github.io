@@ -3,8 +3,11 @@ import scrollToComponent from 'react-scroll-to-component';
 import { Watch } from 'scrollmonitor-react';
 
 export default Watch(function ContactMe(props) {
+    let textBg = null;
+
     if (props.isFullyInViewport){
         props.resolveBg('contact');
+        textBg = <div className='text-bg'><i className='fa fa-comments-o text-flicker-in-glow'></i></div>;
     }
 
     return (
@@ -15,9 +18,7 @@ export default Watch(function ContactMe(props) {
                 </h2>
             </header>
             <main className='text-center'>
-                <div className='text-bg'>
-                    <i className='fa fa-comments-o text-flicker-in-glow'></i>
-                </div>
+                {textBg}
                 <div className='content'>
                     <h2>Stay in touch...</h2>
                     <ul>

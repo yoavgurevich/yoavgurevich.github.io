@@ -45,7 +45,7 @@ export default Watch(class Landing extends Component {
         const loadedContent = this.state.loadContent ? (
             <div className='landing-content vertical-align'>
                 <h1 className='text-center'>Yoav Gurevich</h1>
-                <div className={'landing-img animated fadeIn ' + this.state.currentPic}></div>
+                <div className={'landing-img slide-in-bck-center ' + this.state.currentPic}></div>
                 <blockquote>
                     <h5>
                         <p>
