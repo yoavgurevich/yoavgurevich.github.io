@@ -21,7 +21,7 @@ export default class ScrollButton extends Component {
                     }
         
                     scrollToComponent(this.props.refsList[resolvedRef].current)
-                        .on('end', () => this.props.resolveBg(resolvedRef));
+                        .on('end', () => this.props.resolveBg ? this.props.resolveBg(resolvedRef) : {});
                     break;
                 case 'right':
                 case 'left':

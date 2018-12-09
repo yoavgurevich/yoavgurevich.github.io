@@ -4,7 +4,7 @@
 @import './contact.scss';
 @import './landing.scss';
 
-$color-collection: (indianred, mediumseagreen, darkslategrey, black, midnightblue);
+$color-collection: (indianred, mediumseagreen, darkslategrey, black, maroon, midnightblue);
 
 body {
     background: black;
@@ -30,8 +30,8 @@ body {
     }
 }
 
-.flipContainer * {
-    transition: background linear 1s;
+.flipContainer > div ~ div {
+    transition: background linear 1s !important;
 }
 
 // SCSS extendible blocks

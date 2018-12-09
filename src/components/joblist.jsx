@@ -11,11 +11,23 @@ import CDOT from './partials/cdot';
 export default Watch(class JobList extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            currentPage: 0
+        }
+
+        this.handlePageChange.bind(this);
+    }
+
+    handlePageChange(idx) {
+        this.setState({currentPage: idx});
+        if (this.props.resolveBg) {
+            this.props.resolveBg('joblist', idx);
+        }
     }
 
     render() {
-        if (this.props.isFullyInViewport) {
-            this.props.resolveBg('joblist');
+        if (this.props.isFullyInViewport && this.props.resolveBg) {
+            this.props.resolveBg('joblist', this.state.currentPage);
         }
 
         return (
@@ -23,22 +35,19 @@ export default Watch(class JobList extends Component {
                 <FlipPage
                     orientation='horizontal'
                     className='flipContainer'
-                    showSwipeHint
+                    flipOnTouch
+                    onPageChange={(idx) => this.handlePageChange(idx)}
                     pageBackground={this.props.currentBg}   
                     perspective='40em'
                     responsive>
                     <Engage
-                        refsList={this.props.refsList}
-                        resolveBg={this.props.resolveBg} />
+                        refsList={this.props.refsList} />
                     <Wellpad
-                        refsList={this.props.refsList}
-                        resolveBg={this.props.resolveBg} />
+                        refsList={this.props.refsList} />
                     <CRKF
-                        refsList={this.props.refsList}
-                        resolveBg={this.props.resolveBg} />
+                        refsList={this.props.refsList} />
                     <CDOT
-                        refsList={this.props.refsList}
-                        resolveBg={this.props.resolveBg} />
+                        refsList={this.props.refsList} />
                 </FlipPage>
             </div>
         );

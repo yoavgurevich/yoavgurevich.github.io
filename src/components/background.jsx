@@ -18,29 +18,39 @@ export default class Background extends Component {
         this.resolveBg = this.resolveBg.bind(this);
     }
 
-    resolveBg(componentId) {
-        if (componentId !== this.state.lastComponentId) {
+    resolveBg(componentId, jlPage = null) {
+        if (componentId !== this.state.lastComponentId || jlPage !== null) {
             let resolvedBackground = '';
-    
-            switch (componentId) {
-                case 'joblist':
-                    resolvedBackground = 'indianred';
-                    break;
-                case 'wellpad':
-                    resolvedBackground = 'mediumseagreen';
-                    break;
-                case 'crkf':
-                    resolvedBackground = 'darkslategrey';
-                    break;
-                case 'cdot':
-                    resolvedBackground = 'maroon';
-                    break;
-                case 'contact':
-                    resolvedBackground = 'midnightblue';
-                    break;
-                default:
-                    resolvedBackground = 'black';
-                    break;
+
+            if (!jlPage) {
+                switch (componentId) {
+                    case 'joblist':
+                        resolvedBackground = 'indianred';
+                        break;
+                    case 'contact':
+                        resolvedBackground = 'midnightblue';
+                        break;
+                    default:
+                        resolvedBackground = 'black';
+                        break;
+                }
+            } else {
+                const bgMapping = ['engage', 'wellpad', 'crkf', 'cdot'];
+
+                switch (bgMapping[jlPage]) {
+                    case 'engage':
+                        resolvedBackground = 'indianred';
+                        break;
+                    case 'wellpad':
+                        resolvedBackground = 'mediumseagreen';
+                        break;
+                    case 'crkf':
+                        resolvedBackground = 'darkslategrey';
+                        break;
+                    default:
+                        resolvedBackground = 'maroon';
+                        break;
+                }
             }
     
             this.setState((currentState) => 

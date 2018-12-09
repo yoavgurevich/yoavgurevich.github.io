@@ -48,6 +48,5 @@
 }
 
 .slide-in-bck-center {
-	animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;       
-    animation-delay: 5s;
+	animation: slide-in-bck-center 0.7s 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
