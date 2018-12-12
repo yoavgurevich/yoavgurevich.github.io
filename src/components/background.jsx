@@ -70,7 +70,7 @@ export default class Background extends Component {
                 currentBg: this.state.currentBg,
                 resolveBg: this.resolveBg
             });
-        });        
+        });
 
         return (
             <div

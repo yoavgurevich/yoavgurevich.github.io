@@ -7,11 +7,8 @@ export default class CDOT extends Component {
     }
  
     render () {
-        return (
-            <article
-                id='cdot'
-                ref={this.props.refsList.cdot}
-                className='fsh vertical-align'>
+        let resolvedContent = this.props.currentPage == 3 ? (
+            <div className='fsh vertical-align'>
                 <ScrollButton direction='up' refsList={this.props.refsList} />
                 <svg width="650" height="250">
                     <g>
@@ -23,6 +20,14 @@ export default class CDOT extends Component {
                     </g>
                 </svg>
                 <ScrollButton direction='down' refsList={this.props.refsList} />
+            </div>
+        ) : <div></div>;
+
+        return (
+            <article
+                id='cdot'
+                ref={this.props.refsList.cdot}>
+                {resolvedContent}
             </article>
         );
     }

@@ -7,11 +7,8 @@ export default class CRKF extends Component {
     }
  
     render () {
-        return (
-            <article 
-                id='crkf' 
-                ref={this.props.refsList.crkf}
-                className='fsh vertical-align'>
+        let resolvedContent = this.props.currentPage == 2 ? (
+            <div className='fsh vertical-align'>
                 <ScrollButton direction='up' refsList={this.props.refsList} />
                 <h1 className='aldrich text-center'>
                     実 道 空 手
@@ -19,6 +16,14 @@ export default class CRKF extends Component {
                     Chito-Ryu Karate
                 </h1>
                 <ScrollButton direction='down' refsList={this.props.refsList} />
+            </div>
+        ) : <div></div>;
+
+        return (
+            <article 
+                id='crkf' 
+                ref={this.props.refsList.crkf}>
+                {resolvedContent}
             </article>
         );
     }

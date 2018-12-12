@@ -30,10 +30,6 @@ body {
     }
 }
 
-.flipContainer > div ~ div {
-    transition: background linear 1s !important;
-}
-
 // SCSS extendible blocks
 %relative-center {
     position: relative;

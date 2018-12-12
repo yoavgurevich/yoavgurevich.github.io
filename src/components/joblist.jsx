@@ -37,16 +37,20 @@ export default Watch(class JobList extends Component {
                     className='flipContainer'
                     flipOnTouch
                     onPageChange={(idx) => this.handlePageChange(idx)}
-                    pageBackground={this.props.currentBg}   
+                    pageBackground='transparent'
                     perspective='40em'
                     responsive>
                     <Engage
+                        currentPage={this.state.currentPage}
                         refsList={this.props.refsList} />
                     <Wellpad
+                        currentPage={this.state.currentPage}
                         refsList={this.props.refsList} />
                     <CRKF
+                        currentPage={this.state.currentPage}
                         refsList={this.props.refsList} />
                     <CDOT
+                        currentPage={this.state.currentPage}
                         refsList={this.props.refsList} />
                 </FlipPage>
             </div>

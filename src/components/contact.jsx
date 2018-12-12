@@ -5,7 +5,7 @@ import { Watch } from 'scrollmonitor-react';
 export default Watch(function ContactMe(props) {
     let textBg = null;
 
-    if (props.isFullyInViewport){
+    if (props.isFullyInViewport && props.resolveBg){
         props.resolveBg('contact');
         textBg = <div className='text-bg'><i className='fa fa-comments-o text-flicker-in-glow'></i></div>;
     }
