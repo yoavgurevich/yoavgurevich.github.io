@@ -47,7 +47,6 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-flip-page": "^1.5.2",
-    "react-scroll-to-component": "^1.0.2",
-    "scrollmonitor-react": "^2.3.2"
+    "react-scroll-to-component": "^1.0.2"
   }
 }

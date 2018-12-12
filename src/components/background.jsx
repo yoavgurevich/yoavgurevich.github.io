@@ -74,6 +74,7 @@ export default class Background extends Component {
 
         return (
             <div
+                onScroll={(event) => console.log('yo')}
                 className={this.state.currentBg}>
                 {childrenWithProps}
             </div>

@@ -1,8 +1,7 @@
 import React from 'react';
 import scrollToComponent from 'react-scroll-to-component';
-import { Watch } from 'scrollmonitor-react';
 
-export default Watch(function ContactMe(props) {
+export default function ContactMe(props) {
     let textBg = null;
 
     if (props.isFullyInViewport && props.resolveBg){
@@ -47,4 +46,4 @@ export default Watch(function ContactMe(props) {
             </footer>
         </div>
     );
-})
+}

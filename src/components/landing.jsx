@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import ScrollButton from './scrollButton';
-import { Watch } from 'scrollmonitor-react';
 
-export default Watch(class Landing extends Component {
+export default class Landing extends Component {
     constructor(props) {
         super(props);
 
@@ -79,4 +78,4 @@ export default Watch(class Landing extends Component {
             </div>
         );
     }
-})
+}

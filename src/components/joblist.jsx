@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import FlipPage from 'react-flip-page';
-import { Watch } from 'scrollmonitor-react';
 
 import Engage from './partials/engage';
 import Wellpad from './partials/wellpad';
 import CRKF from './partials/crkf';
 import CDOT from './partials/cdot';
 
-export default Watch(class JobList extends Component {
+export default class JobList extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -56,4 +55,4 @@ export default Watch(class JobList extends Component {
             </div>
         );
     }
-})
+}
