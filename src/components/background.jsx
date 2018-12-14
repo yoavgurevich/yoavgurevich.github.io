@@ -22,11 +22,11 @@ export default class Background extends Component {
     }
 
     componentDidMount() {
-        addEventListener('scroll', () => this.handleScroll());
+        addEventListener('scroll', this.handleScroll);
     }
 
     componentWillUnmount() {
-        removeEventListener('scroll');
+        removeEventListener('scroll', this.handleScroll);
     }
 
     handleScroll() {
@@ -37,9 +37,9 @@ export default class Background extends Component {
             let offsetRatio = Math.abs(offsets.top / pageHeight);
 
             if (this.lastScrollPos < offsets.top) {
-                if (offsetRatio < 0.6 && offsetRatio >= 0.3) {
+                if (offsetRatio < 0.4 && offsetRatio >= 0.2) {
                     this.resolveBg('joblist');
-                } else if (offsetRatio < 0.9 && offsetRatio >= 0.6) {
+                } else if (offsetRatio < 0.7 && offsetRatio >= 0.4) {
                     this.resolveBg('contact');
                 } else {
                     this.resolveBg('landing');
