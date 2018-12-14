@@ -4,8 +4,7 @@ import scrollToComponent from 'react-scroll-to-component';
 export default function ContactMe(props) {
     let textBg = null;
 
-    if (props.isFullyInViewport && props.resolveBg){
-        props.resolveBg('contact');
+    if (props.currentBg == 'midnightblue'){
         textBg = <div className='text-bg'><i className='fa fa-comments-o text-flicker-in-glow'></i></div>;
     }
 
