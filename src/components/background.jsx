@@ -8,6 +8,8 @@ export default class Background extends Component {
             currentBg: 'black',
             lastComponentId: ''
         };
+
+        this.lastScrollPos = 0;
         
         this.refsList = {
             landing: React.createRef(),
@@ -16,6 +18,44 @@ export default class Background extends Component {
         };
 
         this.resolveBg = this.resolveBg.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
+    }
+
+    componentDidMount() {
+        addEventListener('scroll', () => this.handleScroll());
+    }
+
+    componentWillUnmount() {
+        removeEventListener('scroll');
+    }
+
+    handleScroll() {
+        if (document) {
+            const offsets = document.body.getBoundingClientRect();
+            const pageHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, 
+                document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+            let offsetRatio = Math.abs(offsets.top / pageHeight);
+
+            if (this.lastScrollPos < offsets.top) {
+                if (offsetRatio < 0.6 && offsetRatio >= 0.3) {
+                    this.resolveBg('joblist');
+                } else if (offsetRatio < 0.9 && offsetRatio >= 0.6) {
+                    this.resolveBg('contact');
+                } else {
+                    this.resolveBg('landing');
+                }
+            } else {
+                if (offsetRatio > 0.3 && offsetRatio <= 0.6) {
+                    this.resolveBg('joblist');
+                } else if (offsetRatio > 0.6) {
+                    this.resolveBg('contact');
+                } else {
+                    this.resolveBg('landing');
+                }
+            }
+
+            this.lastScrollPos = offsets.top;
+        }
     }
 
     resolveBg(componentId, jlPage = null) {
@@ -74,7 +114,6 @@ export default class Background extends Component {
 
         return (
             <div
-                onScroll={(event) => console.log('yo')}
                 className={this.state.currentBg}>
                 {childrenWithProps}
             </div>
