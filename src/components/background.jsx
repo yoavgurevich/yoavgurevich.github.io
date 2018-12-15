@@ -6,7 +6,8 @@ export default class Background extends Component {
 
         this.state = {
             currentBg: 'black',
-            lastComponentId: ''
+            lastComponentId: '',
+            jlPage: null
         };
 
         this.lastScrollPos = 0;
@@ -38,7 +39,7 @@ export default class Background extends Component {
 
             if (this.lastScrollPos < offsets.top) {
                 if (offsetRatio < 0.4 && offsetRatio >= 0.2) {
-                    this.resolveBg('joblist');
+                    this.resolveBg('joblist', this.state.jlPage);
                 } else if (offsetRatio < 0.7 && offsetRatio >= 0.4) {
                     this.resolveBg('contact');
                 } else {
@@ -46,7 +47,7 @@ export default class Background extends Component {
                 }
             } else {
                 if (offsetRatio > 0.3 && offsetRatio <= 0.6) {
-                    this.resolveBg('joblist');
+                    this.resolveBg('joblist', this.state.jlPage);
                 } else if (offsetRatio > 0.6) {
                     this.resolveBg('contact');
                 } else {
@@ -97,7 +98,8 @@ export default class Background extends Component {
                 currentState.currentBg !== resolvedBackground ?
                     {
                         currentBg: resolvedBackground,
-                        lastComponentId: componentId
+                        lastComponentId: componentId,
+                        jlPage: jlPage !== null ? jlPage : currentState.jlPage
                     } : null
             );
         }
