@@ -20,19 +20,7 @@ export default class ScrollButton extends Component {
                         resolvedRef = 'joblist'
                     }
         
-                    scrollToComponent(this.props.refsList[resolvedRef].current)
-                        .on('end', () => this.props.resolveBg ? this.props.resolveBg(resolvedRef) : {});
-                    break;
-                case 'right':
-                case 'left':
-                    const flipComponent = this.props.refsList.joblist.current;
-                    console.log(flipComponent);
-
-                    if (this.props.direction == 'right') {
-                        flipComponent.incrementPage();
-                    } else {
-                        flipComponent.decrementPage();
-                    }
+                    scrollToComponent(this.props.refsList[resolvedRef].current);
                     break;
             }
         }
