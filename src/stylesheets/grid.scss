@@ -1,0 +1,29 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "grid-header" "grid-content" "grid-footer";
+}
+
+.grid-header, .grid-footer { margin: 0 auto; }
+
+.grid-header { grid-area: grid-header; }
+
+.grid-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". .";
+    grid-area: grid-content;
+    align-items: center;
+
+    p {
+        text-align: justify;
+        padding: 0 125px;
+    }
+}
+
+.grid-footer { 
+    grid-area: grid-footer;
+    align-self: end;
+}

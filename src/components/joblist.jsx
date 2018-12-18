@@ -25,10 +25,6 @@ export default class JobList extends Component {
     }
 
     render() {
-        if (this.props.isFullyInViewport && this.props.resolveBg) {
-            this.props.resolveBg('joblist', this.state.currentPage);
-        }
-
         return (
             <div className='container' ref={this.props.refsList.joblist}>
                 <FlipPage
