@@ -113,3 +113,11 @@ body {
 .text-flicker-in-glow {
 	animation: text-flicker-in-glow 4s linear both;
 }
+
+.slide-left {
+	animation: slide-left 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
+}
+
+.fade-in {
+	animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.5s both;
+}

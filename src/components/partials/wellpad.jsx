@@ -13,8 +13,8 @@ export default class Wellpad extends Component {
                     <ScrollButton direction='up' refsList={this.props.refsList} />
                 </div>
                 <div className="grid-content">
-                    <h1 className='rouge-script h0 text-center'>Wellpad.io</h1>
-                    <p>
+                    <h1 className='rouge-script h0 text-center slide-left'>Wellpad.io</h1>
+                    <p className='fade-in'>
                         This iPad-centric solution was commissioned in order to ameliorate an older system used for managing a health clinic's
                         patient and staff data. It provides an intuitive survey platform, as well as an administrative interface for viewing current information and trends
                         in both new and returning patients.
