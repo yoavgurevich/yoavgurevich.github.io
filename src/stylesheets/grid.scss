@@ -10,16 +10,27 @@
 .grid-header { grid-area: grid-header; }
 
 .grid-content {
+    margin-top: -0.75%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: ". .";
     grid-area: grid-content;
     align-items: center;
-
     p {
         text-align: justify;
         padding: 0 125px;
+    }
+    .fade-in {
+
+        :first-child {
+            margin-left: 25%;
+        }
+
+        img {
+            filter: brightness(0.6);
+            max-width: 26%;
+        }
     }
 }
 
