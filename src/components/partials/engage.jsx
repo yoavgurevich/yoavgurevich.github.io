@@ -15,8 +15,8 @@ export default class Engage extends Component {
                 <div className="grid-content">
                     <h1 className='text-center slide-left'>engage</h1>
                     <div className='fade-in'>
-                        <img src='https://www.engagepeople.com/img/Podium_logo.svg' alt='Podium Logo'></img>
-                        <img src='https://www.engagepeople.com/img/LRG_logo.svg' alt='LRG Logo'></img>
+                        <a className='img-link' href='https://www.engagepeople.com/podium.html' rel='noopener noreferrer' target='_blank'><img src='https://www.engagepeople.com/img/Podium_logo.svg' alt='Podium Logo'></img></a>
+                        <a className='img-link' href='https://www.engagepeople.com/lrg.html' rel='noopener noreferrer' target='_blank'><img src='https://www.engagepeople.com/img/LRG_logo.svg' alt='LRG Logo'></img></a>
                         <p>
                             Spending time on two of the loyalty powerhouse's flagship products Podium & LRG (Axs)
                             has helped hone a vast array of full stack web development skills. 

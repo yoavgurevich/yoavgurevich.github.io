@@ -18,7 +18,7 @@ export default function ContactMe(props) {
             <main className='text-center'>
                 {textBg}
                 <div className='content'>
-                    <h2>Stay in touch...</h2>
+                    <h2 className='league-script'>Stay in touch</h2>
                     <ul>
                         <li>
                             <a href='//ca.linkedin.com/in/yoav-gurevich-42415886' target='_blank'>
