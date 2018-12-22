@@ -11,11 +11,10 @@ export default class Landing extends Component {
             currentIterator: 1
         }
 
-        this.handlePlay = this.handlePlay.bind(this);
         this.cyclePics = this.cyclePics.bind(this);
     }
 
-    handlePlay(e) {
+    componentDidMount() {
         if (!this.state.loadContent) {
             setTimeout(() => {
                 this.setState({loadContent: true});
@@ -63,17 +62,13 @@ export default class Landing extends Component {
             </div>
         ) : <div></div>;
 
-        if (this.props.isFullyInViewport){
-            this.props.resolveBg('landing');
-        }
-
         return (
-            <div ref={this.props.refsList.landing}>
-                <div id='video-viewport'>
+            <div className='fsh' ref={this.props.refsList.landing}>
+                {/* <div id='video-viewport'>
                     <video onPlay={this.handlePlay} className="video-bg" autoPlay={true} muted={true}>
                         <source src="/assets/ink4k_edit.mp4" type="video/mp4"/>
                     </video>
-                </div>
+                </div> */}
                 {loadedContent}
             </div>
         );

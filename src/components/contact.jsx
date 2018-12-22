@@ -18,7 +18,7 @@ export default function ContactMe(props) {
             <main className='text-center'>
                 {textBg}
                 <div className='content'>
-                    <h2 className='league-script'>Stay in touch</h2>
+                    <h1 className='league-script'>Stay in touch</h1>
                     <ul>
                         <li>
                             <a href='//ca.linkedin.com/in/yoav-gurevich-42415886' target='_blank'>
@@ -32,16 +32,15 @@ export default function ContactMe(props) {
                             </a>
                         </li>
                     </ul>
-                    <h5 className='margin-bottom-5'>This portfolio was made possible thanks to these great projects:</h5>
-                    <section className='vendor-imgs'>
-                        <a href='//reactjs.org/' target='_blank'><img src='/assets/react.png' alt='React.js' /></a>
-                        <a href='//webpack.js.org' target='_blank'><img src='/assets/webpack.png' alt='Webpack' /></a>
-                        <a href='//sass-lang.com' target='_blank'><img src='/assets/sass.png' alt='Sass' /></a>
-                    </section>
                 </div>
             </main>
             <footer>
-                <small>Landing page clip courtesy of <a href='//mitchmartinez.com/' target='_blank'>Mitch Martinez</a><sup>&trade;</sup>. Stock footage license agreement available upon request.</small>
+                <h5 className='margin-bottom-5'>This portfolio was made possible thanks to these great projects:</h5>
+                <section className='vendor-imgs'>
+                    <a href='//reactjs.org/' target='_blank'><img src='/assets/react.png' alt='React.js' /></a>
+                    <a href='//webpack.js.org' target='_blank'><img src='/assets/webpack.png' alt='Webpack' /></a>
+                    <a href='//sass-lang.com' target='_blank'><img src='/assets/sass.png' alt='Sass' /></a>
+                </section>
             </footer>
         </div>
     );
