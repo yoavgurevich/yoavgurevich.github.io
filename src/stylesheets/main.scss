@@ -60,6 +60,10 @@ body {
     margin: 0 !important;
 }
 
+.margin-left-30 {
+    margin-right: -30% !important;
+}
+
 a {
     text-decoration: none;
 }
@@ -110,7 +114,8 @@ a {
 
 #cdot {
     svg {
-        margin-left: 70px;
+        margin-left: 12.5%;
+        margin-top: 25px;
     }
 }
 
