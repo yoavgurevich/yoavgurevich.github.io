@@ -32,8 +32,11 @@
     }
 
     blockquote {
-        padding: 0 15%;
+        line-height: 1.5;
+        padding: 0 20%;
+        min-height: fit-content;
         text-align: justify;
+        margin-top: -5px;
 
         @media only screen and (max-width: 667px) {
             max-height: 33vh;
@@ -43,14 +46,18 @@
     }
 
     .landing-img {
-        margin-top: 30px;
-        height: 40vh; width: 33vh;
+        margin-top: 20px;
+        height: 33vh; width: 30vh;
         border-radius: 50%;
         background-size: cover;
         background-position-x: 50%;
     }
+
+    .slide-link-container {
+        margin-top: -70px;
+    }
 }
 
 .slide-in-bck-center {
-	animation: slide-in-bck-center 0.7s 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
