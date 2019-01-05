@@ -2,7 +2,7 @@ import React from 'react';
 import scrollToComponent from 'react-scroll-to-component';
 
 export default function ContactMe(props) {
-    let textBg = null;
+    let textBg = <div className='text-bg'><i className='fa fa-comments-o no-glow'></i></div>;
 
     if (props.currentBg == 'midnightblue'){
         textBg = <div className='text-bg'><i className='fa fa-comments-o text-flicker-in-glow'></i></div>;
@@ -18,7 +18,9 @@ export default function ContactMe(props) {
             <main className='text-center'>
                 {textBg}
                 <div className='content'>
-                    <h1 className='league-script'>Stay in touch</h1>
+                    <h1 className={props.currentBg == 'midnightblue' ? 
+                        'league-script padding-15 text-flicker-in-glow' : 
+                        'league-script padding-15 no-glow'}>Stay in touch!</h1>
                     <ul>
                         <li>
                             <a href='//ca.linkedin.com/in/yoav-gurevich-42415886' target='_blank'>

@@ -60,6 +60,10 @@ body {
     margin: 0 !important;
 }
 
+.padding-15 {
+    padding: 15%;
+}
+
 .margin-left-30 {
     margin-right: -30% !important;
 }
@@ -117,6 +121,10 @@ a {
         margin-left: 12.5%;
         margin-top: 25px;
     }
+}
+
+.no-glow {
+    opacity: 0.1;
 }
 
 .text-flicker-in-glow {
