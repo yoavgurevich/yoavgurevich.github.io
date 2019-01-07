@@ -23,13 +23,13 @@ export default function ContactMe(props) {
                         'league-script padding-15 no-glow'}>Stay in touch!</h1>
                     <ul>
                         <li>
-                            <a href='//ca.linkedin.com/in/yoav-gurevich-42415886' target='_blank'>
+                            <a className='no-glow' rel='noopener noreferrer' href='//ca.linkedin.com/in/yoav-gurevich-42415886' target='_blank'>
                                 <i className='fa fa-linkedin-square'>&nbsp;</i>
                             </a>
-                            <a href='//twitter.com/ygdot14' target='_blank'>
+                            <a className='no-glow' rel='noopener noreferrer' href='//twitter.com/ygdot14' target='_blank'>
                                 <i className='fa fa-twitter'>&nbsp;</i>
                             </a>
-                            <a href='//github.com/yoavgurevich' target='_blank'>
+                            <a className='no-glow' rel='noopener noreferrer' href='//github.com/yoavgurevich' target='_blank'>
                                 <i className='fa fa-github'>&nbsp;</i>
                             </a>
                         </li>

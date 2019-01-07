@@ -12,9 +12,10 @@ export default class Engage extends Component {
                 <div className="grid-header">
                     <ScrollButton direction='up' refsList={this.props.refsList} />
                 </div>
-                <div className="grid-content">
-                    <h1 className='text-center slide-left'>engage</h1>
-                    <div className='fade-in'>
+                <div className={this.props.currentBg == 'indianred' ? 'grid-content' : 'grid-content col-1'}>
+                    <h1 className={this.props.currentBg == 'indianred' ? 'text-center slide-left' : 'text-center'}>engage</h1>
+                    {this.props.currentBg == 'indianred' ? (
+                        <div className='fade-in'>
                         <a className='img-link' href='https://www.engagepeople.com/podium.html' rel='noopener noreferrer' target='_blank'><img src='https://www.engagepeople.com/img/Podium_logo.svg' alt='Podium Logo'></img></a>
                         <a className='img-link' href='https://www.engagepeople.com/lrg.html' rel='noopener noreferrer' target='_blank'><img src='https://www.engagepeople.com/img/LRG_logo.svg' alt='LRG Logo'></img></a>
                         <p>
@@ -26,6 +27,7 @@ export default class Engage extends Component {
                             that build on iterative improvement.
                         </p>
                     </div>
+                    ) : <div></div>}
                 </div>
                 <div className="grid-footer">
                     <ScrollButton direction='down' refsList={this.props.refsList} />

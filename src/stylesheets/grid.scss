@@ -9,6 +9,10 @@
 
 .grid-header { grid-area: grid-header; }
 
+.col-1 {
+    grid-template-columns: 1fr !important;
+}
+
 .grid-content {
     display: grid;
     grid-template-columns: 1fr 1fr;

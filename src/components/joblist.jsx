@@ -36,6 +36,7 @@ export default class JobList extends Component {
                     perspective='40em'
                     responsive>
                     <Engage
+                        currentBg={this.props.currentBg}
                         currentPage={this.state.currentPage}
                         refsList={this.props.refsList} />
                     <Wellpad

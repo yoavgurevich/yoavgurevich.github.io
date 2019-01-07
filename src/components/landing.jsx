@@ -34,7 +34,7 @@ export default class Landing extends Component {
 
     render() {
         return (
-            <div className='fsh' ref={this.props.refsList.landing}>
+            <div className='fsh intro-bg' ref={this.props.refsList.landing}>
                 {/* <div id='video-viewport'>
                     <video onPlay={this.handlePlay} className="video-bg" autoPlay={true} muted={true}>
                         <source src="/assets/ink4k_edit.mp4" type="video/mp4"/>
