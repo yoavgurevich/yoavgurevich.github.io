@@ -71,6 +71,18 @@
                     color: cornsilk;
                     font-size: 42pt;
                 }
+
+                .fa-twitter {
+                    &:hover, &:focus, &:active {
+                        color: cornflowerblue !important;
+                    }
+                }
+
+                .fa-github {
+                    &:hover, &:focus, &:active {
+                        color: grey !important;
+                    }
+                }
             }
         }
 
