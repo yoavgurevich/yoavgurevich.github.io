@@ -37,6 +37,17 @@
             filter: brightness(0.6);
             max-width: 27%;
         }
+
+        .img-group {
+            position: relative;
+            left: 23%;
+            margin-left: 0;
+
+            img {
+                max-height: 120px;
+                margin: 0 5px;
+            }
+        }
     }
 }
 
