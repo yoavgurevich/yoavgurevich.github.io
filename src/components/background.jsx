@@ -5,7 +5,7 @@ export default class Background extends Component {
         super(props);
 
         this.state = {
-            currentBg: 'black',
+            currentBg: 'newgray',
             lastComponentId: '',
             jlPage: null
         };
@@ -72,7 +72,7 @@ export default class Background extends Component {
                         resolvedBackground = 'midnightblue';
                         break;
                     default:
-                        resolvedBackground = 'black';
+                        resolvedBackground = 'newgray';
                         break;
                 }
             } else {

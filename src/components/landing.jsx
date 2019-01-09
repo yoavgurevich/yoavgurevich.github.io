@@ -7,6 +7,7 @@ export default class Landing extends Component {
 
         this.state = {
             currentPic: 'yg1',
+            svgClass: '',
             currentIterator: 1
         }
 
@@ -23,7 +24,8 @@ export default class Landing extends Component {
                 this.setState((prevState) => {
                     return {
                         currentPic: `yg${prevState.currentIterator}`,
-                        currentIterator: prevState.currentIterator + 1
+                        currentIterator: prevState.currentIterator + 1,
+                        svgClass: 'focused'
                     }
                 });
 
@@ -35,19 +37,18 @@ export default class Landing extends Component {
     render() {
         return (
             <div className='fsh intro-bg' ref={this.props.refsList.landing}>
-                {/* <div id='video-viewport'>
-                    <video onPlay={this.handlePlay} className="video-bg" autoPlay={true} muted={true}>
-                        <source src="/assets/ink4k_edit.mp4" type="video/mp4"/>
-                    </video>
-                </div> */}
+                <svg className={this.state.svgClass}>
+                    <image xlinkHref='https://openclipart.org/download/307354/1538176045.svg' />
+                    <rect></rect>
+                </svg>
                 <div className='landing-content vertical-align'>
-                    <h1 className='text-center'>Yoav Gurevich</h1>
+                    <h1 className='text-center'>&nbsp;</h1>
                     <div className={'landing-img slide-in-bck-center ' + this.state.currentPic}></div>
                     <blockquote>
                         <h5>
                             <p>
-                                Seneca College computer programming & analysis graduate of 2015. Studied mixology and wine council studies before that.
-                                Dabbled in audio engineering and production before that. Guitar player for nigh on 12 years now, and a big believer
+                                Seneca College CPAC alumni of 2015. BSO mixology and wine council of Ontario certifications before that.
+                                Audio engineering and production dabbler before that. Guitar player for nigh on 15 years. In short, a big believer
                                 in the harmony between opposite schools of knowledge and experience.
                             </p>
                             <p>

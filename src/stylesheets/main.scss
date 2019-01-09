@@ -31,6 +31,11 @@ body {
     }
 }
 
+.newgray {
+    background: #c3c2c3;
+    transition: background linear 1s;
+}
+
 // SCSS extendible blocks
 %relative-center {
     position: relative;
