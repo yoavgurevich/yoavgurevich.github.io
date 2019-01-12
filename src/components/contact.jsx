@@ -21,19 +21,17 @@ export default function ContactMe(props) {
                     <h1 className={props.currentBg == 'midnightblue' ? 
                         'league-script padding-15 text-flicker-in-glow' : 
                         'league-script padding-15 no-glow'}>Stay in touch!</h1>
-                    <ul>
-                        <li>
-                            <a className='no-glow' rel='noopener noreferrer' href='//ca.linkedin.com/in/yoav-gurevich-42415886' target='_blank'>
-                                <i className='fa fa-linkedin-square'>&nbsp;</i>
-                            </a>
-                            <a className='no-glow' rel='noopener noreferrer' href='//twitter.com/ygdot14' target='_blank'>
-                                <i className='fa fa-twitter'>&nbsp;</i>
-                            </a>
-                            <a className='no-glow' rel='noopener noreferrer' href='//github.com/yoavgurevich' target='_blank'>
-                                <i className='fa fa-github'>&nbsp;</i>
-                            </a>
-                        </li>
-                    </ul>
+                    <div className='inline-flex'>
+                        <a className='no-glow' rel='noopener noreferrer' href='//ca.linkedin.com/in/yoav-gurevich-42415886' target='_blank'>
+                            <i className='fa fa-linkedin-square'>&nbsp;</i>
+                        </a>
+                        <a className='no-glow' rel='noopener noreferrer' href='//twitter.com/ygdot14' target='_blank'>
+                            <i className='fa fa-twitter'>&nbsp;</i>
+                        </a>
+                        <a className='no-glow' rel='noopener noreferrer' href='//github.com/yoavgurevich' target='_blank'>
+                            <i className='fa fa-github'>&nbsp;</i>
+                        </a>
+                    </div>
                 </div>
             </main>
             <footer>

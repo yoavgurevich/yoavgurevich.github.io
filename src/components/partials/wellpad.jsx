@@ -36,7 +36,7 @@ export default class Wellpad extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="grid-footer">
+                <div className="grid-footer align-top">
                     <ScrollButton direction='down' refsList={this.props.refsList} />
                 </div>
             </div>

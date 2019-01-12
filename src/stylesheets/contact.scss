@@ -55,21 +55,23 @@
             text-decoration: none;
         }
 
-        ul {
-            list-style-type: none;
+        .inline-flex {
+            display: inline-flex;
+            align-items: center;
             padding-left: 15px;
-            margin-top: -20%;
+            margin-top: -30%;
 
             a {
-                margin-right: 15px;
+                padding-right: 10px;
 
                 &:hover, &:focus, &:active {
                     opacity: 1;
+                    text-shadow: 0.1px 0 8px;
                 }
 
                 i {
                     color: cornsilk;
-                    font-size: 42pt;
+                    font-size: 44pt;
                 }
 
                 .fa-twitter {

@@ -23,7 +23,7 @@
     width: 100vw;
     height: 60vh;
     fill: #c3c2c3;
-    transition: 2.25s cubic-bezier(0.785, 0.135, 0.15, 0.85);
+    transition: 3s linear;
 }
 
 .focused > rect {
@@ -74,5 +74,5 @@
 }
 .puff-in-center {
     animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-    animation-delay: 3.5s;
+    animation-delay: 3.75s;
 }
