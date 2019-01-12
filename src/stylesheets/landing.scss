@@ -5,22 +5,7 @@
     }
 }
 
-// #video-viewport {
-//     z-index: -1;
-
-//     video {
-//         min-width: 100vw;
-//         max-height: 100vh;
-//         height: auto;
-//         transform: scale(1.15);
-//         @media only screen and (max-width: 823px) {
-//             margin-left: -100%;
-//             margin-top: -20%;
-//         }
-//     }
-// }
-
-svg {
+#skyline {
     width: 98.9vw;
     height: 50vh;
     position: absolute;
@@ -28,17 +13,17 @@ svg {
     transform: rotate(180deg);
 }
 
-svg > image {
+#skyline > image {
     width: 100vw;
     height: 60vh;
     transform: scale(1.05) translateX(-3vw);
 }
 
-svg > rect {
+#skyline > rect {
     width: 100vw;
     height: 60vh;
     fill: #c3c2c3;
-    transition: 1.8s cubic-bezier(0.785, 0.135, 0.15, 0.85);
+    transition: 2.25s cubic-bezier(0.785, 0.135, 0.15, 0.85);
 }
 
 .focused > rect {
@@ -84,6 +69,10 @@ svg > rect {
     }
 }
 
-.slide-in-bck-center {
-	animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.focus-in-contract-bck {
+	animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.puff-in-center {
+    animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    animation-delay: 3.5s;
 }

@@ -12,7 +12,7 @@ export default class Wellpad extends Component {
                 <div className="grid-header">
                     <ScrollButton direction='up' refsList={this.props.refsList} />
                 </div>
-                <div className="grid-content margin-bottom-6">
+                <div className="grid-content margin-bottom-40">
                     <h1 className='rouge-script h0 text-center slide-left'>Wellpad.io</h1>
                     <div className='fade-in'>
                         <div className='img-group'>
@@ -26,7 +26,7 @@ export default class Wellpad extends Component {
                             in both new and returning patients.
                             <br /><br />
                             My primary role for this project was front-end view and component implementation for the patient-intake and follow-up surveys.
-                            Design mock-ups were issued out by team lead <a href="https://www.linkedin.com/in/leesaynor/" rel="noopener noreferrer" target='_blank'>Lee Saynor</a>, and I was to try and bring them to life and make them usable the best of my ability.
+                            Design mock-ups were issued our savvy team lead <a href="https://www.linkedin.com/in/leesaynor/" rel="noopener noreferrer" target='_blank'>Lee Saynor</a>.
                             Lead Developer <a href="https://twitter.com/tabakd_" rel="noopener noreferrer" target='_blank'>Daniel Tabak</a> maintained a unique and frenetic pace throughout every milestone.
                         </p>
                         <div className='img-group'>

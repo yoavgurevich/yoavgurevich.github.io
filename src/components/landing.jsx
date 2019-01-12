@@ -30,24 +30,24 @@ export default class Landing extends Component {
                 });
 
                 this.cyclePics();
-            }, 1200);
+            }, 1100);
         }
     }
 
     render() {
         return (
             <div className='fsh intro-bg' ref={this.props.refsList.landing}>
-                <svg className={this.state.svgClass}>
+                <svg id='skyline' className={this.state.svgClass}>
                     <image xlinkHref='https://openclipart.org/download/307354/1538176045.svg' />
                     <rect></rect>
                 </svg>
                 <div className='landing-content vertical-align'>
                     <h1 className='text-center'>&nbsp;</h1>
-                    <div className={'landing-img slide-in-bck-center ' + this.state.currentPic}></div>
-                    <blockquote>
+                    <div className={'landing-img focus-in-contract-bck ' + this.state.currentPic}></div>
+                    <blockquote className='puff-in-center'>
                         <h5>
                             <p>
-                                Seneca College CPAC alumni of 2015. BSO mixology and wine council of Ontario certifications before that.
+                                2015 Seneca College CPAC alumni. BSO mixology and wine council of Ontario certifications before that.
                                 Audio engineering and production dabbler before that. Guitar player for nigh on 15 years. In short, a big believer
                                 in the harmony between opposite schools of knowledge and experience.
                             </p>
