@@ -24,10 +24,12 @@
     grid-template-areas: ". .";
     grid-area: grid-content;
     align-items: center;
+
     p {
         text-align: justify;
         padding: 0 125px;
     }
+
     .fade-in {
         :first-child {
             margin-left: 12%;

@@ -77,6 +77,18 @@ a {
     text-decoration: none;
 }
 
+.a-link {
+    color: black;
+    margin-left: -15% !important;
+    overflow: visible;
+}
+
+.flex-center {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
 .rfp-touchZone {
     cursor: pointer;
     font-family: FontAwesome;

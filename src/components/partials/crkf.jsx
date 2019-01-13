@@ -18,17 +18,20 @@ export default class CRKF extends Component {
                         <br />
                         Chito-Ryu Karate
                     </h1>
-                    <p className='fade-in'>
-                        <a className='margin-0' href='https://github.com/sedge/opendojo/graphs/contributors' target='_blank' rel='noopener noreferrer'>OpenDojo</a> is a now open-sourced codebase that was implemented to create a content management system for a local karate club.
-                        Its features include a real-time reminder of the upcoming classes, a searchable/filterable student list with detailed
-                        individual profile views, belt rank and class creation views, a club-wide e-mail/announcement module,
-                        and a tablet-friendly interface for two-step logging-in for students attending classes.
-                        <br /><br />
-                        Taking on multiple roles in this project, my contributions involved initial server and server routes setup with Node
-                        and Express.js, implementing a rudimentary front-to-back authentication module using JSON Web Tokens,
-                        maintaining thorough API and data flow documentation for the repository,
-                        as well as being largely responsible for the style guide and appearance of the front-end view elements.
-                    </p>
+                    <div className='fade-in flex-center'>
+                        <a className='a-link' href='https://www.youtube.com/watch?v=8YSFOMD2r8Q&list=PL1saFtx4Uu4p2-LGuVFsnM6Ekv-XSVZVA' rel='noopener noreferrer' target='_blank'><i className='fa fa-4x fa-youtube-square'></i></a>
+                        <p>
+                            <a className='margin-0' href='https://github.com/sedge/opendojo/graphs/contributors' target='_blank' rel='noopener noreferrer'>OpenDojo</a> is a now open-source codebase that was implemented 
+                            to create a content management system for a local karate club.
+                            Its features include real-time upcoming class reminders, a searchable/filterable student list with
+                            individual profile views, belt rank and class creation, group email notifications,
+                            and a tablet-friendly interface for two-step logging-in for students attending classes.
+                            <br /><br />
+                            Assuming multiple roles in this project, my contributions involved initial server config and route setup using Node
+                            and Express.js, implementing a front-to-back authentication module using JSON Web Tokens,
+                            maintaining API documentation, and being largely responsible for the front-end style guide and aesthetic.
+                        </p>
+                    </div>
                 </div>
                 <div className="grid-footer">
                     <ScrollButton direction='down' refsList={this.props.refsList} />
