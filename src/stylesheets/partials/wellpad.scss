@@ -1,0 +1,10 @@
+.zoomed-in {
+    p, img:not(.current-zoom) {
+        opacity: 0;
+    }
+
+    .current-zoom {
+        cursor: zoom-out !important;
+        transform: scale(4.0) !important;
+    }
+}
