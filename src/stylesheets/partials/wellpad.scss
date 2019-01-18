@@ -5,6 +5,8 @@
 
     .current-zoom {
         cursor: zoom-out !important;
-        transform: scale(4.0) !important;
+        transform: scale(5.0) !important;
+        position: fixed;
+        top: 40%; left: 70%; 
     }
 }
