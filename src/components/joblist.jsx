@@ -11,7 +11,8 @@ export default class JobList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentPage: 0
+            currentPage: 0,
+            orientation: 'horizontal'
         }
 
         this.handlePageChange.bind(this);
@@ -28,7 +29,7 @@ export default class JobList extends Component {
         return (
             <div className='container' ref={this.props.refsList.joblist}>
                 <FlipPage
-                    orientation='horizontal'
+                    orientation={this.state.orientation}
                     className='flipContainer'
                     flipOnTouch
                     onPageChange={(idx) => this.handlePageChange(idx)}

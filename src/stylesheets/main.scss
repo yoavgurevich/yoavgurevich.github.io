@@ -160,3 +160,9 @@ a {
 .fade-in {
 	animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.5s both;
 }
+
+@media screen and (max-width: 667px) {
+    .a-link, .rfp-touchZone-next, .rfp-touchZone-previous, .text-bg {
+        display: none;
+    }
+}
