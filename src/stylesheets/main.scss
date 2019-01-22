@@ -154,7 +154,11 @@ a {
 }
 
 .slide-left {
-	animation: slide-left 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
+    animation: slide-left 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
+    
+    @media screen and (max-width: 1023px) {
+        animation: slide-up 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
+    }
 }
 
 .fade-in {

@@ -25,6 +25,12 @@
     grid-area: grid-content;
     align-items: center;
 
+    @media screen and (max-width: 1023px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1.5fr;
+        grid-template-areas: "." ".";
+    }
+
     p {
         text-align: justify;
         padding: 0 125px;
