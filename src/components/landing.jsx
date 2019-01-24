@@ -6,7 +6,7 @@ export default class Landing extends Component {
         super(props);
 
         this.state = {
-            currentPic: 'yg1',
+            currentPic: '',
             svgClass: '',
             currentIterator: 1
         }
@@ -15,7 +15,19 @@ export default class Landing extends Component {
     }
 
     componentDidMount() {
-        this.cyclePics();
+        addEventListener('load', () => {
+            this.setState({
+                currentPic: 'yg1',
+                currentIterator: 1,
+                svgClass: 'focused'
+            });
+
+            this.cyclePics();
+        });
+    }
+
+    componentWillUnmount() {
+        removeEventListener('load', this.cyclePics);
     }
 
     cyclePics() {
@@ -24,8 +36,7 @@ export default class Landing extends Component {
                 this.setState((prevState) => {
                     return {
                         currentPic: `yg${prevState.currentIterator}`,
-                        currentIterator: prevState.currentIterator + 1,
-                        svgClass: 'focused'
+                        currentIterator: prevState.currentIterator + 1
                     }
                 });
 
