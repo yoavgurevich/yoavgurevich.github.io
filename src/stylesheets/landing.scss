@@ -55,9 +55,12 @@
         margin-top: -5px;
 
         @media only screen and (max-width: 667px) {
-            max-height: 33vh;
-            overflow-y: scroll;
             padding: 0 5%;
+
+            h5 {
+                max-height: 25vh;
+                overflow-y: scroll;
+            }
         }
     }
 
@@ -67,6 +70,10 @@
         border-radius: 50%;
         background-size: cover;
         background-position-x: 50%;
+
+        @media screen and (max-width: 1024px) {
+            height: 25vh; width: 25vh;
+        }
     }
 
     .slide-link-container {

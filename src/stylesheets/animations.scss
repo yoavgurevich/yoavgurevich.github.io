@@ -171,12 +171,10 @@
 
 @keyframes puff-in-center {
   0% {
-    transform: scale(1.05);
     filter: blur(2px);
     opacity: 0.01;
   }
   100% {
-    transform: scale(1);
     filter: blur(0px);
     opacity: 1;
   }
