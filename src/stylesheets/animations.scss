@@ -179,3 +179,20 @@
     opacity: 1;
   }
 }
+
+/* attribution: https://codepen.io/GeorgePark/pen/MrjbEr */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    box-shadow:
+      0 0 2px #fff,
+      inset 0 0 15px #fff,
+      0 0 25px cornsilk,
+      inset 0 0 7px cornsilk,
+      0 0 7px cornsilk,
+      inset 0 0 7px cornsilk;        
+  }
+  
+  20%, 24%, 55% {
+    box-shadow: none;
+  }    
+}

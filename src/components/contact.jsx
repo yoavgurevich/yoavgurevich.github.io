@@ -88,10 +88,10 @@ export default class ContactMe extends Component {
     }
 
     render() {
-        let textBg = <div className='text-bg'><i className='fa fa-comments-o no-glow'></i></div>;
+        // let textBg = <div className='text-bg'><i className='fa fa-comments-o no-glow'></i></div>;
     
         if (this.props.currentBg == 'midnightblue'){
-            textBg = <div className='text-bg'><i className='fa fa-comments-o text-flicker-in-glow'></i></div>;
+            // textBg = <div className='text-bg'><i className='fa fa-comments-o text-flicker-in-glow'></i></div>;
             this.createGlowTimers();
         } else {
             this.clearGlowTimers();
@@ -105,11 +105,10 @@ export default class ContactMe extends Component {
                     </h2>
                 </header>
                 <main className='text-center'>
-                    {textBg}
-                    <div className='content'>
+                    <div className={this.props.currentBg == 'midnightblue' ? 'content' : 'content no-glow-border'}>
                         <h1 className={this.props.currentBg == 'midnightblue' ? 
-                            'league-script padding-15 text-flicker-in-glow' : 
-                            'league-script padding-15 no-glow'}>Stay in touch!</h1>
+                            'league-script text-flicker-in-glow' : 
+                            'league-script no-glow'}>Stay in touch!</h1>
                         <div className='inline-flex'>
                             <a rel='noopener noreferrer' href='//ca.linkedin.com/in/yoav-gurevich-42415886' target='_blank'>
                                 <i ref={this.linkRefs.linkedin} className='no-glow fa fa-linkedin-square'>&nbsp;</i>
@@ -124,7 +123,7 @@ export default class ContactMe extends Component {
                     </div>
                 </main>
                 <footer>
-                    <h5 className='margin-bottom-5'>This portfolio was made possible thanks to these great projects:</h5>
+                    <h5>This portfolio was made possible thanks to these great projects:</h5>
                     <section className='vendor-imgs'>
                         <a href='//reactjs.org/' target='_blank'><img src='/assets/react.png' alt='React.js' /></a>
                         <a href='//webpack.js.org' target='_blank'><img src='/assets/webpack.png' alt='Webpack' /></a>

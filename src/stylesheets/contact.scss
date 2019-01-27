@@ -10,6 +10,10 @@
         position: relative;
         left: 92%;
 
+        @media screen and (max-width: 992px) {
+            left: 82%;
+        }
+
         h2 {
             .fa-level-up {
                 cursor: pointer;
@@ -30,26 +34,28 @@
 
     main {
         min-width: 100vw;
+        min-height: 100%;
 
-        .text-bg, .content, .inline-flex {
+        .content, .inline-flex {
             position: relative;
         }
 
-        .text-bg {
-            top: 60%;
-            left: 5%;
-            opacity: 0.9;
-            z-index: 1 !important;
-    
-            .fa-comments-o {
-                user-select: none;
-                font-size: 50vmax !important;
-                width: 100%;
-            }
+        .content {
+            border: 5px solid cornsilk;
+            border-radius: 50%;
+            width: fit-content;
+            margin: 5% auto;
+            padding: 70px;
+            animation: flicker 6s infinite alternate;
         }
 
-        .content {
-            bottom: 92%;
+        .no-glow-border {
+            border: 5px solid rgba(250,250,250, 0.1) !important;
+            animation: none;
+        }
+
+        .inline-flex, h1, a, i {
+            overflow: visible !important;
         }
 
         a {
@@ -60,11 +66,7 @@
             display: inline-flex;
             align-items: center;
             padding-left: 15px;
-            bottom: 30vmin;
-
-            &, a, i {
-                overflow: visible !important;
-            }
+            padding-bottom: 20px;
 
             a {
                 padding-right: 10px;
@@ -109,11 +111,18 @@
     }
 
     footer {
-        display: inline-flex;
+        display: flex;
+        flex-wrap: wrap;
         padding: 3%;
+
+        @media screen and (max-width: 800px) {
+            justify-content: center;
+            text-align: center;
+        }
 
         h5 {
             font-size: 12pt !important;
+            margin-bottom: 5px;
             font-weight: 200;
         }
 
@@ -124,22 +133,4 @@
             }
         }
     }
-
-}
-
-.margin-bottom-5 {
-    margin-bottom: 5px;
-}
-
-
-@media only screen and (min-width: 992px) {
-    main {
-        max-width: 19%;
-    }
-}
-
-@media only screen and (max-width: 667px) {
-    main {
-        max-width: 90%;
-    } 
 }
