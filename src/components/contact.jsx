@@ -12,31 +12,44 @@ export default class ContactMe extends Component {
         }
 
         this.intervalIds = [];
+        this.timeoutIds = [];
         this.toggleColorGlow = this.toggleColorGlow.bind(this);
     }
 
     componentDidMount() {
-        Object.keys(this.linkRefs).forEach(ref => {
-            let intervalId;
+        const timeoutId = setTimeout(() => {
+            Object.keys(this.linkRefs).forEach(ref => {
+                let intervalId, timeoutId;
+    
+                switch(ref) {
+                    case 'linkedin':
+                        intervalId = setInterval(() => this.toggleColorGlow('linkedin'), 1000);
+                        this.intervalIds.push(intervalId);
+                        break;
+                    case 'twitter':
+                        timeoutId = setTimeout(() => {
+                            const intervalId = setInterval(() => this.toggleColorGlow('twitter'), 1000);
+                            this.intervalIds.push(intervalId);
+                        }, 500);
+                        this.timeoutIds.push(timeoutId);
+                        break;
+                    default:
+                        timeoutId = setTimeout(() => {
+                            const intervalId = setInterval(() => this.toggleColorGlow('github'), 1000);
+                            this.intervalIds.push(intervalId);
+                        }, 1000);
+                        this.timeoutIds.push(timeoutId);
+                        break;
+                }
+            });
+        }, 3500);
 
-            switch(ref) {
-                case 'twitter':
-                    intervalId = setInterval(() => this.toggleColorGlow('twitter'), 1500);
-                    break;
-                case 'linkedin':
-                    intervalId = setInterval(() => this.toggleColorGlow('linkedin'), 2000);
-                    break;
-                default:
-                    intervalId = setInterval(() => this.toggleColorGlow('github'), 1000);
-                    break;
-            }
-
-            this.intervalIds.push(intervalId);
-        });
+        this.timeoutIds.push(timeoutId);
     }
 
     componentWillUnmount() {
         this.intervalIds.forEach(intervalId => clearInterval(intervalId));
+        this.timeoutIds.forEach(timeoutId => clearTimeout(timeoutId));
     }
 
     toggleColorGlow(elmKey) {
@@ -45,7 +58,26 @@ export default class ContactMe extends Component {
         if (currentElm.className.indexOf('active-glow') === -1) {
             currentElm.className += ' active-glow';
         } else {
-            currentElm.className = currentElm.className.substring(0, currentElm.className.indexOf(' active-glow'));
+            // There are no mistakes, just happy accidents...
+            let resolvedTimeout;
+
+            switch(elmKey) {
+                case 'linkedin':
+                    resolvedTimeout = 1000;
+                    break;
+                case 'twitter':
+                    resolvedTimeout = 500;
+                    break;
+                default:
+                    resolvedTimeout = 0;
+                    break;
+            }
+
+            const timeoutId = setTimeout(() => {
+                currentElm.className = currentElm.className.substring(0, currentElm.className.indexOf(' active-glow'));
+            }, resolvedTimeout);
+
+            this.timeoutIds.push(timeoutId);
         }
     }
 
