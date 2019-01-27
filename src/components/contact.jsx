@@ -13,10 +13,12 @@ export default class ContactMe extends Component {
 
         this.intervalIds = [];
         this.timeoutIds = [];
+        this.createGlowTimers = this.createGlowTimers.bind(this);
         this.toggleColorGlow = this.toggleColorGlow.bind(this);
+        this.clearGlowTimers = this.clearGlowTimers.bind(this);
     }
 
-    componentDidMount() {
+    createGlowTimers() {
         const timeoutId = setTimeout(() => {
             Object.keys(this.linkRefs).forEach(ref => {
                 let intervalId, timeoutId;
@@ -42,14 +44,9 @@ export default class ContactMe extends Component {
                         break;
                 }
             });
-        }, 3500);
+        }, 3000);
 
         this.timeoutIds.push(timeoutId);
-    }
-
-    componentWillUnmount() {
-        this.intervalIds.forEach(intervalId => clearInterval(intervalId));
-        this.timeoutIds.forEach(timeoutId => clearTimeout(timeoutId));
     }
 
     toggleColorGlow(elmKey) {
@@ -81,11 +78,23 @@ export default class ContactMe extends Component {
         }
     }
 
+    clearGlowTimers() {
+        this.intervalIds.forEach(intervalId => clearInterval(intervalId));
+        this.timeoutIds.forEach(timeoutId => clearTimeout(timeoutId));
+    }
+
+    componentWillUnmount() {
+        this.clearGlowTimers();
+    }
+
     render() {
         let textBg = <div className='text-bg'><i className='fa fa-comments-o no-glow'></i></div>;
     
         if (this.props.currentBg == 'midnightblue'){
             textBg = <div className='text-bg'><i className='fa fa-comments-o text-flicker-in-glow'></i></div>;
+            this.createGlowTimers();
+        } else {
+            this.clearGlowTimers();
         }
     
         return (
