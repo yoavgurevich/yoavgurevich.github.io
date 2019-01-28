@@ -49,10 +49,15 @@ export default class ContactMe extends Component {
         this.timeoutIds.push(timeoutId);
     }
 
-    toggleColorGlow(elmKey) {
+    toggleColorGlow(elmKey, resetGlowState = false) {
         let currentElm = this.linkRefs[elmKey].current;
 
-        if (currentElm.className.indexOf('active-glow') === -1) {
+        if (resetGlowState) {
+            if (currentElm && currentElm.className.indexOf('active-glow') !== -1)
+                currentElm.className = currentElm.className.substring(0, currentElm.className.indexOf(' active-glow'));
+
+            return;
+        } else if (currentElm.className.indexOf('active-glow') === -1) {
             currentElm.className += ' active-glow';
         } else {
             // There are no mistakes, just happy accidents...
@@ -88,12 +93,10 @@ export default class ContactMe extends Component {
     }
 
     render() {
-        // let textBg = <div className='text-bg'><i className='fa fa-comments-o no-glow'></i></div>;
-    
         if (this.props.currentBg == 'midnightblue'){
-            // textBg = <div className='text-bg'><i className='fa fa-comments-o text-flicker-in-glow'></i></div>;
             this.createGlowTimers();
         } else {
+            Object.keys(this.linkRefs).forEach(ref => this.toggleColorGlow(ref, true));
             this.clearGlowTimers();
         }
     

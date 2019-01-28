@@ -47,6 +47,14 @@
             margin: 5% auto;
             padding: 70px;
             animation: flicker 6s infinite alternate;
+
+            @media screen and (max-width: 500px) {
+                transform: scale(0.6);
+            }
+
+            @media screen and (max-width: 992px) {
+                transform: scale(0.8);
+            }
         }
 
         .no-glow-border {
@@ -78,13 +86,13 @@
                 }
 
                 .fa-twitter {
-                    &:hover, &:focus, &:active {
+                    &:hover, &:focus {
                         color: cornflowerblue !important;
                     }
                 }
 
                 .fa-github {
-                    &:hover, &:focus, &:active {
+                    &:hover, &:focus {
                         color: lighten(grey, 5%) !important;
                     }
                 }
