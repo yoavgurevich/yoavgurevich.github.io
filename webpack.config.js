@@ -21,15 +21,7 @@ module.exports = {
                 loaders: ['style-loader', 'css-loader']
             },
             {
-                test: /\.mp4$/,
-                loaders: 'url-loader?limit=50000&mimetype=video/mp4'
-            },
-            {
-                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
-                loader: 'url-loader?limit=10000&mimetype=application/font-woff' 
-            },
-            { 
-                test: /\.(png|jpg|jpeg|gif|ico|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+                test: /\.(png|jpg|jpeg|gif|ico|ttf|eot|svg|woff(2)?)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
                 loader: 'file-loader'
             }
         ]
@@ -38,7 +30,7 @@ module.exports = {
         extensions: ['*', '.js', '.jsx']
     },
     output: {
-        path: __dirname + '/dist',
+        path: __dirname,
         publicPath: '/',
         filename: 'bundle.js'
     },
@@ -46,7 +38,7 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
-        contentBase: './dist',
+        contentBase: '.',
         hot: true
     }
 };
