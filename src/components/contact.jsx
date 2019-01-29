@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import scrollToComponent from 'react-scroll-to-component';
+import ReactImage from '../assets/react.png';
+import SassImage from '../assets/sass.png';
+import WebpackImage from '../assets/webpack.png';
 
 export default class ContactMe extends Component {
     constructor(props) {
@@ -128,9 +131,9 @@ export default class ContactMe extends Component {
                 <footer>
                     <h5>This portfolio was made possible thanks to these great projects:</h5>
                     <section className='vendor-imgs'>
-                        <a href='//reactjs.org/' target='_blank'><img src='/assets/react.png' alt='React.js' /></a>
-                        <a href='//webpack.js.org' target='_blank'><img src='/assets/webpack.png' alt='Webpack' /></a>
-                        <a href='//sass-lang.com' target='_blank'><img src='/assets/sass.png' alt='Sass' /></a>
+                        <a href='//reactjs.org/' target='_blank'><img src={ReactImage} alt='React.js' /></a>
+                        <a href='//webpack.js.org' target='_blank'><img src={WebpackImage} alt='Webpack' /></a>
+                        <a href='//sass-lang.com' target='_blank'><img src={SassImage} alt='Sass' /></a>
                     </section>
                 </footer>
             </div>

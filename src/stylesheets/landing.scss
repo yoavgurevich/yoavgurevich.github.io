@@ -1,6 +1,6 @@
 @for $i from 1 through 5 {
     .yg#{$i} {
-        background-image: url('/assets/yg' + $i + '.png');
+        background-image: url('../assets/yg' + $i + '.png');
     }
 }
 
