@@ -1,7 +1,6 @@
 @for $i from 1 through 5 {
     .yg#{$i} {
         background-image: url('/assets/yg' + $i + '.png');
-        transition: background ease-in 0.3s;
     }
 }
 
@@ -70,6 +69,7 @@
         border-radius: 50%;
         background-size: cover;
         background-position-x: 50%;
+        transition: background ease-in 0.3s;
 
         @media screen and (max-width: 1024px) {
             height: 25vh; width: 25vh;

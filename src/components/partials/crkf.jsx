@@ -21,11 +21,11 @@ export default class CRKF extends Component {
                     <div className='fade-in flex-center'>
                         <a className='a-link' href='https://www.youtube.com/watch?v=8YSFOMD2r8Q&list=PL1saFtx4Uu4p2-LGuVFsnM6Ekv-XSVZVA' rel='noopener noreferrer' target='_blank'><i className='fa fa-4x fa-youtube-square'></i></a>
                         <p>
-                            <a className='margin-0' href='https://github.com/sedge/opendojo/graphs/contributors' target='_blank' rel='noopener noreferrer'>OpenDojo</a> is a now open-source codebase that was implemented 
-                            to create a content management system for a local karate club.
-                            Its features include real-time upcoming class reminders, a searchable/filterable student list with
+                            <a className='margin-0' href='https://github.com/sedge/opendojo/graphs/contributors' target='_blank' rel='noopener noreferrer'>OpenDojo</a> is a now open-source codebase implemented 
+                            to create a no-nonsense CMS for a local karate club.
+                            Its features include upcoming class reminders, a searchable/filterable student list with
                             individual profile views, belt rank and class creation, group email notifications,
-                            and a tablet-friendly interface for two-step logging-in for students attending classes.
+                            and a tablet-friendly UI for 2FA student login when attending classes.
                             <br /><br />
                             Assuming multiple roles in this project, my contributions involved initial server config and route setup using Node
                             and Express.js, implementing a front-to-back authentication module using JSON Web Tokens,

@@ -3,6 +3,10 @@
     grid-template-columns: 1fr;
     grid-template-rows: 0.75fr 1.5fr 0.75fr;
     grid-template-areas: "grid-header" "grid-content" "grid-footer";
+
+    @media screen and (max-width: 500px) {
+        grid-template-rows: 0.5fr 2fr 0.5fr;
+    }
 }
 
 .grid-header, .grid-footer { margin: 0 auto; }
@@ -29,11 +33,16 @@
         grid-template-columns: 1fr;
         grid-template-rows: 0.5fr 1.5fr;
         grid-template-areas: "." ".";
+        padding-top: 15px;
     }
 
     p {
         text-align: justify;
         padding: 0 125px;
+
+        @media screen and (max-width: 992px) {
+            padding: 15px 50px;
+        }
     }
 
     .fade-in {
@@ -43,6 +52,10 @@
 
         :nth-child(2) {
             margin-left: -12%;
+            
+            @media screen and (max-width: 992px) {
+                margin-left: 0;
+            }
         }
 
         .img-link > img {

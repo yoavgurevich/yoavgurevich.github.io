@@ -141,7 +141,14 @@ a {
 #cdot {
     svg {
         margin-left: 12.5%;
-        margin-top: 25px;
+        margin-top: 10%;
+
+        @media screen and (max-width: 500px) {
+            margin-left: -20%;
+            margin-top: -10%;
+            max-height: 35%;
+            overflow: visible !important;
+        }
     }
 }
 

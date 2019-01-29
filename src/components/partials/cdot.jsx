@@ -13,7 +13,7 @@ export default class CDOT extends Component {
                     <ScrollButton direction='up' refsList={this.props.refsList} />
                 </div>
                 <div className="grid-content">
-                    <svg width="100%" height="250" className='slide-left'>
+                    <svg width="100%" height="100%" className='slide-left'>
                         <g>
                             <text dx="162" dy="142" className="svg-xxl eb-garamond" fill="white">CD</text>
                             <circle cx="320" cy="115" r="35" fill="red" />
