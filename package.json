@@ -1,0 +1,52 @@
+{
+  "name": "yoavgurevich.github.io",
+  "version": "1.0.0",
+  "description": "Github pages landing for professional portfolio",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "build": "webpack --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoavgurevich/yoavgurevich.github.io.git"
+  },
+  "author": "Yoav Gurevich",
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-2"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/yoavgurevich/yoavgurevich.github.io/issues"
+  },
+  "homepage": "https://github.com/yoavgurevich/yoavgurevich.github.io#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "node-sass": "^4.8.3",
+    "react-hot-loader": "^4.1.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.20.3",
+    "url-loader": "^1.0.1",
+    "webpack": "4.19.1",
+    "webpack-cli": "2.0.14",
+    "webpack-dev-server": "3.1.3"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-flip-page": "^1.5.3",
+    "react-scroll-to-component": "^1.0.2"
+  }
+}
