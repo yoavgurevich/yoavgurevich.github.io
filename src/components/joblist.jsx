@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import FlipPage from 'react-flip-page';
 
 import Engage from './partials/engage';

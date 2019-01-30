@@ -143,9 +143,14 @@ a {
         margin-left: 12.5%;
         margin-top: 10%;
 
-        @media screen and (max-width: 500px) {
+        @media screen and (min-width: 501px) and (max-width: 767px) {
             margin-left: -20%;
             margin-top: -10%;
+        }
+
+        @media screen and (max-width: 500px) {
+            margin-left: -30%;
+            margin-top: -15%;
             max-height: 35%;
             overflow: visible !important;
         }
@@ -163,7 +168,7 @@ a {
 .slide-left {
     animation: slide-left 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
     
-    @media screen and (max-width: 1023px) {
+    @media screen and (max-width: 767px) {
         animation: slide-up 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
     }
 }
@@ -173,7 +178,7 @@ a {
 }
 
 @media screen and (max-width: 667px) {
-    .a-link, .rfp-touchZone-next, .rfp-touchZone-previous, .text-bg {
+    .a-link, .rfp-touchZone-next, .rfp-touchZone-previous {
         display: none;
     }
 }
