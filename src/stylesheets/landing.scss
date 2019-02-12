@@ -1,9 +1,3 @@
-@for $i from 1 through 5 {
-    .yg#{$i} {
-        background-image: url('../assets/yg' + $i + '.png');
-    }
-}
-
 #skyline {
     width: 100vw;
     height: 50vh;
@@ -53,7 +47,7 @@
         text-align: justify;
         margin-top: -5px;
 
-        @media only screen and (max-width: 667px) {
+        @media only screen and (max-width: 768px) {
             padding: 0 5%;
 
             h5 {
@@ -64,15 +58,45 @@
     }
 
     .landing-img {
-        margin-top: 20px;
+        margin-top: 25px;
         height: 33vh; width: 30vh;
         border-radius: 50%;
-        background-size: cover;
-        background-position-x: 50%;
-        transition: background ease-in 0.3s;
 
         @media screen and (max-width: 1024px) {
             height: 25vh; width: 25vh;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .blur-appear {
+            filter: grayscale(100%);
+            transition: all 1000ms ease-in-out;
+        }
+
+        .blur-appear.blur-appear-active {
+            filter: grayscale(0);
+        }
+
+        .blur-enter {
+            filter: blur(2px);
+            transition: all 300ms linear;
+        }
+        
+        .blur-enter.blur-enter-active {
+            filter: blur(0);
+            transition: all 300ms linear;
+        }
+        
+        .blur-leave {
+            filter: blur(2px);
+            transition: all 300ms linear;
+        }
+        
+        .blur-leave.blur-leave-active {
+            filter: blur(0);
+            transition: all 300ms linear;
         }
     }
 
@@ -81,9 +105,6 @@
     }
 }
 
-.focus-in-contract-bck {
-	animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
 .puff-in-center {
     animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
     animation-delay: 3.75s;

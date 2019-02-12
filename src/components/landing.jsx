@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import ScrollButton from './scrollButton';
+
+import yg1 from '../assets/yg1.png';
+import yg2 from '../assets/yg2.png';
+import yg3 from '../assets/yg3.png';
+import yg4 from '../assets/yg4.png';
+import yg5 from '../assets/yg5.png';
 
 export default class Landing extends Component {
     constructor(props) {
@@ -7,6 +14,7 @@ export default class Landing extends Component {
 
         this.state = {
             currentPic: '',
+            picsCarousel: [yg1, yg2, yg3, yg4, yg5],
             svgClass: '',
             currentIterator: 1
         }
@@ -17,7 +25,7 @@ export default class Landing extends Component {
     componentDidMount() {
         addEventListener('load', () => {
             this.setState({
-                currentPic: 'yg1',
+                currentPic: yg1,
                 currentIterator: 1,
                 svgClass: 'focused'
             });
@@ -31,11 +39,11 @@ export default class Landing extends Component {
     }
 
     cyclePics() {
-        if (this.state.currentPic !== 'yg5') {
+        if (this.state.currentIterator !== 5) {
             setTimeout(() => {
                 this.setState((prevState) => {
                     return {
-                        currentPic: `yg${prevState.currentIterator}`,
+                        currentPic: prevState.picsCarousel[prevState.currentIterator],
                         currentIterator: prevState.currentIterator + 1
                     }
                 });
@@ -46,6 +54,19 @@ export default class Landing extends Component {
     }
 
     render() {
+        let landingImg = this.state.svgClass == 'focused' ? 
+            <CSSTransitionGroup
+                component="div" 
+                className="landing-img"
+                transitionName="blur"
+                transitionAppear={true}
+                transitionAppearTimeout={1100}
+                transitionEnterTimeout={1100}
+                transitionLeaveTimeout={1100}>
+                <img src={this.state.currentPic} key={this.state.currentPic} />
+            </CSSTransitionGroup> :
+            <div className='landing-img'></div>;
+
         return (
             <div className='fsh intro-bg' ref={this.props.refsList.landing}>
                 <svg id='skyline' className={this.state.svgClass}>
@@ -54,7 +75,7 @@ export default class Landing extends Component {
                 </svg>
                 <div className='landing-content vertical-align'>
                     <h1 className='text-center'>&nbsp;</h1>
-                    <div className={'landing-img focus-in-contract-bck ' + this.state.currentPic}></div>
+                    {landingImg}
                     <blockquote className='puff-in-center'>
                         <h5>
                             <p>
