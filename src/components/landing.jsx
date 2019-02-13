@@ -63,7 +63,7 @@ export default class Landing extends Component {
                 transitionAppearTimeout={1100}
                 transitionEnterTimeout={1100}
                 transitionLeaveTimeout={1100}>
-                <img src={this.state.currentPic} key={this.state.currentPic} />
+                <img src={this.state.currentPic} key={this.state.currentPic + Date.now()} />
             </CSSTransitionGroup> :
             <div className='landing-img'></div>;
 

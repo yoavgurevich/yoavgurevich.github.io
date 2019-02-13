@@ -1,6 +1,7 @@
 const webpack = require('webpack');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
-module.exports = {
+module.exports = (env, argv) => ({
     entry: [
         'react-hot-loader/patch',
         './src/index.js'
@@ -35,10 +36,16 @@ module.exports = {
         filename: 'bundle.js'
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new ImageminPlugin({
+            disable: argv.mode !== 'production', // Disable during development
+            pngquant: {
+              quality: '95-100'
+            }
+        })
     ],
     devServer: {
         contentBase: '.',
         hot: true
     }
-};
+});
