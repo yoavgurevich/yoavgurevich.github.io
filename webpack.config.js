@@ -46,6 +46,7 @@ module.exports = (env, argv) => ({
     ],
     devServer: {
         contentBase: '.',
-        hot: true
+        hot: true,
+        compress: argv.mode === 'production'
     }
 });
