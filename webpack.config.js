@@ -1,7 +1,9 @@
 const webpack = require('webpack');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-module.exports = (env, argv) => ({
+var baseConfig  = {
     entry: [
         'react-hot-loader/patch',
         './src/index.js'
@@ -34,19 +36,45 @@ module.exports = (env, argv) => ({
         path: __dirname,
         publicPath: '/',
         filename: 'bundle.js'
-    },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new ImageminPlugin({
-            disable: argv.mode !== 'production', // Disable during development
-            pngquant: {
-              quality: '95-100'
-            }
-        })
-    ],
-    devServer: {
-        contentBase: '.',
-        hot: true,
-        compress: argv.mode === 'production'
     }
-});
+};
+
+var environmentAdditionals = {
+    'development': {
+        plugins: [
+            new webpack.HotModuleReplacementPlugin(),
+            new ImageminPlugin({
+                pngquant: {
+                  quality: '95-100'
+                }
+            })
+        ],
+        devServer: {
+            contentBase: '.',
+            hot: true
+        }
+    },
+    'production': {
+        optimization: {
+            minimizer: [
+              new UglifyJsPlugin({
+                uglifyOptions: {
+                  mangle: {
+                    keep_fnames: true,
+                  },
+                },
+              })
+            ],
+        },
+        plugins: [
+            new OptimizeCssAssetsPlugin(),
+            new ImageminPlugin({
+                pngquant: {
+                  quality: '95-100'
+                }
+            })
+        ],
+    }
+}
+
+module.exports = (env, argv) => (Object.assign(baseConfig, environmentAdditionals[argv.mode]));

@@ -54,19 +54,6 @@ export default class Landing extends Component {
     }
 
     render() {
-        let landingImg = this.state.svgClass == 'focused' ? 
-            <CSSTransitionGroup
-                component="div" 
-                className="landing-img"
-                transitionName="blur"
-                transitionAppear={true}
-                transitionAppearTimeout={1100}
-                transitionEnterTimeout={1100}
-                transitionLeaveTimeout={1100}>
-                <img src={this.state.currentPic} key={this.state.currentPic + Date.now()} />
-            </CSSTransitionGroup> :
-            <div className='landing-img'></div>;
-
         return (
             <div className='fsh intro-bg' ref={this.props.refsList.landing}>
                 <svg id='skyline' className={this.state.svgClass}>
@@ -75,7 +62,16 @@ export default class Landing extends Component {
                 </svg>
                 <div className='landing-content vertical-align'>
                     <h1 className='text-center'>&nbsp;</h1>
-                    {landingImg}
+                    <CSSTransitionGroup
+                        component="div" 
+                        className="landing-img"
+                        transitionName="blur"
+                        transitionAppear={true}
+                        transitionAppearTimeout={1100}
+                        transitionEnterTimeout={1100}
+                        transitionLeaveTimeout={1100}>
+                        <img src={this.state.currentPic} key={this.state.currentPic + Date.now()} />
+                    </CSSTransitionGroup>
                     <blockquote className='puff-in-center'>
                         <h5>
                             <p>
