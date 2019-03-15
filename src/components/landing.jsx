@@ -25,8 +25,7 @@ export default class Landing extends Component {
     componentDidMount() {
         addEventListener('load', () => {
             this.setState({
-                currentPic: yg1,
-                currentIterator: 1,
+                currentPic: this.state.picsCarousel[0],
                 svgClass: 'focused'
             });
 
@@ -54,6 +53,14 @@ export default class Landing extends Component {
     }
 
     render() {
+        let landingImages = []
+        for (let i = 0; i < 5; i++) {
+            const imageStyleConditionals = { 
+                opacity: this.state.currentIterator - 1 !== i ? '0' : '1'
+            }
+            landingImages.push(<img style={imageStyleConditionals} src={this.state.picsCarousel[i]} key={i} />)
+        }
+
         return (
             <div className='fsh intro-bg' ref={this.props.refsList.landing}>
                 <svg id='skyline' className={this.state.svgClass}>
@@ -62,16 +69,9 @@ export default class Landing extends Component {
                 </svg>
                 <div className='landing-content vertical-align'>
                     <h1 className='text-center'>&nbsp;</h1>
-                    <CSSTransitionGroup
-                        component="div" 
-                        className="landing-img"
-                        transitionName="blur"
-                        transitionAppear={true}
-                        transitionAppearTimeout={1100}
-                        transitionEnterTimeout={1100}
-                        transitionLeaveTimeout={1100}>
-                        <img src={this.state.currentPic} key={this.state.currentPic + Date.now()} />
-                    </CSSTransitionGroup>
+                    <div className='landing-img'>
+                        {landingImages}
+                    </div>
                     <blockquote className='puff-in-center'>
                         <h5>
                             <p>

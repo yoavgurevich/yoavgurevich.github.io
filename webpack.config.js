@@ -42,12 +42,7 @@ var baseConfig  = {
 var environmentAdditionals = {
     'development': {
         plugins: [
-            new webpack.HotModuleReplacementPlugin(),
-            new ImageminPlugin({
-                pngquant: {
-                  quality: '95-100'
-                }
-            })
+            new webpack.HotModuleReplacementPlugin()
         ],
         devServer: {
             contentBase: '.',
