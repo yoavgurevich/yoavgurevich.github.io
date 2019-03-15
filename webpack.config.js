@@ -58,6 +58,9 @@ var environmentAdditionals = {
         optimization: {
             minimizer: [
               new UglifyJsPlugin({
+                extractComments: true,
+                cache: true,
+                parallel: true,
                 uglifyOptions: {
                   mangle: {
                     keep_fnames: true,
