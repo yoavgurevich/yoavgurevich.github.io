@@ -3,7 +3,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-var baseConfig  = {
+var baseConfig = {
     entry: [
         'react-hot-loader/patch',
         './src/index.js'
