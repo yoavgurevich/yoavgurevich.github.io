@@ -8,101 +8,109 @@ export default class ContactMe extends Component {
     constructor(props) {
         super(props);
 
-        this.linkRefs = {
-            twitter: React.createRef(),
-            linkedin: React.createRef(),
-            github: React.createRef()
+        this.state = {
+            links: {
+                linkedin: {
+                    cssClass: 'no-glow fa fa-linkedin-square',
+                },
+                twitter: {
+                    cssClass: 'no-glow fa fa-twitter'
+                },
+                github: {
+                    cssClass: 'no-glow fa fa-github'
+                }
+            }
         }
 
-        this.intervalIds = [];
         this.timeoutIds = [];
-        this.createGlowTimers = this.createGlowTimers.bind(this);
-        this.toggleColorGlow = this.toggleColorGlow.bind(this);
-        this.clearGlowTimers = this.clearGlowTimers.bind(this);
     }
 
     createGlowTimers() {
-        const timeoutId = setTimeout(() => {
-            Object.keys(this.linkRefs).forEach(ref => {
-                let intervalId, timeoutId;
-    
-                switch(ref) {
-                    case 'linkedin':
-                        intervalId = setInterval(() => this.toggleColorGlow('linkedin'), 1000);
-                        this.intervalIds.push(intervalId);
-                        break;
-                    case 'twitter':
-                        timeoutId = setTimeout(() => {
-                            const intervalId = setInterval(() => this.toggleColorGlow('twitter'), 1000);
-                            this.intervalIds.push(intervalId);
-                        }, 500);
-                        this.timeoutIds.push(timeoutId);
-                        break;
-                    default:
-                        timeoutId = setTimeout(() => {
-                            const intervalId = setInterval(() => this.toggleColorGlow('github'), 1000);
-                            this.intervalIds.push(intervalId);
-                        }, 1000);
-                        this.timeoutIds.push(timeoutId);
-                        break;
-                }
+        const initialTimeoutId = setTimeout(() => {
+            Object.keys(this.state.links).forEach(linkName => {
+                const timeoutDelays = {
+                    linkedin: 0,
+                    twitter: 500,
+                    github: 1000
+                };
+
+                const timeoutId = setTimeout(() => this.toggleColorGlow(linkName), timeoutDelays[linkName]);
+                this.timeoutIds.push(timeoutId);
             });
         }, 3000);
 
-        this.timeoutIds.push(timeoutId);
+        this.timeoutIds.push(initialTimeoutId);
     }
 
-    toggleColorGlow(elmKey, resetGlowState = false) {
-        let currentElm = this.linkRefs[elmKey].current;
+    toggleColorGlow(linkName) {
+        const { cssClass } = this.state.links[linkName];
 
-        if (resetGlowState) {
-            if (currentElm && currentElm.className.indexOf('active-glow') !== -1)
-                currentElm.className = currentElm.className.substring(0, currentElm.className.indexOf(' active-glow'));
-
-            return;
-        } else if (currentElm.className.indexOf('active-glow') === -1) {
-            currentElm.className += ' active-glow';
+        if (cssClass.indexOf('active-glow') === -1) {
+            this.setState(prevState => ({
+                links: {
+                    ...prevState.links,
+                    [linkName]: {
+                        cssClass: prevState.links[linkName].cssClass + ' active-glow'
+                    }
+                }
+            }));
         } else {
-            // There are no mistakes, just happy accidents...
-            let resolvedTimeout;
-
-            switch(elmKey) {
-                case 'linkedin':
-                    resolvedTimeout = 1000;
-                    break;
-                case 'twitter':
-                    resolvedTimeout = 500;
-                    break;
-                default:
-                    resolvedTimeout = 0;
-                    break;
-            }
+            const refTimeouts = {
+                linkedin: 900,
+                twitter: 500,
+                github: 0
+            };
 
             const timeoutId = setTimeout(() => {
-                currentElm.className = currentElm.className.substring(0, currentElm.className.indexOf(' active-glow'));
-            }, resolvedTimeout);
+                this.setState(prevState => ({
+                    links: {
+                        ...prevState.links,
+                        [linkName]: {
+                            cssClass: prevState.links[linkName].cssClass.substring(0, cssClass.indexOf(' active-glow'))
+                        }
+                    }
+                }));
+            }, refTimeouts[linkName]);
 
             this.timeoutIds.push(timeoutId);
         }
+
+        const timeoutId = setTimeout(() => this.toggleColorGlow(linkName), 1000);
+        this.timeoutIds.push(timeoutId);
+    };
+
+    clearGlowCssAndTimers() {
+        this.timeoutIds.forEach(timeoutId => clearTimeout(timeoutId));
+
+        Object.keys(this.state.links).forEach(linkName => {
+            if (this.state.links[linkName].cssClass.indexOf('active-glow') !== -1)
+                this.setState(prevState => ({
+                    links: {
+                        ...prevState.links,
+                        [linkName]: {
+                            cssClass: prevState.links[linkName].cssClass.substring(0, prevState.links[linkName].cssClass.indexOf(' active-glow'))
+                        }
+                    }
+                }));
+        });
+
+        this.timeoutIds = [];
     }
 
-    clearGlowTimers() {
-        this.intervalIds.forEach(intervalId => clearInterval(intervalId));
-        this.timeoutIds.forEach(timeoutId => clearTimeout(timeoutId));
+    componentDidMount() {
+        if (this.props.currentBg === 'midnightblue' && !this.timeoutIds.length) this.createGlowTimers();
+    }
+
+    componentDidUpdate() {
+        if (this.props.currentBg === 'midnightblue' && !this.timeoutIds.length) this.createGlowTimers();
+        if (this.timeoutIds.length >= 500 || this.props.currentBg !== 'midnightblue') this.clearGlowCssAndTimers();
     }
 
     componentWillUnmount() {
-        this.clearGlowTimers();
+        this.clearGlowCssAndTimers();
     }
 
     render() {
-        if (this.props.currentBg == 'midnightblue'){
-            this.createGlowTimers();
-        } else {
-            Object.keys(this.linkRefs).forEach(ref => this.toggleColorGlow(ref, true));
-            this.clearGlowTimers();
-        }
-    
         return (
             <div id="contact" className='contact-bg fsh' ref={this.props.refsList.contact}>
                 <header>
@@ -117,13 +125,13 @@ export default class ContactMe extends Component {
                             'league-script no-glow'}>Stay in touch!</h1>
                         <div className='inline-flex'>
                             <a rel='noopener noreferrer' href='//ca.linkedin.com/in/yoav-gurevich-42415886' target='_blank'>
-                                <i ref={this.linkRefs.linkedin} className='no-glow fa fa-linkedin-square'>&nbsp;</i>
+                                <i className={this.state.links.linkedin.cssClass}>&nbsp;</i>
                             </a>
                             <a rel='noopener noreferrer' href='//twitter.com/ygdot14' target='_blank'>
-                                <i ref={this.linkRefs.twitter} className='no-glow fa fa-twitter'>&nbsp;</i>
+                                <i className={this.state.links.twitter.cssClass}>&nbsp;</i>
                             </a>
                             <a rel='noopener noreferrer' href='//github.com/yoavgurevich' target='_blank'>
-                                <i ref={this.linkRefs.github} className='no-glow fa fa-github'>&nbsp;</i>
+                                <i className={this.state.links.github.cssClass}></i>
                             </a>
                         </div>
                     </div>

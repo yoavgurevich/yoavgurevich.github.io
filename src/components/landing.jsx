@@ -15,7 +15,6 @@ export default class Landing extends Component {
         this.state = {
             currentPic: '',
             picsCarousel: [yg1, yg2, yg3, yg4, yg5],
-            svgClass: '',
             currentIterator: 1
         }
 
@@ -24,11 +23,7 @@ export default class Landing extends Component {
 
     componentDidMount() {
         addEventListener('load', () => {
-            this.setState({
-                currentPic: this.state.picsCarousel[0],
-                svgClass: 'focused'
-            });
-
+            this.setState({ currentPic: this.state.picsCarousel[0] });
             this.cyclePics();
         });
     }
@@ -56,14 +51,14 @@ export default class Landing extends Component {
         let landingImages = []
         for (let i = 0; i < 5; i++) {
             const imageStyleConditionals = { 
-                opacity: this.state.currentIterator - 1 !== i ? '0' : '1'
+                opacity: this.state.currentIterator - 1 !== i ? '0.01' : '1'
             }
             landingImages.push(<img style={imageStyleConditionals} src={this.state.picsCarousel[i]} key={i} />)
         }
 
         return (
             <div id="landing" className='fsh intro-bg' ref={this.props.refsList.landing}>
-                <svg id='skyline' className={this.state.svgClass}>
+                <svg id='skyline'>
                     <image xlinkHref='https://openclipart.org/download/307354/1538176045.svg' />
                     <rect></rect>
                 </svg>
