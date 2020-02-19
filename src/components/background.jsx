@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+const INTERSECTION_THRESHOLD = 0.66;
+
 export default class Background extends Component {
     constructor(props) {
         super(props);
@@ -9,8 +11,6 @@ export default class Background extends Component {
             lastComponentId: '',
             jlPage: null
         };
-
-        this.lastScrollPos = 0;
         
         this.refsList = {
             landing: React.createRef(),
@@ -23,40 +23,17 @@ export default class Background extends Component {
     }
 
     componentDidMount() {
-        addEventListener('scroll', this.handleScroll);
+        const observer = new IntersectionObserver(this.handleScroll, { threshold: INTERSECTION_THRESHOLD });
+        Object.keys(this.refsList).forEach(refKey => observer.observe(this.refsList[refKey].current));
     }
 
-    componentWillUnmount() {
-        removeEventListener('scroll', this.handleScroll);
-    }
-
-    handleScroll() {
-        if (document) {
-            const offsets = document.body.getBoundingClientRect();
-            const pageHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, 
-                document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
-            let offsetRatio = Math.abs(offsets.top / pageHeight);
-
-            if (this.lastScrollPos < offsets.top) {
-                if (offsetRatio < 0.4 && offsetRatio >= 0.2) {
-                    this.resolveBg('joblist', this.state.jlPage);
-                } else if (offsetRatio < 0.7 && offsetRatio >= 0.4) {
-                    this.resolveBg('contact');
-                } else {
-                    this.resolveBg('landing');
-                }
-            } else {
-                if (offsetRatio > 0.3 && offsetRatio <= 0.6) {
-                    this.resolveBg('joblist', this.state.jlPage);
-                } else if (offsetRatio > 0.6) {
-                    this.resolveBg('contact');
-                } else {
-                    this.resolveBg('landing');
-                }
+    handleScroll(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && Math.abs(INTERSECTION_THRESHOLD - entry.intersectionRatio) <= 0.1) {
+                console.warn(entry.target.id, entry);
+                this.resolveBg(entry.target.id, entry.target.id === 'joblist' ? this.state.jlPage : null);
             }
-
-            this.lastScrollPos = offsets.top;
-        }
+        });
     }
 
     resolveBg(componentId, jlPage = null) {

@@ -33,7 +33,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
-    "node-sass": "^4.8.3",
+    "node-sass": "^4.13.1",
     "react-hot-loader": "^4.1.0",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.20.3",
@@ -48,7 +48,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-flip-page": "^1.5.3",
+    "react-flip-page": "^1.6.0",
     "react-scroll-to-component": "^1.0.2",
     "react-transition-group": "^1.2.1",
     "uglifyjs-webpack-plugin": "^2.1.1"
