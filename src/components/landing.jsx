@@ -15,7 +15,6 @@ export default class Landing extends Component {
         this.state = {
             currentPic: '',
             picsCarousel: [yg1, yg2, yg3, yg4, yg5],
-            svgClass: '',
             currentIterator: 1
         }
 
@@ -24,11 +23,7 @@ export default class Landing extends Component {
 
     componentDidMount() {
         addEventListener('load', () => {
-            this.setState({
-                currentPic: this.state.picsCarousel[0],
-                svgClass: 'focused'
-            });
-
+            this.setState({ currentPic: this.state.picsCarousel[0] });
             this.cyclePics();
         });
     }
@@ -63,7 +58,7 @@ export default class Landing extends Component {
 
         return (
             <div id="landing" className='fsh intro-bg' ref={this.props.refsList.landing}>
-                <svg id='skyline' className={this.state.svgClass}>
+                <svg id='skyline'>
                     <image xlinkHref='https://openclipart.org/download/307354/1538176045.svg' />
                     <rect></rect>
                 </svg>

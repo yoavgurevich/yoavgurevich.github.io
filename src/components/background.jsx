@@ -30,7 +30,6 @@ export default class Background extends Component {
     handleScroll(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting && Math.abs(INTERSECTION_THRESHOLD - entry.intersectionRatio) <= 0.1) {
-                console.warn(entry.target.id, entry);
                 this.resolveBg(entry.target.id, entry.target.id === 'joblist' ? this.state.jlPage : null);
             }
         });
@@ -83,13 +82,12 @@ export default class Background extends Component {
     }
 
     render() {
-        const childrenWithProps = React.Children.map(this.props.children, (child) => {
-            return React.cloneElement(child, {
+        const childrenWithProps = React.Children.map(this.props.children, (child) => 
+            React.cloneElement(child, {
                 refsList: this.refsList,
                 currentBg: this.state.currentBg,
                 resolveBg: this.resolveBg
-            });
-        });
+            }));
 
         return (
             <div
