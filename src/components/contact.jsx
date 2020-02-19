@@ -104,7 +104,7 @@ export default class ContactMe extends Component {
         }
     
         return (
-            <div className='contact-bg fsh' ref={this.props.refsList.contact}>
+            <div id="contact" className='contact-bg fsh' ref={this.props.refsList.contact}>
                 <header>
                     <h2 onClick={() => scrollToComponent(this.props.refsList.landing.current)}>
                         <i className='fa fa-2x fa-level-up'></i>

@@ -25,7 +25,7 @@ export default class JobList extends Component {
 
     render() {
         return (
-            <div className='container' ref={this.props.refsList.joblist}>
+            <div id="joblist" className='container' ref={this.props.refsList.joblist}>
                 <FlipPage
                     orientation='horizontal'
                     className='flipContainer'

@@ -62,7 +62,7 @@ export default class Landing extends Component {
         }
 
         return (
-            <div className='fsh intro-bg' ref={this.props.refsList.landing}>
+            <div id="landing" className='fsh intro-bg' ref={this.props.refsList.landing}>
                 <svg id='skyline' className={this.state.svgClass}>
                     <image xlinkHref='https://openclipart.org/download/307354/1538176045.svg' />
                     <rect></rect>
