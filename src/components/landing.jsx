@@ -51,7 +51,7 @@ export default class Landing extends Component {
         let landingImages = []
         for (let i = 0; i < 5; i++) {
             const imageStyleConditionals = { 
-                opacity: this.state.currentIterator - 1 !== i ? '0' : '1'
+                opacity: this.state.currentIterator - 1 !== i ? '0.01' : '1'
             }
             landingImages.push(<img style={imageStyleConditionals} src={this.state.picsCarousel[i]} key={i} />)
         }

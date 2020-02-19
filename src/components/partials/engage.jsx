@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import ScrollButton from '../scrollButton';
+
+import PodiumLogo from '../../assets/podium-logo.svg';
+import LrgLogo from '../../assets/access-logo.svg';
  
 export default class Engage extends Component {
     constructor(props) {
@@ -16,7 +19,6 @@ export default class Engage extends Component {
         }
     }
  
-    // TODO: https://youtu.be/ABdm-uzgZeg
     render () {
         let resolvedContent = this.props.currentPage == 0 ? (
             <div className='fsh grid-container'>
@@ -27,10 +29,10 @@ export default class Engage extends Component {
                     <h1 className={this.props.currentBg == 'indianred' || this.state.hasAnimated ? 'text-center slide-left' : 'text-center'}>engage</h1>
                     {this.props.currentBg == 'indianred' || this.state.hasAnimated ? (
                         <div className='fade-in'>
-                            <a className='img-link' href='https://www.engagepeople.com/podium.html' rel='noopener noreferrer' target='_blank'><img src='https://www.engagepeople.com/img/Podium_logo.svg' alt='Podium Logo'></img></a>
-                            <a className='img-link' href='https://www.engagepeople.com/lrg.html' rel='noopener noreferrer' target='_blank'><img src='https://www.engagepeople.com/img/LRG_logo.svg' alt='LRG Logo'></img></a>
+                            <a className='img-link' href='https://www.engagepeople.com/podium.html' rel='noopener noreferrer' target='_blank'><img src={PodiumLogo} alt='Podium Logo'></img></a>
+                            <a className='img-link' href='https://www.engagepeople.com/lrg.html' rel='noopener noreferrer' target='_blank'><img src={LrgLogo} alt='LRG Logo'></img></a>
                             <p>
-                                Spending time on two of the loyalty powerhouse's flagship products Podium & LRG (Axs)
+                                Spending time on two of the loyalty powerhouse's flagship products Podium & Access (LRG)
                                 has helped hone a vast array of full stack web development skills. 
                                 <br /><br />
                                 Catering to enterprise clientele
