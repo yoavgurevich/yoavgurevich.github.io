@@ -48,14 +48,6 @@ export default class Landing extends Component {
     }
 
     render() {
-        let landingImages = []
-        for (let i = 0; i < 5; i++) {
-            const imageStyleConditionals = { 
-                opacity: this.state.currentIterator - 1 !== i ? '0.01' : '1'
-            }
-            landingImages.push(<img style={imageStyleConditionals} src={this.state.picsCarousel[i]} key={i} />)
-        }
-
         return (
             <div id="landing" className='fsh intro-bg' ref={this.props.refsList.landing}>
                 <svg id='skyline'>
@@ -65,7 +57,12 @@ export default class Landing extends Component {
                 <div className='landing-content vertical-align'>
                     <h1 className='text-center'>&nbsp;</h1>
                     <div className='landing-img'>
-                        {landingImages}
+                        <CSSTransitionGroup
+                            transitionName="carousel"
+                            transitionEnterTimeout={300}
+                            transitionLeaveTimeout={300}>
+                            <img src={this.state.currentPic} key={this.state.currentPic} />
+                        </CSSTransitionGroup>
                     </div>
                     <blockquote className='puff-in-center'>
                         <h5>

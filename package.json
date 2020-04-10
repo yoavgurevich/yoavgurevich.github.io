@@ -38,16 +38,16 @@
     "sass-loader": "^7.0.1",
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
-    "webpack": "^4.29.6",
+    "webpack": "^4.42.1",
     "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.2.1"
+    "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-flip-page": "^1.6.0",
     "react-scroll-to-component": "^1.0.2",
     "react-transition-group": "^1.2.1",

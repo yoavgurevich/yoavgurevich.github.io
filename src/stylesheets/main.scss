@@ -9,13 +9,11 @@
 $color-collection: (indianred, mediumseagreen, darkslategrey, black, maroon, midnightblue);
 
 body {
-    background: black;
     margin: 0;
     font-family: 'Nanum Gothic', sans-serif;
-
-    * {
-        overflow: hidden;
-    }
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 @each $color in $color-collection {
@@ -54,12 +52,15 @@ body {
 }
 
 .fsh {
-    min-height: 100vh;
-    color: cornsilk;
+    height: 100vh;
 }
 
 .container {
-    width: 100%; height: 100vh;
+    width: 100%;
+}
+
+.flipContainer {
+    position: initial;
 }
 
 .margin-0 {

@@ -63,6 +63,9 @@ var environmentAdditionals = {
                 },
               })
             ],
+            splitChunks: {
+              chunks: 'all'
+            },
         },
         plugins: [
             new OptimizeCssAssetsPlugin(),

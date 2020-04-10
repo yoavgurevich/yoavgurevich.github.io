@@ -10,10 +10,17 @@ export default class JobList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentPage: 0
+            currentPage: 0,
+            flipOrientation: '',
         }
 
         this.handlePageChange.bind(this);
+    }
+
+    componentDidMount() {
+        this.setState({
+            flipOrientation: window.innerWidth <= 500 ? 'vertical' : 'horizontal'
+        });
     }
 
     handlePageChange(idx) {
@@ -25,29 +32,31 @@ export default class JobList extends Component {
 
     render() {
         return (
-            <div id="joblist" className='container' ref={this.props.refsList.joblist}>
-                <FlipPage
-                    orientation='horizontal'
-                    className='flipContainer'
-                    flipOnTouch
-                    onPageChange={(idx) => this.handlePageChange(idx)}
-                    pageBackground='transparent'
-                    perspective='40em'
-                    responsive>
-                    <Engage
-                        currentBg={this.props.currentBg}
-                        currentPage={this.state.currentPage}
-                        refsList={this.props.refsList} />
-                    <Wellpad
-                        currentPage={this.state.currentPage}
-                        refsList={this.props.refsList} />
-                    <CRKF
-                        currentPage={this.state.currentPage}
-                        refsList={this.props.refsList} />
-                    <CDOT
-                        currentPage={this.state.currentPage}
-                        refsList={this.props.refsList} />
-                </FlipPage>
+            <div id="joblist" className='container fsh font-cornsilk' ref={this.props.refsList.joblist}>
+                {this.state.flipOrientation.length && (
+                    <FlipPage
+                        orientation={this.state.flipOrientation}
+                        className='flipContainer'
+                        flipOnTouch
+                        onPageChange={(idx) => this.handlePageChange(idx)}
+                        pageBackground='transparent'
+                        perspective='40em'
+                        responsive>
+                        <Engage
+                            currentBg={this.props.currentBg}
+                            currentPage={this.state.currentPage}
+                            refsList={this.props.refsList} />
+                        <Wellpad
+                            currentPage={this.state.currentPage}
+                            refsList={this.props.refsList} />
+                        <CRKF
+                            currentPage={this.state.currentPage}
+                            refsList={this.props.refsList} />
+                        <CDOT
+                            currentPage={this.state.currentPage}
+                            refsList={this.props.refsList} />
+                    </FlipPage>
+                )}
             </div>
         );
     }
