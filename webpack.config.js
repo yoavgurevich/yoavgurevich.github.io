@@ -35,7 +35,7 @@ var baseConfig = {
     output: {
         path: __dirname,
         publicPath: '/',
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
     }
 };
 
