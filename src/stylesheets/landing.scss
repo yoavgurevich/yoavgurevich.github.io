@@ -53,6 +53,7 @@
     }
 
     .landing-img {
+        position: relative;
         margin-top: 2.5rem;
         height: 25vh; width: 25vh;
         border-radius: 50%;
@@ -63,8 +64,10 @@
         }
 
         img {
+            opacity: 0.01;
+            position: absolute;
             max-width: 100%;
-            transition: opacity .5s cubic-bezier(0.470, 0.000, 0.745, 0.715);
+            transition: opacity .6s cubic-bezier(0.470, 0.000, 0.745, 0.715);
         }
     }
 
@@ -77,11 +80,8 @@
     animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
     animation-delay: 3.75s;
 }
-
-.image-dormant {
-    opacity: 0.01;
-}
-
+            
 .image-active {
-    opacity: 1;
+    opacity: 1 !important;
+    transition: opacity .6s cubic-bezier(0.470, 0.000, 0.745, 0.715);
 }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import ScrollButton from './scrollButton';
 
 import yg1 from '../assets/yg1.png';
@@ -13,38 +12,31 @@ export default class Landing extends Component {
         super(props);
 
         this.state = {
-            currentPic: '',
-            picsCarousel: [yg1, yg2, yg3, yg4, yg5],
-            currentIterator: 1
+            picsCarousel: [
+                { source: yg1, ref: React.createRef() },
+                { source: yg2, ref: React.createRef() },
+                { source: yg3, ref: React.createRef() },
+                { source: yg4, ref: React.createRef() },
+                { source: yg5, ref: React.createRef() },
+            ],
         }
-
-        this.cyclePics = this.cyclePics.bind(this);
     }
 
     componentDidMount() {
-        addEventListener('load', () => {
-            this.setState({ currentPic: this.state.picsCarousel[0] });
-            this.cyclePics();
-        });
+        addEventListener('load', this.cyclePics());
     }
 
     componentWillUnmount() {
         removeEventListener('load', this.cyclePics);
     }
 
-    cyclePics() {
-        if (this.state.currentIterator !== 5) {
-            setTimeout(() => {
-                this.setState((prevState) => {
-                    return {
-                        currentPic: prevState.picsCarousel[prevState.currentIterator],
-                        currentIterator: prevState.currentIterator + 1
-                    }
-                });
+    cyclePics(index = 0) {
+        if (index === this.state.picsCarousel.length) return;
 
-                this.cyclePics();
-            }, 1100);
-        }
+        setTimeout(() => {
+            this.state.picsCarousel[index].ref.current.className = 'image-active';
+            this.cyclePics(index + 1);
+        }, 900);
     }
 
     render() {
@@ -55,14 +47,8 @@ export default class Landing extends Component {
                     <rect></rect>
                 </svg>
                 <div className='landing-content vertical-align'>
-                    <h1 className='text-center'>&nbsp;</h1>
                     <div className='landing-img'>
-                        <CSSTransitionGroup
-                            transitionName="carousel"
-                            transitionEnterTimeout={300}
-                            transitionLeaveTimeout={300}>
-                            <img src={this.state.currentPic} key={this.state.currentPic} />
-                        </CSSTransitionGroup>
+                        {this.state.picsCarousel.map(({ ref, source }, index) => <img key={Date.now() + index} ref={ref} src={source} />)}
                     </div>
                     <blockquote className='puff-in-center'>
                         <h5>
