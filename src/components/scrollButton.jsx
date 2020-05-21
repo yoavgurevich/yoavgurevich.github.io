@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import scrollToComponent from 'react-scroll-to-component';
 
 export default class ScrollButton extends Component {
     constructor(props) {
@@ -20,7 +19,7 @@ export default class ScrollButton extends Component {
                         resolvedRef = 'joblist'
                     }
         
-                    scrollToComponent(this.props.refsList[resolvedRef].current);
+                    this.props.refsList[resolvedRef].current.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     break;
             }
         }

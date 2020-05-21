@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import scrollToComponent from 'react-scroll-to-component';
 import ReactImage from '../assets/react.png';
 import SassImage from '../assets/sass.png';
 import WebpackImage from '../assets/webpack.png';
@@ -114,7 +113,7 @@ export default class ContactMe extends Component {
         return (
             <div id="contact" className='container contact-bg fsh font-cornsilk' ref={this.props.refsList.contact}>
                 <header>
-                    <h2 onClick={() => scrollToComponent(this.props.refsList.landing.current)}>
+                    <h2 onClick={() => this.props.refsList.landing.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
                         <i className='fa fa-2x fa-level-up'></i>
                     </h2>
                 </header>
