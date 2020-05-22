@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const INTERSECTION_THRESHOLD = 0.66;
+const INTERSECTION_THRESHOLD = 0.6;
 
 export default class Background extends Component {
     constructor(props) {
