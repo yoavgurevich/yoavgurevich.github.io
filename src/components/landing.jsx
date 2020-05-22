@@ -37,7 +37,6 @@ const Landing = ({ refsList }) => {
     <div id="landing" className="fsh intro-bg" ref={refsList.landing}>
       <svg id="skyline">
         <image xlinkHref="https://openclipart.org/download/307354/1538176045.svg" />
-        <rect></rect>
       </svg>
       <div className="landing-content vertical-align">
         <div className="landing-img">

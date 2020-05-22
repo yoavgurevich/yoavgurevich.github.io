@@ -97,12 +97,12 @@ export default class ContactMe extends Component {
     }
 
     componentDidMount() {
-        if (this.props.currentBg === 'midnightblue' && !this.timeoutIds.length) this.createGlowTimers();
+        if (this.props.currentBg === 'black' && !this.timeoutIds.length) this.createGlowTimers();
     }
 
     componentDidUpdate() {
-        if (this.props.currentBg === 'midnightblue' && !this.timeoutIds.length) this.createGlowTimers();
-        if (this.timeoutIds.length >= 500 || this.props.currentBg !== 'midnightblue') this.clearGlowCssAndTimers();
+        if (this.props.currentBg === 'black' && !this.timeoutIds.length) this.createGlowTimers();
+        if (this.timeoutIds.length >= 500 || this.props.currentBg !== 'black') this.clearGlowCssAndTimers();
     }
 
     componentWillUnmount() {
@@ -118,8 +118,8 @@ export default class ContactMe extends Component {
                     </h2>
                 </header>
                 <main className='text-center'>
-                    <div className={this.props.currentBg == 'midnightblue' ? 'content' : 'content no-glow-border'}>
-                        <h1 className={this.props.currentBg == 'midnightblue' ? 
+                    <div className={this.props.currentBg == 'black' ? 'content' : 'content no-glow-border'}>
+                        <h1 className={this.props.currentBg == 'black' ? 
                             'league-script text-flicker-in-glow' : 
                             'league-script no-glow'}>Stay in touch!</h1>
                         <div className='inline-flex'>

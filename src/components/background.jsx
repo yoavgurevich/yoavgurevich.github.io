@@ -24,7 +24,7 @@ export default class Background extends Component {
 
     componentDidMount() {
         const observer = new IntersectionObserver(this.handleScroll, { threshold: INTERSECTION_THRESHOLD });
-        Object.keys(this.refsList).forEach(refKey => observer.observe(this.refsList[refKey].current));
+        Object.values(this.refsList).forEach(ref => observer.observe(ref.current));
     }
 
     handleScroll(entries) {
@@ -45,7 +45,7 @@ export default class Background extends Component {
                         resolvedBackground = 'indianred';
                         break;
                     case 'contact':
-                        resolvedBackground = 'midnightblue';
+                        resolvedBackground = 'black';
                         break;
                     default:
                         resolvedBackground = 'newgray';
