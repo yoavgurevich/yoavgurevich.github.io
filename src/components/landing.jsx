@@ -16,6 +16,8 @@ const Landing = ({ refsList }) => {
     { source: yg5, ref: React.useRef() },
   ];
 
+  const [loaded, setLoaded] = React.useState(false);
+
   React.useEffect(() => {
     addEventListener("load", cyclePics());
 
@@ -25,10 +27,10 @@ const Landing = ({ refsList }) => {
   }, []);
 
   const cyclePics = (index = 0) => {
-    if (index === picsCarousel.length) return;
+    if (index === picsCarousel.length + 1) return setLoaded(true);
 
     setTimeout(() => {
-      picsCarousel[index].ref.current.className = "image-active";
+      if (picsCarousel[index]) picsCarousel[index].ref.current.className = "image-active";
       cyclePics(index + 1);
     }, 900);
   };
@@ -40,7 +42,7 @@ const Landing = ({ refsList }) => {
       </svg>
       <div className="landing-content vertical-align">
         <div className="landing-img">
-          {picsCarousel.map(({ ref, source }, index) => (
+          {loaded ? <img src={yg5} className="image-active" /> : picsCarousel.map(({ ref, source }, index) => (
             <img key={Date.now() + index} ref={ref} src={source} />
           ))}
         </div>

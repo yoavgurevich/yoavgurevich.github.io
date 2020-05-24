@@ -14,23 +14,25 @@
   },
   "author": "Yoav Gurevich",
   "license": "MIT",
-  "babel": {
-    "presets": [
-      "env",
-      "react",
-      "stage-2"
-    ]
-  },
   "bugs": {
     "url": "https://github.com/yoavgurevich/yoavgurevich.github.io/issues"
   },
   "homepage": "https://github.com/yoavgurevich/yoavgurevich.github.io#readme",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.0",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
     "node-sass": "^4.13.1",
