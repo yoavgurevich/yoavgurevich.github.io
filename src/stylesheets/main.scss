@@ -6,7 +6,7 @@
 @import './grid.scss';
 @import './partials/wellpad.scss';
 
-$color-collection: (indianred, mediumseagreen, darkslategrey, black, maroon, midnightblue);
+$color-collection: (indianred, mediumseagreen, darkslategrey, black, maroon, black);
 
 body {
     margin: 0;
@@ -17,17 +17,10 @@ body {
 }
 
 @each $color in $color-collection {
-    @if nth($color, 1) == midnightblue {
-        .#{$color} {
-            background: #191930;
-            transition: background linear 1s;
-        }
-    } @else {
-        .#{$color} {
-            background: nth($color, 1);
-            transition: background linear 1s;
-        }
-    }
+  .#{$color} {
+      background: nth($color, 1);
+      transition: background linear 1s;
+  }
 }
 
 .newgray {

@@ -1,38 +1,28 @@
-import React, { Component } from 'react';
-import scrollToComponent from 'react-scroll-to-component';
+import React from "react";
 
-export default class ScrollButton extends Component {
-    constructor(props) {
-        super(props);
+const ScrollButton = ({ direction, refsList, currentElm = "joblist" }) => {
+  const handleClick = () => {
+    if (refsList) {
+      const refKeys = Object.keys(refsList);
+      const resolvedRefIndex =
+        direction === "up"
+          ? refKeys.indexOf(currentElm) - 1
+          : refKeys.indexOf(currentElm) + 1;
 
-        this.handleClick = this.handleClick.bind(this);
+      refsList[refKeys[resolvedRefIndex]].current.scrollIntoView({
+        behavior: "smooth",
+        block: direction === "up" ? "start" : "end",
+      });
     }
+  };
 
-    handleClick() {
-        if (this.props.refsList) {
-            switch(this.props.direction) {
-                case 'up':
-                case 'down':
-                    let resolvedRef = this.props.direction === 'up' ?
-                        'landing' : 'contact';
-        
-                    if (this.props.currentElm) {
-                        resolvedRef = 'joblist'
-                    }
-        
-                    scrollToComponent(this.props.refsList[resolvedRef].current);
-                    break;
-            }
-        }
-    }
+  return (
+    <div onClick={handleClick} className="slide-link-container">
+      <h2>
+        <i className={"fa fa-2x fa-angle-double-" + direction}></i>
+      </h2>
+    </div>
+  );
+};
 
-    render() {
-        return (
-            <div onClick={this.handleClick} className='slide-link-container'>
-                <h2>
-                    <i className={'fa fa-2x fa-angle-double-' + this.props.direction}></i>
-                </h2>
-            </div>
-        );
-    }
-}
+export default ScrollButton;

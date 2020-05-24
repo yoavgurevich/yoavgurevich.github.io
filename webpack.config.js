@@ -13,7 +13,32 @@ var baseConfig = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: ['babel-loader']
+                use: {
+                  loader: 'babel-loader',
+                  options: {
+                    "presets": [
+                      "@babel/preset-env",
+                      "@babel/preset-react"
+                    ],
+                    plugins: [
+                        "@babel/plugin-proposal-optional-chaining",
+                        "@babel/plugin-syntax-dynamic-import",
+                        "@babel/plugin-syntax-import-meta",
+                        "@babel/plugin-proposal-class-properties",
+                        "@babel/plugin-proposal-json-strings",
+                        [
+                            "@babel/plugin-proposal-decorators",
+                            {
+                                "legacy": true
+                            }
+                        ],
+                        "@babel/plugin-proposal-function-sent",
+                        "@babel/plugin-proposal-export-namespace-from",
+                        "@babel/plugin-proposal-numeric-separator",
+                        "@babel/plugin-proposal-throw-expressions"
+                    ]
+                  }
+                }
             },
             {
                 test: /\.scss$/,
