@@ -9,51 +9,48 @@ var baseConfig = {
         './src/index.js'
     ],
     module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: {
-                  loader: 'babel-loader',
-                  options: {
-                    "presets": [
-                      "@babel/preset-env",
-                      "@babel/preset-react"
-                    ],
-                    plugins: [
-                        "@babel/plugin-proposal-optional-chaining",
-                        "@babel/plugin-syntax-dynamic-import",
-                        "@babel/plugin-syntax-import-meta",
-                        "@babel/plugin-proposal-class-properties",
-                        "@babel/plugin-proposal-json-strings",
-                        [
-                            "@babel/plugin-proposal-decorators",
-                            {
-                                "legacy": true
-                            }
-                        ],
-                        "@babel/plugin-proposal-function-sent",
-                        "@babel/plugin-proposal-export-namespace-from",
-                        "@babel/plugin-proposal-numeric-separator",
-                        "@babel/plugin-proposal-throw-expressions"
-                    ]
-                  }
-                }
-            },
-            {
-                test: /\.scss$/,
-                loaders: ['style-loader', 'css-loader', 'sass-loader']
-            },
-            {
-                test: /\.css$/,
-                loaders: ['style-loader', 'css-loader']
-            },
-            {
-                test: /\.(png|jpg|jpeg|gif|ico|ttf|eot|svg|woff(2)?)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
-                loader: 'file-loader'
+      rules: [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              "presets": [
+                "@babel/preset-env",
+                "@babel/preset-react"
+              ],
+              plugins: [
+                "@babel/plugin-proposal-optional-chaining",
+                "@babel/plugin-syntax-dynamic-import",
+                "@babel/plugin-syntax-import-meta",
+                "@babel/plugin-proposal-class-properties",
+                "@babel/plugin-proposal-json-strings",
+                [
+                    "@babel/plugin-proposal-decorators",
+                    {
+                        "legacy": true
+                    }
+                ],
+                "@babel/plugin-proposal-throw-expressions"
+              ]
             }
-        ]
-      },
+          }
+        },
+        {
+            test: /\.scss$/,
+            loaders: ['style-loader', 'css-loader', 'sass-loader']
+        },
+        {
+            test: /\.css$/,
+            loaders: ['style-loader', 'css-loader']
+        },
+        {
+            test: /\.(png|jpg|jpeg|gif|ico|ttf|eot|svg|woff(2)?)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+            loader: 'file-loader'
+        }
+      ]
+    },
     resolve: {
         extensions: ['*', '.js', '.jsx']
     },
@@ -76,18 +73,6 @@ var environmentAdditionals = {
     },
     'production': {
         optimization: {
-            minimizer: [
-              new UglifyJsPlugin({
-                extractComments: true,
-                cache: true,
-                parallel: true,
-                uglifyOptions: {
-                  mangle: {
-                    keep_fnames: true,
-                  },
-                },
-              })
-            ],
             splitChunks: {
               chunks: 'all'
             },
