@@ -42,9 +42,13 @@ const Landing = ({ refsList }) => {
       </svg>
       <div className="landing-content vertical-align">
         <div className="landing-img">
-          {loaded ? <img src={yg5} className="image-active" /> : picsCarousel.map(({ ref, source }, index) => (
-            <img key={Date.now() + index} ref={ref} src={source} />
-          ))}
+          {loaded ? (
+            <img src={yg5} className="image-active" />
+          ) : (
+            picsCarousel.map(({ ref, source }, index) => (
+              <img key={Date.now() + index} ref={ref} src={source} />
+            ))
+          )}
         </div>
         <blockquote className="puff-in-center">
           <h5>
