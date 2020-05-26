@@ -59,29 +59,15 @@ export default class App extends Component {
             resolvedBackground = "indianred";
             break;
           case "contact":
-            resolvedBackground = "black";
+            resolvedBackground = "newgray-dark";
             break;
           default:
             resolvedBackground = "newgray";
             break;
         }
       } else {
-        const bgMapping = ["engage", "wellpad", "crkf", "cdot"];
-
-        switch (bgMapping[jlPage]) {
-          case "engage":
-            resolvedBackground = "indianred";
-            break;
-          case "wellpad":
-            resolvedBackground = "mediumseagreen";
-            break;
-          case "crkf":
-            resolvedBackground = "darkslategrey";
-            break;
-          default:
-            resolvedBackground = "maroon";
-            break;
-        }
+        const bgMapping = ["indianred", "mediumseagreen", "darkslategrey", "maroon"];
+        resolvedBackground = bgMapping[jlPage];
       }
 
       this.setState((currentState) =>
@@ -105,9 +91,7 @@ export default class App extends Component {
 
     return (
       <div className={this.state.currentBg}>
-        <Landing {...baseProps} />
-        <JobList {...baseProps} />
-        <Contact {...baseProps} />
+        {[Landing, JobList, Contact].map((Component, index) => <Component key={`${Date.now()}-${index}`} {...baseProps} />)}
       </div>
     );
   }

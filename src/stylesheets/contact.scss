@@ -1,150 +1,153 @@
 .contact-bg {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 2fr 0.5fr;
-    align-items: center;
-    max-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 2fr 0.5fr;
+  align-items: center;
+  max-height: 100vh;
+  position: relative;
 
-    header {
-        z-index: 20;
-        position: relative;
-        left: 92%;
+  header {
+    z-index: 20;
+    position: relative;
+    left: 92%;
 
-        @media screen and (max-width: 992px) {
-            left: 82%;
-        }
-
-        h2 {
-            .fa-level-up {
-                cursor: pointer;
-                opacity: 0.2;
-                transition: all 0.3s ease-out;
-    
-                &:hover {
-                    transition: all 0.3s ease-in;
-                    opacity: 1;
-                }
-            }
-        }
+    @media screen and (max-width: 992px) {
+      left: 82%;
     }
 
-    .content, footer {
-        z-index: 10;
+    h2 {
+      .fa-level-up {
+        cursor: pointer;
+        opacity: 0.2;
+        transition: all 0.3s ease-out;
+
+        &:hover {
+          transition: all 0.3s ease-in;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  main {
+    min-width: 100vw;
+    min-height: 100%;
+
+    .content,
+    .inline-flex {
+      position: relative;
     }
 
-    main {
-        min-width: 100vw;
-        min-height: 100%;
-
-        .content, .inline-flex {
-            position: relative;
-        }
-
-        .content {
-            border: 5px solid cornsilk;
-            border-radius: 50%;
-            width: fit-content;
-            margin: 5% auto;
-            padding: 70px;
-            animation: flicker 6s infinite alternate;
-
-            @media screen and (max-width: 500px) {
-                transform: scale(0.6);
-                margin-left: -5%;
-            }
-
-            @media screen and (min-width: 501px) and (max-width: 992px) {
-                transform: scale(0.8);
-            }
-
-            @media (min-width: 1024px) {
-                width: 22.5vw;
-            }
-        }
-
-        .no-glow-border {
-            border: 5px solid rgba(250,250,250, 0.1) !important;
-            animation: none;
-        }
-
-        .inline-flex, h1, a, i {
-            overflow: visible !important;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .inline-flex {
-            display: inline-flex;
-            align-items: center;
-            padding-left: 15px;
-            padding-bottom: 20px;
-
-            a {
-                padding-right: 10px;
-                text-decoration: none !important;
-
-                i {
-                    color: cornsilk;
-                    font-size: 44pt;
-                }
-
-                .fa-twitter {
-                    &:hover, &:focus {
-                        color: cornflowerblue !important;
-                    }
-                }
-
-                .fa-github {
-                    &:hover, &:focus {
-                        color: lighten(grey, 5%) !important;
-                    }
-                }
-            }
-
-            i:hover, i:focus, i:active, .active-glow {
-                opacity: 1 !important;
-                text-shadow: 0.1px 0 25px;
-            }
-
-            .fa-twitter.active-glow {
-                color: cornflowerblue !important;
-            }
-
-            .fa-github.active-glow {
-                color: lighten(grey, 5%) !important;
-            }
-
-            .fa-linkedin-square.active-glow {
-                color: cornsilk !important;
-            }
-        }
-
+    .inline-flex,
+    h1,
+    a,
+    i {
+      overflow: visible !important;
     }
 
-    footer {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 3%;
-
-        @media screen and (max-width: 800px) {
-            justify-content: center;
-            text-align: center;
-            padding-bottom: 25px;
-        }
-
-        h5 {
-            font-size: 12pt !important;
-            margin-bottom: 5px;
-            font-weight: 200;
-        }
-
-        .vendor-imgs {
-            img {
-                margin: 20px 10px 20px 15px;
-                max-height: 30px;
-            }
-        }
+    a {
+      text-decoration: none;
     }
+
+    .inline-flex {
+      display: inline-flex;
+      align-items: center;
+      padding-left: 15px;
+      padding-bottom: 20px;
+
+      a {
+        padding-right: 10px;
+        text-decoration: none !important;
+
+        i {
+          color: cornsilk;
+          font-size: 44pt;
+        }
+
+        .fa-twitter {
+          &:hover,
+          &:focus {
+            color: cornflowerblue !important;
+          }
+        }
+
+        .fa-github {
+          &:hover,
+          &:focus {
+            color: lighten(grey, 5%) !important;
+          }
+        }
+      }
+
+      i:hover,
+      i:focus,
+      i:active,
+      .active-glow {
+        opacity: 1 !important;
+      }
+
+      .fa-twitter.active-glow {
+        color: cornflowerblue !important;
+      }
+
+      .fa-github.active-glow {
+        color: lighten(grey, 5%) !important;
+      }
+
+      .fa-linkedin-square.active-glow {
+        color: cornsilk !important;
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    margin-bottom: 10vh;
+
+    div {
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 800px) {
+      justify-content: center;
+      text-align: center;
+    }
+
+    h5 {
+      font-size: 12pt !important;
+      margin-bottom: 5px;
+      font-weight: 200;
+      opacity: 0.2;
+    }
+
+    .vendor-imgs {
+      img {
+        margin: 20px 10px 20px 15px;
+        max-height: 30px;
+      }
+    }
+  }
+
+  #skyline-inverse {
+    width: 100vw;
+    height: 50vh;
+    position: absolute;
+    bottom: 0;
+  }
+
+  #skyline-inverse > image {
+    width: 100vw;
+    height: 60vh;
+    transform: scale(1.05) translateX(-2vw);
+
+    @media screen and (max-width: 1024px) {
+      transform: scale(1.3) translate(-20vw, -10vw);
+      height: 75vh;
+    }
+  }
 }

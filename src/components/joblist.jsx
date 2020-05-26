@@ -1,63 +1,60 @@
-import React, { Component } from 'react';
-import FlipPage from 'react-flip-page';
+import React, { Component } from "react";
+import Swiper from "swiper";
 
-import Engage from './partials/engage';
-import Wellpad from './partials/wellpad';
-import CRKF from './partials/crkf';
-import CDOT from './partials/cdot';
+import Engage from "./partials/engage";
+import Wellpad from "./partials/wellpad";
+import CRKF from "./partials/crkf";
+import CDOT from "./partials/cdot";
 
-export default class JobList extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            currentPage: 0,
-            flipOrientation: '',
-        }
+const JobList = props => {
+  const [currentPage, setCurrentPage] = React.useState(0);
 
-        this.handlePageChange.bind(this);
-    }
+  React.useEffect(() => {
+    new Swiper(".swiper-container", {
+      effect: "cube",
+      loop: true,
+      grabCursor: true,
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+      },
+      on: {
+        slideNextTransitionStart: () => {
+          setCurrentPage(currentPage + 1);
+        },
+        slidePrevTransitionStart: () => {
+          setCurrentPage(currentPage - 1);
+        },
+      }
+    });
+  }, []);
 
-    componentDidMount() {
-        this.setState({
-            flipOrientation: window.innerWidth <= 500 ? 'vertical' : 'horizontal'
-        });
-    }
+  return (
+    <div
+      id="joblist"
+      className="swiper-container font-cornsilk"
+      style={{ position: "relative" }}
+      ref={props.refsList.joblist}
+    >
+      <div className="swiper-wrapper">
+        <Engage
+          currentBg={props.currentBg}
+          refsList={props.refsList}
+        />
+        <Wellpad
+          refsList={props.refsList}
+        />
+        <CRKF
+          refsList={props.refsList}
+        />
+        <CDOT
+          refsList={props.refsList}
+        />
+      </div>
 
-    handlePageChange(idx) {
-        this.setState({currentPage: idx});
-        if (this.props.resolveBg) {
-            this.props.resolveBg('joblist', idx);
-        }
-    }
-
-    render() {
-        return (
-            <div id="joblist" className='container fsh font-cornsilk' ref={this.props.refsList.joblist}>
-                {this.state.flipOrientation.length && (
-                    <FlipPage
-                        orientation={this.state.flipOrientation}
-                        className='flipContainer'
-                        flipOnTouch
-                        onPageChange={(idx) => this.handlePageChange(idx)}
-                        pageBackground='transparent'
-                        perspective='40em'
-                        responsive>
-                        <Engage
-                            currentBg={this.props.currentBg}
-                            currentPage={this.state.currentPage}
-                            refsList={this.props.refsList} />
-                        <Wellpad
-                            currentPage={this.state.currentPage}
-                            refsList={this.props.refsList} />
-                        <CRKF
-                            currentPage={this.state.currentPage}
-                            refsList={this.props.refsList} />
-                        <CDOT
-                            currentPage={this.state.currentPage}
-                            refsList={this.props.refsList} />
-                    </FlipPage>
-                )}
-            </div>
-        );
-    }
+      <div className="swiper-pagination" />
+    </div>
+  );
 }
+
+export default JobList;

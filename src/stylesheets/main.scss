@@ -6,7 +6,7 @@
 @import './grid.scss';
 @import './partials/wellpad.scss';
 
-$color-collection: (indianred, mediumseagreen, darkslategrey, black, maroon, black);
+$color-collection: (white, indianred, mediumseagreen, darkslategrey, maroon);
 
 body {
     margin: 0;
@@ -26,6 +26,11 @@ body {
 .newgray {
     background: #c3c2c3;
     transition: background linear 1s;
+}
+
+.newgray-dark {
+  background: #2F2F2F;
+  transition: background linear 1s;
 }
 
 // SCSS extendible blocks
