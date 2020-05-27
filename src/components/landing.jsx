@@ -19,18 +19,15 @@ const Landing = ({ refsList }) => {
   const [loaded, setLoaded] = React.useState(false);
 
   React.useEffect(() => {
-    addEventListener("load", cyclePics());
-
-    return () => {
-      removeEventListener("load", cyclePics);
-    };
+    cyclePics();
   }, []);
 
   const cyclePics = (index = 0) => {
     if (index === picsCarousel.length + 1) return setLoaded(true);
 
     setTimeout(() => {
-      if (picsCarousel[index]) picsCarousel[index].ref.current.className = "image-active";
+      const currentIndexRef = picsCarousel[index]?.ref?.current;
+      if (currentIndexRef) currentIndexRef.className = "image-active";
       cyclePics(index + 1);
     }, 900);
   };

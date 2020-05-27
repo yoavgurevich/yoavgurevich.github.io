@@ -41,33 +41,25 @@ export default class App extends Component {
         entry.isIntersecting &&
         Math.abs(INTERSECTION_THRESHOLD - entry.intersectionRatio) <= 0.1
       ) {
-        this.resolveBg(
-          entry.target.id,
-          entry.target.id === "joblist" ? this.state.jlPage : null
-        );
+        this.resolveBg(entry.target.id);
       }
     });
   }
 
-  resolveBg(componentId, jlPage = null) {
-    if (componentId !== this.state.lastComponentId || jlPage !== null) {
+  resolveBg(componentId) {
+    if (componentId !== this.state.lastComponentId) {
       let resolvedBackground = "";
 
-      if (!jlPage) {
-        switch (componentId) {
-          case "joblist":
-            resolvedBackground = "indianred";
-            break;
-          case "contact":
-            resolvedBackground = "newgray-dark";
-            break;
-          default:
-            resolvedBackground = "newgray";
-            break;
-        }
-      } else {
-        const bgMapping = ["indianred", "mediumseagreen", "darkslategrey", "maroon"];
-        resolvedBackground = bgMapping[jlPage];
+      switch (componentId) {
+        case "joblist":
+          resolvedBackground = "indianred";
+          break;
+        case "contact":
+          resolvedBackground = "newgray-dark";
+          break;
+        default:
+          resolvedBackground = "newgray";
+          break;
       }
 
       this.setState((currentState) =>
@@ -75,7 +67,6 @@ export default class App extends Component {
           ? {
               currentBg: resolvedBackground,
               lastComponentId: componentId,
-              jlPage: jlPage !== null ? jlPage : currentState.jlPage,
             }
           : null
       );
@@ -85,12 +76,13 @@ export default class App extends Component {
   render() {
     const baseProps = {
       refsList: this.refsList,
+      lastComponentId: this.state.lastComponentId,
       currentBg: this.state.currentBg,
       resolveBg: this.resolveBg,
     };
 
     return (
-      <div className={this.state.currentBg}>
+      <div id="background" className={this.state.currentBg}>
         {[Landing, JobList, Contact].map((Component, index) => <Component key={`${Date.now()}-${index}`} {...baseProps} />)}
       </div>
     );
