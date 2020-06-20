@@ -17,7 +17,7 @@ const ScrollButton = ({ direction, refsList, currentElm = "joblist" }) => {
   };
 
   return (
-    <div onClick={handleClick} className="slide-link-container">
+    <div onClick={handleClick} className="slide-link-container text-center">
       <h2>
         <i className={"fa fa-2x fa-angle-double-" + direction}></i>
       </h2>

@@ -37,6 +37,7 @@ export default class App extends Component {
 
   handleScroll(entries) {
     entries.forEach((entry) => {
+      console.log('handling scroll');
       if (
         entry.isIntersecting &&
         Math.abs(INTERSECTION_THRESHOLD - entry.intersectionRatio) <= 0.1

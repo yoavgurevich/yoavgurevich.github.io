@@ -1,43 +1,47 @@
 import React, { Component } from "react";
-import Swiper from "swiper";
+import Swiper from 'react-id-swiper';
 
+import ScrollButton from './scrollButton';
 import Engage from "./partials/engage";
 import Wellpad from "./partials/wellpad";
 import CRKF from "./partials/crkf";
 import CDOT from "./partials/cdot";
 
 const JobList = props => {
-  let swiper = {};
+  const [swiper, setSwiper] = React.useState(null);
+  const swiperParams = {
+    effect: "cube",
+    cubeEffect: {
+      shadow: false,
+      slideShadows: false,
+    },
+    loop: true,
+    grabCursor: true,
+    pagination: {
+      el: ".swiper-pagination",
+      dynamicBullets: true,
+    }
+  };
 
   React.useEffect(() => {
-    swiper = new Swiper(".swiper-container", {
-      effect: "cube",
-      cubeEffect: {
-        shadow: false,
-      },
-      loop: true,
-      grabCursor: true,
-      pagination: {
-        el: ".swiper-pagination",
-        dynamicBullets: true,
-      }
-    });
-
-    swiper.on('slideChange', () => {
-      if (props.lastComponentId === 'joblist') {
-        const bgMapping = ["indianred", "mediumseagreen", "darkslategrey", "maroon"];
-        document.getElementById('background').className = bgMapping[swiper.realIndex];
-      }
-    });
-  }, []);
+    if (swiper !== null) {
+      swiper.on('slideChange', () => {
+        if (props.lastComponentId === 'joblist') {
+          const bgMapping = ["indianred", "mediumseagreen", "darkslategrey", "maroon"];
+          document.getElementById('background').className = bgMapping[swiper.realIndex];
+        }
+      });
+    }
+  }, [swiper]);
 
   return (
     <div
       id="joblist"
-      className="swiper-container font-cornsilk"
+      className="font-cornsilk"
       ref={props.refsList.joblist}
     >
-      <div className="swiper-wrapper">
+      <ScrollButton direction="up" refsList={props.refsList} />
+      <Swiper {...swiperParams} getSwiper={setSwiper}>
         <Engage
           currentBg={props.currentBg}
           refsList={props.refsList}
@@ -51,9 +55,8 @@ const JobList = props => {
         <CDOT
           refsList={props.refsList}
         />
-      </div>
-
-      <div className="swiper-pagination" />
+      </Swiper>
+      <ScrollButton direction="down" refsList={props.refsList} />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ScrollButton from "../scrollButton";
 
 // TODO: https://youtu.be/ABdm-uzgZeg
 export default class CRKF extends Component {
@@ -10,10 +9,7 @@ export default class CRKF extends Component {
   render() {
     return (
       <div id="crkf" className="swiper-slide" ref={this.props.refsList.crkf}>
-        <div className="fsh grid-container">
-          <div className="grid-header">
-            <ScrollButton direction="up" refsList={this.props.refsList} />
-          </div>
+        <div className="slide-content">
           <div className="grid-content">
             <h1 className="aldrich text-center slide-left">
               実 道 空 手
@@ -53,9 +49,6 @@ export default class CRKF extends Component {
                 largely responsible for the front-end style guide and aesthetic.
               </p>
             </div>
-          </div>
-          <div className="grid-footer">
-            <ScrollButton direction="down" refsList={this.props.refsList} />
           </div>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ScrollButton from "../scrollButton";
 
 export default class Wellpad extends Component {
   constructor(props) {
@@ -31,10 +30,7 @@ export default class Wellpad extends Component {
         className="swiper-slide"
         ref={this.props.refsList.wellpad}
       >
-        <div className="fsh grid-container wellpad-bg">
-          <div className="grid-header">
-            <ScrollButton direction="up" refsList={this.props.refsList} />
-          </div>
+        <div className="slide-content">
           <div className="grid-content margin-bottom-40">
             <h1 className="rouge-script h0 text-center slide-left">
               Wellpad.io
@@ -129,9 +125,6 @@ export default class Wellpad extends Component {
                 ></img>
               </div>
             </div>
-          </div>
-          <div className="grid-footer align-top">
-            <ScrollButton direction="down" refsList={this.props.refsList} />
           </div>
         </div>
       </div>

@@ -37,7 +37,7 @@ const Landing = ({ refsList }) => {
       <svg id="skyline">
         <image xlinkHref="https://openclipart.org/download/307354/1538176045.svg" />
       </svg>
-      <div className="landing-content vertical-align">
+      <div className="landing-content flex flex-column justify-between items-center overflow-visible">
         <div className="landing-img">
           {loaded ? (
             <img src={yg5} className="image-active" />
