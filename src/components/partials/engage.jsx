@@ -12,6 +12,12 @@ export default class Engage extends Component {
     };
   }
 
+  componentDidUpdate() {
+    if (!this.state.hasAnimated) {
+      this.setState({ hasAnimated: true });
+    }
+  }
+
   render() {
     return (
       <div id="engage" className="swiper-slide">

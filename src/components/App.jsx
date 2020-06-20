@@ -18,6 +18,7 @@ export default class App extends Component {
 
     this.resolveBg = this.resolveBg.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
+    this.lastJoblistIndex = 0;
   }
 
   componentDidMount() {
@@ -40,14 +41,15 @@ export default class App extends Component {
     });
   }
 
-  resolveBg(componentId, joblistIndex = 0) {
+  resolveBg(componentId, joblistIndex) {
     if (componentId) {
       let resolvedBackground = "";
 
       switch (componentId) {
         case "joblist":
           const joblistBackgrounds = ["indianred", "mediumseagreen", "darkslategrey", "maroon"];
-          resolvedBackground = joblistBackgrounds[joblistIndex];
+          if (![null, undefined, NaN].includes(joblistIndex)) this.lastJoblistIndex = joblistIndex;
+          resolvedBackground = joblistBackgrounds[this.lastJoblistIndex];
           break;
         case "contact":
           resolvedBackground = "newgray-dark";
