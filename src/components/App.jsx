@@ -10,12 +10,6 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      currentBg: "newgray",
-      lastComponentId: "",
-      jlPage: null,
-    };
-
     this.refsList = {
       landing: React.createRef(),
       joblist: React.createRef(),
@@ -37,7 +31,6 @@ export default class App extends Component {
 
   handleScroll(entries) {
     entries.forEach((entry) => {
-      console.log('handling scroll');
       if (
         entry.isIntersecting &&
         Math.abs(INTERSECTION_THRESHOLD - entry.intersectionRatio) <= 0.1
@@ -47,13 +40,14 @@ export default class App extends Component {
     });
   }
 
-  resolveBg(componentId) {
-    if (componentId !== this.state.lastComponentId) {
+  resolveBg(componentId, joblistIndex = 0) {
+    if (componentId) {
       let resolvedBackground = "";
 
       switch (componentId) {
         case "joblist":
-          resolvedBackground = "indianred";
+          const joblistBackgrounds = ["indianred", "mediumseagreen", "darkslategrey", "maroon"];
+          resolvedBackground = joblistBackgrounds[joblistIndex];
           break;
         case "contact":
           resolvedBackground = "newgray-dark";
@@ -63,27 +57,18 @@ export default class App extends Component {
           break;
       }
 
-      this.setState((currentState) =>
-        currentState.currentBg !== resolvedBackground
-          ? {
-              currentBg: resolvedBackground,
-              lastComponentId: componentId,
-            }
-          : null
-      );
+      document.getElementById('background').className = resolvedBackground;
     }
   }
 
   render() {
     const baseProps = {
       refsList: this.refsList,
-      lastComponentId: this.state.lastComponentId,
-      currentBg: this.state.currentBg,
       resolveBg: this.resolveBg,
     };
 
     return (
-      <div id="background" className={this.state.currentBg}>
+      <div id="background" className="newgray">
         {[Landing, JobList, Contact].map((Component, index) => <Component key={`${Date.now()}-${index}`} {...baseProps} />)}
       </div>
     );

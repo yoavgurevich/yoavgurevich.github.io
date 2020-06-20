@@ -26,10 +26,7 @@ const JobList = props => {
   React.useEffect(() => {
     if (swiper !== null) {
       swiper.on('slideChange', () => {
-        if (props.lastComponentId === 'joblist') {
-          const bgMapping = ["indianred", "mediumseagreen", "darkslategrey", "maroon"];
-          document.getElementById('background').className = bgMapping[swiper.realIndex];
-        }
+        props.resolveBg('joblist', swiper.realIndex);
       });
     }
   }, [swiper]);

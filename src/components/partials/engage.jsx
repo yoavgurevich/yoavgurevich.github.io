@@ -12,26 +12,20 @@ export default class Engage extends Component {
     };
   }
 
-  componentDidUpdate() {
-    if (this.props.currentBg == "indianred" && !this.state.hasAnimated) {
-      this.setState({ hasAnimated: true });
-    }
-  }
-
   render() {
     return (
       <div id="engage" className="swiper-slide">
         <div className="slide-content">
           <h1
             className={
-              this.props.currentBg == "indianred" || this.state.hasAnimated
+              this.state.hasAnimated
                 ? "text-center slide-left"
                 : "text-center"
             }
           >
             engage
           </h1>
-          {this.props.currentBg == "indianred" || this.state.hasAnimated ? (
+          {this.state.hasAnimated ? (
             <div className="fade-in">
               <a
                 className="img-link"
