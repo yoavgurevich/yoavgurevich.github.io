@@ -16,9 +16,8 @@ export default class App extends Component {
       contact: React.createRef(),
     };
 
-    this.resolveBg = this.resolveBg.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
     this.lastJoblistIndex = 0;
+    this.lastComponentId = 'landing';
   }
 
   componentDidMount() {
@@ -30,7 +29,7 @@ export default class App extends Component {
     );
   }
 
-  handleScroll(entries) {
+  handleScroll = (entries) => {
     entries.forEach((entry) => {
       if (
         entry.isIntersecting &&
@@ -41,14 +40,20 @@ export default class App extends Component {
     });
   }
 
-  resolveBg(componentId, joblistIndex) {
-    if (componentId) {
+  resolveBg = (componentId, joblistIndex) => {
+    if (componentId !== this.lastComponentId || joblistIndex !== this.lastJoblistIndex) {
       let resolvedBackground = "";
 
       switch (componentId) {
         case "joblist":
-          const joblistBackgrounds = ["indianred", "mediumseagreen", "darkslategrey", "maroon"];
-          if (![null, undefined, NaN].includes(joblistIndex)) this.lastJoblistIndex = joblistIndex;
+          const joblistBackgrounds = [
+            "indianred",
+            "mediumseagreen",
+            "darkslategrey",
+            "maroon",
+          ];
+          if (![null, undefined, NaN].includes(joblistIndex))
+            this.lastJoblistIndex = joblistIndex;
           resolvedBackground = joblistBackgrounds[this.lastJoblistIndex];
           break;
         case "contact":
@@ -59,7 +64,9 @@ export default class App extends Component {
           break;
       }
 
-      document.getElementById('background').className = resolvedBackground;
+      document.getElementById("background").className = resolvedBackground;
+      this.lastComponentId = componentId;
+      dispatchEvent(new CustomEvent('backgroundchange', { detail: resolvedBackground }));
     }
   }
 
@@ -71,7 +78,9 @@ export default class App extends Component {
 
     return (
       <div id="background" className="newgray">
-        {[Landing, JobList, Contact].map((Component, index) => <Component key={`${Date.now()}-${index}`} {...baseProps} />)}
+        {[Landing, JobList, Contact].map((Component, index) => (
+          <Component key={`${Date.now()}-${index}`} {...baseProps} />
+        ))}
       </div>
     );
   }

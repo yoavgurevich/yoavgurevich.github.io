@@ -12,10 +12,16 @@ export default class Engage extends Component {
     };
   }
 
-  componentDidUpdate() {
-    if (!this.state.hasAnimated) {
-      this.setState({ hasAnimated: true });
-    }
+  handleBgChange = ({ detail }) => {
+    if (detail === 'indianred' && !this.state.hasAnimated) this.setState({ hasAnimated: true });
+  };
+
+  componentDidMount() {
+    addEventListener('backgroundchange', this.handleBgChange);
+  }
+
+  componentWillUnmount() {
+    removeEventListener('backgroundchange', this.handleBgChange);
   }
 
   render() {

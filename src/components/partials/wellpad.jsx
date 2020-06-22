@@ -8,11 +8,9 @@ export default class Wellpad extends Component {
       focusMode: null,
       zoomElement: null,
     };
-
-    this.toggleFocusMode = this.toggleFocusMode.bind(this);
   }
 
-  toggleFocusMode(e) {
+  toggleFocusMode = (e) => {
     let elemId = e.target.id;
 
     this.setState((currentState) => {
