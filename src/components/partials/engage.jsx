@@ -27,7 +27,7 @@ export default class Engage extends Component {
   render() {
     return (
       <div id="engage" className="swiper-slide">
-        <div className="slide-content">
+        <div className="slide-content flex flex-column items-center">
           <h1
             className={
               this.state.hasAnimated
@@ -39,22 +39,24 @@ export default class Engage extends Component {
           </h1>
           {this.state.hasAnimated ? (
             <div className="fade-in">
-              <a
-                className="img-link"
-                href="https://www.engagepeople.com/podium.html"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <img src={PodiumLogo} alt="Podium Logo"></img>
-              </a>
-              <a
-                className="img-link"
-                href="https://www.engagepeople.com/lrg.html"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <img src={LrgLogo} alt="LRG Logo"></img>
-              </a>
+              <div className="text-center">
+                <a
+                  className="img-link"
+                  href="https://www.engagepeople.com/podium.html"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <img src={PodiumLogo} alt="Podium Logo"></img>
+                </a>
+                <a
+                  className="img-link"
+                  href="https://www.engagepeople.com/lrg.html"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <img src={LrgLogo} alt="LRG Logo"></img>
+                </a>
+              </div>
               <p>
                 Spending time on two of the loyalty powerhouse's flagship
                 products Podium & Access (LRG) has helped hone a vast array of
@@ -63,7 +65,7 @@ export default class Engage extends Component {
                 <br />
                 Catering to enterprise clientele seeking robust, modular, and
                 secure platforms requires consistent attention to detail and
-                processes that build on iterative improvement.
+                processes that build on consistent, iterative improvement.
               </p>
             </div>
           ) : (

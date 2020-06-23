@@ -3,7 +3,7 @@ import React from "react";
 const CDOT = ({ refsList }) => (
   <div id="cdot" className="swiper-slide" ref={refsList.cdot}>
     <div className="slide-content">
-      <svg width="100%" height="100%" className="slide-left">
+      <svg>
         <g>
           <text
             dx="162"
@@ -40,9 +40,14 @@ const CDOT = ({ refsList }) => (
           </text>
         </g>
       </svg>
-      <p className="fade-in">
-        Under a rigorously inspiring team lead by the esteemed David Humphrey,
-        there's not much more that I can discuss on top of my{" "}
+      <p>
+        Under a rigorously inspiring team led by the esteemed <a
+          className="margin-0"
+          href="https://blog.humphd.org/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >David Humphrey</a>,
+        there's not much more that I can discuss beyond the{" "}
         <a
           className="margin-0"
           href="https://ygcdw.blogspot.ca/"
@@ -51,8 +56,9 @@ const CDOT = ({ refsList }) => (
         >
           Blogger posts
         </a>{" "}
-        during my time on the project besides reiterating that it was one of
-        the true pleasures of my fledgling career to have worked alongside
+        created during my time on the project.
+        <br /><br />
+        It was one of the true pleasures of my fledgling career to have worked alongside
         such talent as &nbsp;
         <a
           className="margin-0"
@@ -78,8 +84,8 @@ const CDOT = ({ refsList }) => (
         >
           Ali Al Dallal
         </a>
-        . I must say with confidence that I've never really felt like a
-        programmer until I experienced being a part of this project.
+        . I can say with confidence that I've never really felt like a
+        programmer until I became a part of this project.
       </p>
     </div>
   </div>

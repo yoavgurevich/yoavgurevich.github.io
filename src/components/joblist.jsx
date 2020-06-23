@@ -34,7 +34,7 @@ const JobList = props => {
   return (
     <div
       id="joblist"
-      className="font-cornsilk"
+      className="fsh font-cornsilk"
       ref={props.refsList.joblist}
     >
       <ScrollButton direction="up" refsList={props.refsList} />

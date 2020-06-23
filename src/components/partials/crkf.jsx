@@ -16,7 +16,7 @@ export default class CRKF extends Component {
               <br />
               Chito-Ryu Karate
             </h1>
-            <div className="fade-in flex-center">
+            <div className="flex flex-column justify-center">
               <a
                 className="a-link"
                 href="https://www.youtube.com/watch?v=8YSFOMD2r8Q&list=PL1saFtx4Uu4p2-LGuVFsnM6Ekv-XSVZVA"
