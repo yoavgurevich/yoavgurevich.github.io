@@ -141,6 +141,10 @@ a {
   width: 100%;
 }
 
+.horizontal-center {
+  margin: 0 auto;
+}
+
 .slide-content {
   p {
     text-align: justify;
@@ -160,33 +164,24 @@ a {
     }
   
     .img-group {
-      position: relative;
-      left: 25%;
-      margin-left: 0;
-  
-      img {
-        width: 90px;
-        margin: 0 2px;
-        transform: scale(0.9);
-        transition: 0.3s all ease;
-  
-        &:hover {
-          cursor: zoom-in;
-          transform: scale(1);
-          transition: 0.3s all ease;
-        }
-      }
-    }
-  
-    @media screen and (max-width: 667px) {
-      .img-group {
-        display: none;
+      align-self: center;
+      height: 25vh;
+      width: 33vw;
+      padding-bottom: 2rem;
+
+      .swiper-container {
+        height: 100%;
       }
 
-      .img-link > img {
-        max-width: 45%;
+      .swiper-slide {
+        width: 11vw;
+      }
+
+      @media screen and (max-width: 667px) {
+        width: 100vw;
       }
     }
+  
   }
 }
 

@@ -17,9 +17,11 @@ const JobList = props => {
     },
     loop: true,
     grabCursor: true,
+    resistanceRatio: 0.01,
     pagination: {
       el: ".swiper-pagination",
       dynamicBullets: true,
+      clickable: true,
     }
   };
 
