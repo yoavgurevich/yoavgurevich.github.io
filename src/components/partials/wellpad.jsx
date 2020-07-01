@@ -9,12 +9,11 @@ import wellpad5 from "../../assets/wellpad5.png";
 import wellpad6 from "../../assets/wellpad6.png";
 
 const Wellpad = ({ refsList }) => {
+  const [innerSwiper, setInnerSwiper] = React.useState(null);
+
   const swiperParams = {
-    slidesPerView: "auto",
-    effect: "coverflow",
-    coverflowEffect: {
-      slideShadows: false,
-    },
+    slidesPerView: 3,
+    centeredSlides: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -31,6 +30,10 @@ const Wellpad = ({ refsList }) => {
     wellpad6,
   ];
 
+  const toggleImageZoom = () => {
+    if (innerSwiper !== null) innerSwiper.zoom.toggle();
+  };
+
   return (
     <div id="wellpad" className="swiper-slide" ref={refsList.wellpad}>
       <div className="slide-content">
@@ -38,14 +41,14 @@ const Wellpad = ({ refsList }) => {
           <h1 className="rouge-script h0 text-center slide-left">Wellpad.io</h1>
           <div className="fade-in">
             <div className="img-group horizontal-center">
-              <Swiper {...swiperParams}>
+              <Swiper {...swiperParams} getSwiper={setInnerSwiper}>
                 {wellpadImages.map((imageSource, idx) => (
                   <div>
                     <div
                       className="swiper-zoom-container"
                       key={idx + Date.now()}
                     >
-                      <img src={imageSource} alt={`wellpad-image-${idx + 1}`} />
+                      <img onClick={toggleImageZoom} src={imageSource} alt={`wellpad-image-${idx + 1}`} />
                     </div>
                   </div>
                 ))}

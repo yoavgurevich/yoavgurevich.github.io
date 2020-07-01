@@ -74,6 +74,10 @@ body {
 
 a {
   text-decoration: none;
+
+  &:visited {
+    color: grey;
+  }
 }
 
 .a-link {
@@ -165,7 +169,7 @@ a {
   
     .img-group {
       height: 25vh;
-      width: 33vw;
+      margin: auto 25%;
       padding-bottom: 2rem;
 
       .swiper-container {
@@ -174,6 +178,12 @@ a {
 
       .swiper-slide {
         overflow: hidden;
+      }
+
+      .swiper-zoom-container {
+        img:hover {
+          cursor: zoom-in;
+        }
       }
 
       @media screen and (max-width: 667px) {
