@@ -64,8 +64,9 @@ export default class Engage extends Component {
                 <br />
                 <br />
                 Catering to enterprise clientele seeking robust, modular, and
-                secure platforms requires consistent attention to detail and
-                processes that build on consistent, iterative improvement.
+                secure platforms requires unwavering attention to detail in all of
+                the SDLC processes that build on consistent, iterative improvement
+                for both developers and end users.
               </p>
             </div>
           ) : (

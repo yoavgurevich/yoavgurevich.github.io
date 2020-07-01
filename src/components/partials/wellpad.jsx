@@ -1,31 +1,35 @@
 import React, { Component } from "react";
 import Swiper from "react-id-swiper";
 
+import wellpad1 from "../../assets/wellpad1.png";
+import wellpad2 from "../../assets/wellpad2.png";
+import wellpad3 from "../../assets/wellpad3.png";
+import wellpad4 from "../../assets/wellpad4.png";
+import wellpad5 from "../../assets/wellpad5.png";
+import wellpad6 from "../../assets/wellpad6.png";
+
 const Wellpad = ({ refsList }) => {
   const swiperParams = {
-    slidesPerView: 'auto',
-    effect: 'coverflow',
+    slidesPerView: "auto",
+    effect: "coverflow",
+    coverflowEffect: {
+      slideShadows: false,
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    zoom: true,
   };
 
   const wellpadImages = [
-    "https://i.imgur.com/CIsoSBG.png",
-    "https://i.imgur.com/H9bpbJm.png",
-    "https://i.imgur.com/59BmDKw.png",
-    "https://i.imgur.com/OAye111.png",
-    "https://i.imgur.com/9uZQe3K.png",
-    "https://i.imgur.com/osl2TbD.png",
+    wellpad1,
+    wellpad2,
+    wellpad3,
+    wellpad4,
+    wellpad5,
+    wellpad6,
   ];
-
-  const getSlideStyle = (imageSource) => ({
-    backgroundImage: `url(${imageSource})`,
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    backgroundPositionX: '50%',
-  });
 
   return (
     <div id="wellpad" className="swiper-slide" ref={refsList.wellpad}>
@@ -36,10 +40,14 @@ const Wellpad = ({ refsList }) => {
             <div className="img-group horizontal-center">
               <Swiper {...swiperParams}>
                 {wellpadImages.map((imageSource, idx) => (
-                  <div
-                    key={idx + Date.now()}
-                    style={getSlideStyle(imageSource)}
-                  />
+                  <div>
+                    <div
+                      className="swiper-zoom-container"
+                      key={idx + Date.now()}
+                    >
+                      <img src={imageSource} alt={`wellpad-image-${idx + 1}`} />
+                    </div>
+                  </div>
                 ))}
               </Swiper>
             </div>
