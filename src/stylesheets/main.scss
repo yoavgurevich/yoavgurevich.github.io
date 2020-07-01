@@ -72,6 +72,10 @@ body {
   margin-right: -30% !important;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 a {
   text-decoration: none;
 
@@ -160,13 +164,19 @@ a {
       overflow-y: scroll;
     }
   }
-  
+
   .fade-in {
     .img-link > img {
       filter: brightness(0.6);
       max-width: 15%;
     }
+
+    @media screen and (max-width: 667px) {
+      width: 100vw;
+    }
+  }
   
+  main {
     .img-group {
       height: 25vh;
       margin: auto 25%;
@@ -184,10 +194,6 @@ a {
         img:hover {
           cursor: zoom-in;
         }
-      }
-
-      @media screen and (max-width: 667px) {
-        width: 100vw;
       }
     }
   

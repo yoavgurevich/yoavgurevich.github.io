@@ -11,7 +11,7 @@ export default class CRKF extends Component {
       <div id="crkf" className="swiper-slide" ref={this.props.refsList.crkf}>
         <div className="slide-content">
           <div className="grid-content">
-            <h1 className="aldrich text-center slide-left">
+            <h1 className="aldrich text-center">
               実 道 空 手
               <br />
               Chito-Ryu Karate
