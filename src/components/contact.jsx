@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollButton from './scrollButton';
 import ReactImage from "../assets/react.png";
 import SassImage from "../assets/sass.png";
 import WebpackImage from "../assets/webpack.png";
@@ -10,7 +11,10 @@ const Contact = ({ refsList }) => {
       className="container contact-bg fsh font-cornsilk"
       ref={refsList.contact}
     >
-      <header>
+      <header className="flex justify-between">
+        <div className="horizontal-center">
+          <ScrollButton direction="up" refsList={refsList} currentElm="contact" />
+        </div>
         <h2
           onClick={() =>
             refsList.landing.current.scrollIntoView({

@@ -1,18 +1,17 @@
 .contact-bg {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 2fr 0.5fr;
+  display: flex;
+  position: relative;
+  flex-direction: column;
   align-items: center;
   max-height: 100vh;
-  position: relative;
+
+  header, footer {
+    width: 95%;
+  }
 
   header {
-    z-index: 20;
-    position: relative;
-    left: 92%;
-
-    @media screen and (max-width: 992px) {
-      left: 82%;
+    div {
+      padding-left: 3%;
     }
 
     h2 {
@@ -31,7 +30,6 @@
 
   main {
     min-width: 100vw;
-    min-height: 100%;
 
     .content,
     .inline-flex {
@@ -103,11 +101,10 @@
   footer {
     display: flex;
     flex-direction: column;
-    padding: 3%;
-    margin-bottom: 10vh;
+    padding-top: 10%;
 
     div {
-      width: 20%;
+      width: 17%;
       display: flex;
       justify-content: center;
       text-align: center;

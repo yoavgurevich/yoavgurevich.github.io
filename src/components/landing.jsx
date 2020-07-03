@@ -58,8 +58,8 @@ const Landing = ({ refsList }) => {
             </p>
             <p>
               The project overviews below highlight my humble contributions to a
-              few different use cases. If there are two things I've learned
-              about the development process so far, it's that it could be as
+              few different teams and products. If there are two things I've learned
+              about web development so far, it's that it could be as
               personal and unique as songwriting, and that passion is{" "}
               <i>very</i> contagious.
             </p>
