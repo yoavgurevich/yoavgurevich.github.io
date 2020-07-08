@@ -18,6 +18,10 @@ const JobList = props => {
     loop: true,
     grabCursor: true,
     resistanceRatio: 0.01,
+    navigation: {
+      nextEl: ".swiper-button-next.fa-swiper-button-next",
+      prevEl: ".swiper-button-prev.fa-swiper-button-prev",
+    },
     pagination: {
       el: ".swiper-pagination",
       dynamicBullets: true,

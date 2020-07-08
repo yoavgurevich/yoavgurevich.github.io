@@ -5,7 +5,16 @@
 @import "./landing.scss";
 @import "./partials/wellpad.scss";
 
-$color-collection: (white, indianred, mediumseagreen, darkslategrey, maroon);
+$color-collection: (
+  "white": white, 
+  "indianred": indianred, 
+  "mediumseagreen": mediumseagreen, 
+  "darkslategrey": darkslategrey, 
+  "maroon": maroon,
+  "customblue": #042E6F,
+  "newgray": #c3c2c3,
+  "newgray-dark": #2f2f2f
+);
 
 body {
   margin: 0;
@@ -15,21 +24,11 @@ body {
   overflow-x: hidden;
 }
 
-@each $color in $color-collection {
-  .#{$color} {
-    background: nth($color, 1);
+@each $name, $color in $color-collection {
+  .#{$name} {
+    background: $color;
     transition: background linear 1s;
   }
-}
-
-.newgray {
-  background: #c3c2c3;
-  transition: background linear 1s;
-}
-
-.newgray-dark {
-  background: #2f2f2f;
-  transition: background linear 1s;
 }
 
 // SCSS extendible blocks
@@ -54,6 +53,26 @@ body {
 
 .container {
   width: 100%;
+}
+
+.fa-swiper-button-next, .fa-swiper-button-prev {
+  padding: 0 25px;
+
+  &::after {
+    color: white;
+    font-family: FontAwesome;
+    font-size: 5rem;
+
+    @extend %slide-link-style;
+  }
+}
+
+.fa-swiper-button-prev::after {
+  content: '\F100';
+}
+
+.fa-swiper-button-next::after {
+  content: '\F101';
 }
 
 .flipContainer {
