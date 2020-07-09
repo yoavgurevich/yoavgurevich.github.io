@@ -15,8 +15,8 @@ const Wellpad = ({ refsList }) => {
     slidesPerView: 3,
     centeredSlides: true,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next.fa-nested-nav-btn-next",
+      prevEl: ".swiper-button-prev.fa-nested-nav-btn-prev",
     },
     zoom: true,
   };

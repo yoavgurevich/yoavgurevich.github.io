@@ -19,8 +19,8 @@ const JobList = props => {
     grabCursor: true,
     resistanceRatio: 0.01,
     navigation: {
-      nextEl: ".swiper-button-next.fa-swiper-button-next",
-      prevEl: ".swiper-button-prev.fa-swiper-button-prev",
+      nextEl: ".swiper-button-next.fa-swiper-button-next.px-8",
+      prevEl: ".swiper-button-prev.fa-swiper-button-prev.px-8",
     },
     pagination: {
       el: ".swiper-pagination",

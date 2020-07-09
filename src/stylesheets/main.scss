@@ -55,9 +55,18 @@ body {
   width: 100%;
 }
 
-.fa-swiper-button-next, .fa-swiper-button-prev {
-  padding: 0 25px;
+.px-8 {
+  padding: 0 2rem;
+}
 
+.px-n8 {
+  padding: 0 -2rem;
+}
+
+.fa-swiper-button-next,
+.fa-swiper-button-prev,
+.fa-nested-nav-btn-next,
+.fa-nested-nav-btn-prev {
   &::after {
     color: white;
     font-family: FontAwesome;
@@ -65,6 +74,14 @@ body {
 
     @extend %slide-link-style;
   }
+}
+
+.fa-nested-nav-btn-next::after {
+  content: '\F105';
+}
+
+.fa-nested-nav-btn-prev::after {
+  content: '\F104';
 }
 
 .fa-swiper-button-prev::after {

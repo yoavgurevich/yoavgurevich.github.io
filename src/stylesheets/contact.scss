@@ -131,6 +131,7 @@
   }
 
   #skyline-inverse {
+    filter: invert(60%);
     width: 100vw;
     height: 50vh;
     position: absolute;
