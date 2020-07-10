@@ -14,8 +14,7 @@
       padding-left: 3%;
     }
 
-    h2 {
-      .fa-level-up {
+    .home-btn {
         cursor: pointer;
         opacity: 0.2;
         transition: all 0.3s ease-out;
@@ -24,7 +23,6 @@
           transition: all 0.3s ease-in;
           opacity: 1;
         }
-      }
     }
   }
 
@@ -54,10 +52,10 @@
       padding-bottom: 20px;
 
       a {
-        padding-right: 10px;
+        padding-right: 25px;
         text-decoration: none !important;
 
-        i {
+        svg {
           color: cornsilk;
           font-size: 44pt;
         }
@@ -123,7 +121,8 @@
     }
 
     .vendor-imgs {
-      img {
+      z-index: 1000;
+      a {
         margin: 20px 10px 20px 15px;
         max-height: 30px;
       }

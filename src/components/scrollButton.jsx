@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDoubleUp, faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons'
 
 const ScrollButton = ({ direction, refsList, currentElm = "joblist" }) => {
   const handleClick = () => {
@@ -19,7 +21,7 @@ const ScrollButton = ({ direction, refsList, currentElm = "joblist" }) => {
   return (
     <div onClick={handleClick} className="slide-link-container text-center">
       <h2>
-        <i className={"fa fa-2x fa-angle-double-" + direction}></i>
+        <FontAwesomeIcon size="2x" icon={direction === "up" ? faAngleDoubleUp : faAngleDoubleDown} />
       </h2>
     </div>
   );

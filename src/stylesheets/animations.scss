@@ -208,12 +208,12 @@
 
 @keyframes slide-in-blurred-top {
   0% {
-    transform: rotate(180deg) translateX(-1000px) scaleX(0.2);
+    transform: rotate(180deg) translateY(500px) scaleX(0.2);
     filter: blur(40px);
     opacity: 0;
   }
   100% {
-    transform: rotate(180deg) translateX(0) scaleX(1);
+    transform: rotate(180deg) translateY(0) scaleX(1);
     filter: blur(0);
     opacity: 1;
   }

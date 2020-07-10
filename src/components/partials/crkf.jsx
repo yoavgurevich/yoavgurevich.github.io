@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 // TODO: https://youtu.be/ABdm-uzgZeg
 export default class CRKF extends Component {
@@ -23,7 +25,7 @@ export default class CRKF extends Component {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <i className="fa fa-4x fa-youtube-square"></i>
+                <FontAwesomeIcon size="4x" icon={faYoutube} />
               </a>
               <p>
                 <a

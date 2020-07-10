@@ -1,5 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import Swiper from 'react-id-swiper';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 
 import ScrollButton from './scrollButton';
 import Engage from "./partials/engage";
@@ -19,9 +21,11 @@ const JobList = props => {
     grabCursor: true,
     resistanceRatio: 0.01,
     navigation: {
-      nextEl: ".swiper-button-next.fa-swiper-button-next.px-8",
-      prevEl: ".swiper-button-prev.fa-swiper-button-prev.px-8",
+      nextEl: '.swiper-button-next.nested',
+      prevEl: '.swiper-button-prev.nested',
     },
+    renderNextButton: () => <FontAwesomeIcon className="swiper-button-next nested fa-nav-btn" size="6x" icon={faAngleDoubleRight} />,
+    renderPrevButton: () => <FontAwesomeIcon className="swiper-button-prev nested fa-nav-btn" size="6x" icon={faAngleDoubleLeft} />,
     pagination: {
       el: ".swiper-pagination",
       dynamicBullets: true,

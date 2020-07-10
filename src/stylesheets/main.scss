@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Nanum+Gothic|EB+Garamond:800|Aldrich|Rouge+Script|League+Script");
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=EB+Garamond:wght@800&family=League+Script&family=Nanum+Gothic&family=Rouge+Script&family=Work+Sans&display=swap');
 @import "./typography.scss";
 @import "./animations.scss";
 @import "./contact.scss";
@@ -63,33 +63,9 @@ body {
   padding: 0 -2rem;
 }
 
-.fa-swiper-button-next,
-.fa-swiper-button-prev,
-.fa-nested-nav-btn-next,
-.fa-nested-nav-btn-prev {
-  &::after {
-    color: white;
-    font-family: FontAwesome;
-    font-size: 5rem;
-
-    @extend %slide-link-style;
-  }
-}
-
-.fa-nested-nav-btn-next::after {
-  content: '\F105';
-}
-
-.fa-nested-nav-btn-prev::after {
-  content: '\F104';
-}
-
-.fa-swiper-button-prev::after {
-  content: '\F100';
-}
-
-.fa-swiper-button-next::after {
-  content: '\F101';
+.fa-nav-btn {
+  color: white;
+  @extend %slide-link-style;
 }
 
 .flipContainer {

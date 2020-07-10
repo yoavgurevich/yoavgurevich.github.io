@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Swiper from "react-id-swiper";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 import wellpad1 from "../../assets/wellpad1.png";
 import wellpad2 from "../../assets/wellpad2.png";
@@ -15,9 +17,12 @@ const Wellpad = ({ refsList }) => {
     slidesPerView: 3,
     centeredSlides: true,
     navigation: {
-      nextEl: ".swiper-button-next.fa-nested-nav-btn-next",
-      prevEl: ".swiper-button-prev.fa-nested-nav-btn-prev",
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
+    
+    renderNextButton: () => <FontAwesomeIcon className="swiper-button-next fa-nav-btn" size="6x" icon={faAngleRight} />,
+    renderPrevButton: () => <FontAwesomeIcon className="swiper-button-prev fa-nav-btn" size="6x" icon={faAngleLeft} />,
     zoom: true,
   };
 
@@ -43,7 +48,7 @@ const Wellpad = ({ refsList }) => {
             <div className="img-group horizontal-center">
               <Swiper {...swiperParams} getSwiper={setInnerSwiper}>
                 {wellpadImages.map((imageSource, idx) => (
-                  <div>
+                  <div key={`wellpadImges-${idx}`}>
                     <div
                       className="swiper-zoom-container"
                       key={idx + Date.now()}

@@ -1,8 +1,8 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLevelUpAlt } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faTwitter, faGithub, faReact, faSass, faFontAwesomeFlag } from '@fortawesome/free-brands-svg-icons';
 import ScrollButton from './scrollButton';
-import ReactImage from "../assets/react.png";
-import SassImage from "../assets/sass.png";
-import WebpackImage from "../assets/webpack.png";
 
 const Contact = ({ refsList }) => {
   return (
@@ -16,6 +16,7 @@ const Contact = ({ refsList }) => {
           <ScrollButton direction="up" refsList={refsList} currentElm="contact" />
         </div>
         <h2
+          className="home-btn"
           onClick={() =>
             refsList.landing.current.scrollIntoView({
               behavior: "smooth",
@@ -23,7 +24,7 @@ const Contact = ({ refsList }) => {
             })
           }
         >
-          <i className="fa fa-2x fa-level-up"></i>
+          <FontAwesomeIcon size="2x" icon={faLevelUpAlt} />
         </h2>
       </header>
       <main className="text-center">
@@ -35,21 +36,21 @@ const Contact = ({ refsList }) => {
               href="//ca.linkedin.com/in/yoav-gurevich-42415886"
               target="_blank"
             >
-              <i className="no-glow fa fa-linkedin-square">&nbsp;</i>
+              <FontAwesomeIcon className="no-glow" size="4x" icon={faLinkedin} />
             </a>
             <a
               rel="noopener noreferrer"
               href="//twitter.com/ygdot14"
               target="_blank"
             >
-              <i className="no-glow fa fa-twitter">&nbsp;</i>
+              <FontAwesomeIcon className="no-glow" size="4x" icon={faTwitter} />
             </a>
             <a
               rel="noopener noreferrer"
               href="//github.com/yoavgurevich"
               target="_blank"
             >
-              <i className="no-glow fa fa-github"></i>
+              <FontAwesomeIcon className="no-glow" size="4x" icon={faGithub} />
             </a>
           </div>
         </div>
@@ -61,14 +62,14 @@ const Contact = ({ refsList }) => {
           </h5>
         </div>
         <div className="vendor-imgs">
-          <a href="//reactjs.org/" rel="noopener noreferrer" target="_blank">
-            <img src={ReactImage} alt="React.js" />
-          </a>
-          <a href="//webpack.js.org" rel="noopener noreferrer" target="_blank">
-            <img src={WebpackImage} alt="Webpack" />
+          <a href="//reactjs.org/" rel="noopener noreferrer" target="_blank">          
+            <FontAwesomeIcon size="2x" icon={faReact} />
           </a>
           <a href="//sass-lang.com" rel="noopener noreferrer" target="_blank">
-            <img src={SassImage} alt="Sass" />
+            <FontAwesomeIcon size="2x" icon={faSass} />
+          </a>
+          <a href="//fontawesome.com" rel="noopener noreferrer" target="_blank">
+            <FontAwesomeIcon size="2x" icon={faFontAwesomeFlag} />
           </a>
         </div>
       </footer>
