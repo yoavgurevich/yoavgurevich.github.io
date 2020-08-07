@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 
 import App from './components/App';
 
+import 'swiper/css/swiper.min.css';
 import './stylesheets/main.scss'
-import 'font-awesome/css/font-awesome.min.css';
 
 ReactDOM.render(
   <App />,

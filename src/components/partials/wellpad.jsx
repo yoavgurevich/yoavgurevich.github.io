@@ -1,71 +1,97 @@
-import React, { Component } from 'react';
-import ScrollButton from '../scrollButton';
- 
-export default class Wellpad extends Component {
-    constructor(props) {
-        super(props);
+import React, { Component } from "react";
+import Swiper from "react-id-swiper";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-        this.state = {
-            focusMode: null,
-            zoomElement: null
-        }
+import wellpad1 from "../../assets/wellpad1.png";
+import wellpad2 from "../../assets/wellpad2.png";
+import wellpad3 from "../../assets/wellpad3.png";
+import wellpad4 from "../../assets/wellpad4.png";
+import wellpad5 from "../../assets/wellpad5.png";
+import wellpad6 from "../../assets/wellpad6.png";
 
-        this.toggleFocusMode = this.toggleFocusMode.bind(this);
-    }
+const Wellpad = ({ refsList }) => {
+  const [innerSwiper, setInnerSwiper] = React.useState(null);
 
-    toggleFocusMode(e) {
-        let elemId = e.target.id;
+  const swiperParams = {
+    slidesPerView: 3,
+    centeredSlides: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    
+    renderNextButton: () => <FontAwesomeIcon className="swiper-button-next fa-nav-btn" size="6x" icon={faAngleRight} />,
+    renderPrevButton: () => <FontAwesomeIcon className="swiper-button-prev fa-nav-btn" size="6x" icon={faAngleLeft} />,
+    zoom: true,
+  };
 
-        this.setState((currentState) => {
-            return {
-                focusMode: currentState.focusMode === 'zoomed-in' ? '' : 'zoomed-in',
-                zoomElement: elemId
-            }
-        });
-    }
- 
-    render () {
-        let resolvedContent = this.props.currentPage == 1 ? (
-            <div className='fsh grid-container wellpad-bg'>
-                <div className="grid-header">
-                    <ScrollButton direction='up' refsList={this.props.refsList} />
-                </div>
-                <div className="grid-content margin-bottom-40">
-                    <h1 className='rouge-script h0 text-center slide-left'>Wellpad.io</h1>
-                    <div className={'fade-in ' + this.state.focusMode}>
-                        <div className='img-group'>
-                            <img id='zoom-img-1' className={this.state.zoomElement == 'zoom-img-1' ? 'current-zoom' : ''} src='https://i.imgur.com/CIsoSBG.png' alt='wellpad image 1' onClick={this.toggleFocusMode}></img>
-                            <img id='zoom-img-2' className={this.state.zoomElement == 'zoom-img-2' ? 'current-zoom' : ''} src='https://i.imgur.com/H9bpbJm.png' alt='wellpad image 2' onClick={this.toggleFocusMode}></img>
-                            <img id='zoom-img-3' className={this.state.zoomElement == 'zoom-img-3' ? 'current-zoom' : ''} src='https://i.imgur.com/59BmDKw.png' alt='wellpad image 3' onClick={this.toggleFocusMode}></img>
-                        </div>
-                        <p>
-                            This iPad-centric solution was commissioned in order to ameliorate an older system used for managing a health clinic's
-                            patient and staff data. It provides an intuitive survey platform, as well as an administrative interface for viewing current information and trends
-                            in both new and returning patients.
-                            <br /><br />
-                            My primary role for this project was front-end view and component implementation for the patient-intake and follow-up surveys.
-                            Design mock-ups were issued our savvy team lead <a href="https://www.linkedin.com/in/leesaynor/" rel="noopener noreferrer" target='_blank'>Lee Saynor</a>.
-                            Lead Developer <a href="https://twitter.com/tabakd_" rel="noopener noreferrer" target='_blank'>Daniel Tabak</a> maintained a unique and frenetic pace throughout every milestone.
-                        </p>
-                        <div className='img-group'>
-                            <img id='zoom-img-4' className={this.state.zoomElement == 'zoom-img-4' ? 'current-zoom' : ''} src='https://i.imgur.com/OAye111.png' alt='wellpad image 4' onClick={this.toggleFocusMode}></img>
-                            <img id='zoom-img-5' className={this.state.zoomElement == 'zoom-img-5' ? 'current-zoom' : ''} src='https://i.imgur.com/9uZQe3K.png' alt='wellpad image 5' onClick={this.toggleFocusMode}></img>
-                            <img id='zoom-img-6' className={this.state.zoomElement == 'zoom-img-6' ? 'current-zoom' : ''} src='https://i.imgur.com/osl2TbD.png' alt='wellpad image 6' onClick={this.toggleFocusMode}></img>
-                        </div>
+  const wellpadImages = [
+    wellpad1,
+    wellpad2,
+    wellpad3,
+    wellpad4,
+    wellpad5,
+    wellpad6,
+  ];
+
+  const toggleImageZoom = () => {
+    if (innerSwiper !== null) innerSwiper.zoom.toggle();
+  };
+
+  return (
+    <div id="wellpad" className="swiper-slide" ref={refsList.wellpad}>
+      <div className="slide-content">
+        <div className="grid-content margin-bottom-40">
+          <h1 className="rouge-script h0 text-center">Wellpad.io</h1>
+          <main>
+            <div className="img-group horizontal-center">
+              <Swiper {...swiperParams} getSwiper={setInnerSwiper}>
+                {wellpadImages.map((imageSource, idx) => (
+                  <div key={`wellpadImges-${idx}`}>
+                    <div
+                      className="swiper-zoom-container"
+                      key={idx + Date.now()}
+                    >
+                      <img onClick={toggleImageZoom} src={imageSource} alt={`wellpad-image-${idx + 1}`} />
                     </div>
-                </div>
-                <div className="grid-footer align-top">
-                    <ScrollButton direction='down' refsList={this.props.refsList} />
-                </div>
+                  </div>
+                ))}
+              </Swiper>
             </div>
-        ) : <div></div>;
+            <p>
+              This iPad-centric solution was commissioned in order to ameliorate
+              an older system used for managing a health clinic's patient and
+              staff data. It provides an intuitive survey platform, as well as
+              an administrative interface for viewing current information and
+              trends in both new and returning patients.
+              <br />
+              <br />
+              My primary role for this project was front-end view and component
+              implementation for the patient-intake and follow-up surveys.
+              Design mock-ups were issued our savvy team lead{" "}
+              <a
+                href="https://www.linkedin.com/in/leesaynor/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Lee Saynor
+              </a>
+              . Lead Developer{" "}
+              <a
+                href="https://twitter.com/tabakd_"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Daniel Tabak
+              </a>{" "}
+              maintained a unique and frenetic pace throughout every milestone.
+            </p>
+          </main>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-        return (
-            <article 
-                id='wellpad'
-                ref={this.props.refsList.wellpad}>
-                {resolvedContent}
-            </article>
-        );
-    }
-}
+export default Wellpad;

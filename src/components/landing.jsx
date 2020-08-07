@@ -19,18 +19,15 @@ const Landing = ({ refsList }) => {
   const [loaded, setLoaded] = React.useState(false);
 
   React.useEffect(() => {
-    addEventListener("load", cyclePics());
-
-    return () => {
-      removeEventListener("load", cyclePics);
-    };
+    cyclePics();
   }, []);
 
   const cyclePics = (index = 0) => {
     if (index === picsCarousel.length + 1) return setLoaded(true);
 
     setTimeout(() => {
-      if (picsCarousel[index]) picsCarousel[index].ref.current.className = "image-active";
+      const currentIndexRef = picsCarousel[index]?.ref?.current;
+      if (currentIndexRef) currentIndexRef.className = "image-active";
       cyclePics(index + 1);
     }, 900);
   };
@@ -40,7 +37,7 @@ const Landing = ({ refsList }) => {
       <svg id="skyline">
         <image xlinkHref="https://openclipart.org/download/307354/1538176045.svg" />
       </svg>
-      <div className="landing-content vertical-align">
+      <div className="landing-content flex flex-column justify-between items-center overflow-visible">
         <div className="landing-img">
           {loaded ? (
             <img src={yg5} className="image-active" />
@@ -61,8 +58,8 @@ const Landing = ({ refsList }) => {
             </p>
             <p>
               The project overviews below highlight my humble contributions to a
-              few different use cases. If there are two things I've learned
-              about the development process so far, it's that it could be as
+              few different teams and products. If there are two things I've learned
+              about web development so far, it's that it could be as
               personal and unique as songwriting, and that passion is{" "}
               <i>very</i> contagious.
             </p>

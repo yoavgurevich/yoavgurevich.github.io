@@ -10,20 +10,14 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      currentBg: "newgray",
-      lastComponentId: "",
-      jlPage: null,
-    };
-
     this.refsList = {
       landing: React.createRef(),
       joblist: React.createRef(),
       contact: React.createRef(),
     };
 
-    this.resolveBg = this.resolveBg.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
+    this.lastJoblistIndex = 0;
+    this.lastComponentId = 'landing';
   }
 
   componentDidMount() {
@@ -35,79 +29,58 @@ export default class App extends Component {
     );
   }
 
-  handleScroll(entries) {
+  handleScroll = (entries) => {
     entries.forEach((entry) => {
       if (
         entry.isIntersecting &&
         Math.abs(INTERSECTION_THRESHOLD - entry.intersectionRatio) <= 0.1
       ) {
-        this.resolveBg(
-          entry.target.id,
-          entry.target.id === "joblist" ? this.state.jlPage : null
-        );
+        this.resolveBg(entry.target.id);
       }
     });
   }
 
-  resolveBg(componentId, jlPage = null) {
-    if (componentId !== this.state.lastComponentId || jlPage !== null) {
+  resolveBg = (componentId, joblistIndex) => {
+    if (componentId !== this.lastComponentId || joblistIndex !== this.lastJoblistIndex) {
       let resolvedBackground = "";
 
-      if (!jlPage) {
-        switch (componentId) {
-          case "joblist":
-            resolvedBackground = "indianred";
-            break;
-          case "contact":
-            resolvedBackground = "black";
-            break;
-          default:
-            resolvedBackground = "newgray";
-            break;
-        }
-      } else {
-        const bgMapping = ["engage", "wellpad", "crkf", "cdot"];
-
-        switch (bgMapping[jlPage]) {
-          case "engage":
-            resolvedBackground = "indianred";
-            break;
-          case "wellpad":
-            resolvedBackground = "mediumseagreen";
-            break;
-          case "crkf":
-            resolvedBackground = "darkslategrey";
-            break;
-          default:
-            resolvedBackground = "maroon";
-            break;
-        }
+      switch (componentId) {
+        case "joblist":
+          const joblistBackgrounds = [
+            "indianred",
+            "mediumseagreen",
+            "darkslategrey",
+            "maroon",
+          ];
+          if (![null, undefined, NaN].includes(joblistIndex))
+            this.lastJoblistIndex = joblistIndex;
+          resolvedBackground = joblistBackgrounds[this.lastJoblistIndex];
+          break;
+        case "contact":
+          resolvedBackground = "newgray-dark";
+          break;
+        default:
+          resolvedBackground = "newgray";
+          break;
       }
 
-      this.setState((currentState) =>
-        currentState.currentBg !== resolvedBackground
-          ? {
-              currentBg: resolvedBackground,
-              lastComponentId: componentId,
-              jlPage: jlPage !== null ? jlPage : currentState.jlPage,
-            }
-          : null
-      );
+      document.getElementById("background").className = resolvedBackground;
+      this.lastComponentId = componentId;
+      dispatchEvent(new CustomEvent('backgroundchange', { detail: resolvedBackground }));
     }
   }
 
   render() {
     const baseProps = {
       refsList: this.refsList,
-      currentBg: this.state.currentBg,
       resolveBg: this.resolveBg,
     };
 
     return (
-      <div className={this.state.currentBg}>
-        <Landing {...baseProps} />
-        <JobList {...baseProps} />
-        <Contact {...baseProps} />
+      <div id="background" className="newgray">
+        {[Landing, JobList, Contact].map((Component, index) => (
+          <Component key={`${Date.now()}-${index}`} {...baseProps} />
+        ))}
       </div>
     );
   }
