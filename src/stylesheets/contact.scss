@@ -101,11 +101,19 @@
     flex-direction: column;
     padding-top: 10%;
 
+    @media (max-width: 800px) {
+      padding-top: 25%;
+    }
+
     div {
       width: 17%;
       display: flex;
       justify-content: center;
       text-align: center;
+      
+      @media (max-width: 800px) {
+        width: 100%;
+      }
     }
 
     @media screen and (max-width: 800px) {
