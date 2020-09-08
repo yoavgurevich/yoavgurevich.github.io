@@ -59,17 +59,25 @@ body {
   padding: 0 2rem;
 }
 
+.w-1\/3 {
+  width: 33%;
+}
+
 .px-n8 {
   padding: 0 -2rem;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.left-0 {
+  left: 0;
 }
 
 .fa-nav-btn {
   color: white;
   @extend %slide-link-style;
-}
-
-.flipContainer {
-  position: initial;
 }
 
 .margin-0 {
@@ -197,6 +205,10 @@ a {
 
     @media screen and (max-width: 667px) {
       width: 100vw;
+
+      .img-link > img {
+        max-width: 35%;
+      }
     }
   }
   
@@ -212,6 +224,17 @@ a {
 
       .swiper-slide {
         overflow: hidden;
+      }
+
+      .swiper-slide-zoomed {
+        overflow: visible;
+        z-index: 1000;
+
+        .swiper-zoom-container {
+          img:hover {
+            cursor: move;
+          }
+        }
       }
 
       .swiper-zoom-container {
@@ -262,10 +285,4 @@ a {
 
 .fade-in {
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.5s both;
-}
-
-@media screen and (max-width: 667px) {
-  .a-link {
-    display: none;
-  }
 }
