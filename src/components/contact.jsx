@@ -1,8 +1,15 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLevelUpAlt } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faTwitter, faGithub, faReact, faSass, faFontAwesomeFlag } from '@fortawesome/free-brands-svg-icons';
-import ScrollButton from './scrollButton';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLevelUpAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLinkedin,
+  faTwitter,
+  faGithub,
+  faReact,
+  faSass,
+  faFontAwesomeFlag,
+} from "@fortawesome/free-brands-svg-icons";
+import ScrollButton from "./scrollButton";
 
 const Contact = ({ refsList }) => {
   return (
@@ -11,21 +18,28 @@ const Contact = ({ refsList }) => {
       className="container contact-bg fsh font-cornsilk"
       ref={refsList.contact}
     >
-      <header className="flex justify-between">
-        <div className="horizontal-center">
-          <ScrollButton direction="up" refsList={refsList} currentElm="contact" />
+      <header className="flex justify-center">
+        <div className="w-1/3" />
+        <div className="w-1/3">
+          <ScrollButton
+            direction="up"
+            refsList={refsList}
+            currentElm="contact"
+          />
         </div>
-        <h2
-          className="home-btn"
-          onClick={() =>
-            refsList.landing.current.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            })
-          }
-        >
-          <FontAwesomeIcon size="2x" icon={faLevelUpAlt} />
-        </h2>
+        <div className="w-1/3 text-right">
+          <h2
+            className="home-btn"
+            onClick={() =>
+              refsList.landing.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              })
+            }
+          >
+            <FontAwesomeIcon size="2x" icon={faLevelUpAlt} />
+          </h2>
+        </div>
       </header>
       <main className="text-center">
         <div>
@@ -36,7 +50,11 @@ const Contact = ({ refsList }) => {
               href="//ca.linkedin.com/in/yoav-gurevich-42415886"
               target="_blank"
             >
-              <FontAwesomeIcon className="no-glow" size="4x" icon={faLinkedin} />
+              <FontAwesomeIcon
+                className="no-glow"
+                size="4x"
+                icon={faLinkedin}
+              />
             </a>
             <a
               rel="noopener noreferrer"
@@ -62,7 +80,7 @@ const Contact = ({ refsList }) => {
           </h5>
         </div>
         <div className="vendor-imgs">
-          <a href="//reactjs.org/" rel="noopener noreferrer" target="_blank">          
+          <a href="//reactjs.org/" rel="noopener noreferrer" target="_blank">
             <FontAwesomeIcon size="2x" icon={faReact} />
           </a>
           <a href="//sass-lang.com" rel="noopener noreferrer" target="_blank">
