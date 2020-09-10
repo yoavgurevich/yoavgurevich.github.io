@@ -27,7 +27,7 @@ export default class CRKF extends Component {
               >
                 <FontAwesomeIcon size="4x" icon={faYoutube} />
               </a>
-              <p>
+              <p className="md:max-h-1/6-screen">
                 <a
                   className="margin-0"
                   href="https://github.com/sedge/opendojo/graphs/contributors"
