@@ -14,15 +14,14 @@ const Wellpad = ({ refsList }) => {
   const [innerSwiper, setInnerSwiper] = React.useState(null);
 
   const swiperParams = {
-    slidesPerView: 3,
+    slidesPerView: innerWidth < 992 ? 1 : 3,
     centeredSlides: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-    
-    renderNextButton: () => <FontAwesomeIcon className="swiper-button-next fa-nav-btn" size="6x" icon={faAngleRight} />,
-    renderPrevButton: () => <FontAwesomeIcon className="swiper-button-prev fa-nav-btn" size="6x" icon={faAngleLeft} />,
+    renderNextButton: () => <FontAwesomeIcon className="swiper-button-next fa-nav-btn img-group-nav-right" size="6x" icon={faAngleRight} />,
+    renderPrevButton: () => <FontAwesomeIcon className="swiper-button-prev fa-nav-btn img-group-nav-left" size="6x" icon={faAngleLeft} />,
     zoom: true,
   };
 
@@ -45,7 +44,7 @@ const Wellpad = ({ refsList }) => {
         <div className="grid-content margin-bottom-40">
           <h1 className="rouge-script h0 text-center">Wellpad.io</h1>
           <main>
-            <div className="img-group horizontal-center">
+            <div className="img-group">
               <Swiper {...swiperParams} getSwiper={setInnerSwiper}>
                 {wellpadImages.map((imageSource, idx) => (
                   <div key={`wellpadImges-${idx}`}>
@@ -59,7 +58,7 @@ const Wellpad = ({ refsList }) => {
                 ))}
               </Swiper>
             </div>
-            <p>
+            <p className="md:max-h-1/6-screen">
               This iPad-centric solution was commissioned in order to ameliorate
               an older system used for managing a health clinic's patient and
               staff data. It provides an intuitive survey platform, as well as

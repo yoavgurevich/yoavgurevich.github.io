@@ -50,7 +50,7 @@ const Engage = () => {
                 <img src={LrgLogo} alt="LRG Logo"></img>
               </a>
             </div>
-            <p>
+            <p className="md:max-h-1/3-screen">
               Spending time on two of the loyalty powerhouse's flagship
               products Podium & Access (LRG) has helped hone a vast array of
               full stack web development skills.
