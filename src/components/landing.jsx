@@ -57,10 +57,10 @@ const Landing = ({ refsList }) => {
               schools of knowledge and experience.
             </p>
             <p>
-              The project overviews below highlight my humble contributions to a
-              few different teams and products. If there are two things I've learned
-              about web development so far, it's that it could be as
-              personal and unique as songwriting, and that passion is{" "}
+              The project overviews below highlight over 5 years of contributions to
+              different teams and products. The two big takeaways I would pass on
+              about web development so far? It has the power to be as
+              personal and unique as songwriting, and true passion is{" "}
               <i>very</i> contagious.
             </p>
           </h5>
