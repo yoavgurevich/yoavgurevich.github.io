@@ -32,23 +32,27 @@ const Engage = () => {
         </h1>
         {hasAnimated ? (
           <div className="fade-in">
-            <div className="text-center">
-              <a
-                className="img-link"
-                href="https://www.engagepeople.com/podium.html"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <img src={PodiumLogo} alt="Podium Logo"></img>
-              </a>
-              <a
-                className="img-link"
-                href="https://www.engagepeople.com/lrg.html"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <img src={LrgLogo} alt="LRG Logo"></img>
-              </a>
+            <div className="flex justify-center">
+              <div className="w-1/2 text-right">
+                <a
+                  className="img-link filter-brightness-3/5"
+                  href="https://www.engagepeople.com/podium.html"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <img src={PodiumLogo} alt="Podium Logo"></img>
+                </a>
+              </div>
+              <div className="w-1/2">
+                <a
+                  className="img-link filter-brightness-3/5"
+                  href="https://www.engagepeople.com/lrg.html"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <img src={LrgLogo} alt="LRG Logo"></img>
+                </a>
+              </div>
             </div>
             <p className="md:max-h-1/3-screen">
               Spending time on two of the loyalty powerhouse's flagship

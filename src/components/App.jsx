@@ -47,6 +47,7 @@ export default class App extends Component {
       switch (componentId) {
         case "joblist":
           const joblistBackgrounds = [
+            "customblue",
             "indianred",
             "mediumseagreen",
             "darkslategrey",
