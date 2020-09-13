@@ -42,8 +42,8 @@ const Paytm = () => {
               </a>
             </div>
             <p className="md:max-h-1/3-screen">
-              Coding alongside some of the best in the payment provider sector,
-              I had the privilege to hone secure frontend coding skills using{" "}
+              Programming next to some of the brightest minds in the payment provider space,
+              I seized the opportunity to hone secure frontend coding skills with{" "}
               <a
                 className="margin-0"
                 href="https://github.com/sedge/opendojo/graphs/contributors"
@@ -57,7 +57,7 @@ const Paytm = () => {
               <br />
               <br />
               Whether it was javascript SDKs, marketing campaign forms, or
-              simply elegant invoice layouts, it was all written with a diligent
+              simply elegant invoice layouts, everything was written with a diligent
               effort to adhere to better practices in every part of the
               lifecycle - more unit and end-to-end testing coverage, clean and
               performant code with an eye towards refactoring conovluted and

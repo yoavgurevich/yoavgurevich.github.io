@@ -67,5 +67,18 @@
       }
     }
   }
+}
 
+@media screen and (min-width: 1200px) and (orientation: landscape) {
+  .img-group {
+    .swiper-container {
+      .img-group-nav-left {
+        left: 25%;
+      }
+    
+      .img-group-nav-right {
+        right: 25%;
+      }
+    }
+  }
 }

@@ -61,6 +61,24 @@
           font-size: 44pt;
         }
 
+        .fa-linkedin,
+        .fa-twitter,
+        .fa-github {
+          opacity: 0.1;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+        .fa-linkedin {
+          &:hover,
+          &:focus {
+            color: white !important;
+          }
+        }
+
         .fa-twitter {
           &:hover,
           &:focus {
@@ -74,25 +92,6 @@
             color: lighten(grey, 5%) !important;
           }
         }
-      }
-
-      i:hover,
-      i:focus,
-      i:active,
-      .active-glow {
-        opacity: 1 !important;
-      }
-
-      .fa-twitter.active-glow {
-        color: cornflowerblue !important;
-      }
-
-      .fa-github.active-glow {
-        color: lighten(grey, 5%) !important;
-      }
-
-      .fa-linkedin-square.active-glow {
-        color: cornsilk !important;
       }
     }
   }

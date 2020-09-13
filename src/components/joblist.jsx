@@ -15,6 +15,8 @@ import CDOT from "./partials/cdot";
 
 const JobList = (props) => {
   const [swiper, setSwiper] = React.useState(null);
+  const [hasInteracted, setHasInteracted] = React.useState(false);
+
   const swiperParams = {
     effect: "cube",
     cubeEffect: {
@@ -29,7 +31,7 @@ const JobList = (props) => {
     },
     renderNextButton: () => (
       <FontAwesomeIcon
-        className="swiper-button-next nested fa-nav-btn"
+        className={`swiper-button-next nested fa-nav-btn${!hasInteracted ? ' pulsate' : ''}`}
         size="6x"
         icon={faAngleDoubleRight}
       />
@@ -41,17 +43,13 @@ const JobList = (props) => {
         icon={faAngleDoubleLeft}
       />
     ),
-    pagination: {
-      el: ".swiper-pagination",
-      dynamicBullets: true,
-      clickable: true,
-    },
   };
 
   React.useEffect(() => {
     if (swiper !== null) {
       swiper.on("slideChange", () => {
         props.resolveBg("joblist", swiper.realIndex);
+        setHasInteracted(true);
       });
     }
   }, [swiper]);

@@ -43,32 +43,28 @@ const Contact = ({ refsList }) => {
       </header>
       <main className="text-center">
         <div>
-          <h1 className="league-script no-glow">Stay in touch!</h1>
+          <h1 className="no-glow font-weight-light">Let's connect!</h1>
           <div className="inline-flex">
             <a
               rel="noopener noreferrer"
               href="//ca.linkedin.com/in/yoav-gurevich-42415886"
               target="_blank"
             >
-              <FontAwesomeIcon
-                className="no-glow"
-                size="4x"
-                icon={faLinkedin}
-              />
+              <FontAwesomeIcon size="4x" icon={faLinkedin} />
             </a>
             <a
               rel="noopener noreferrer"
               href="//twitter.com/ygdot14"
               target="_blank"
             >
-              <FontAwesomeIcon className="no-glow" size="4x" icon={faTwitter} />
+              <FontAwesomeIcon size="4x" icon={faTwitter} />
             </a>
             <a
               rel="noopener noreferrer"
               href="//github.com/yoavgurevich"
               target="_blank"
             >
-              <FontAwesomeIcon className="no-glow" size="4x" icon={faGithub} />
+              <FontAwesomeIcon size="4x" icon={faGithub} />
             </a>
           </div>
         </div>

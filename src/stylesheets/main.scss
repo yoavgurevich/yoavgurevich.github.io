@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Aldrich&family=EB+Garamond:wght@800&family=League+Script&family=Nanum+Gothic&family=Rouge+Script&family=Work+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&family=EB+Garamond:wght@800&family=Nanum+Gothic&family=Rouge+Script&family=Work+Sans&display=swap");
 @import "./typography.scss";
 @import "./responsive.scss";
 @import "./animations.scss";
@@ -213,7 +213,7 @@ a {
     padding: 0 30%;
 
     @media screen and (max-width: 992px) {
-      padding: 15px 50px;
+      padding: 15px 60px;
       overflow-y: scroll;
     }
   }
@@ -282,6 +282,10 @@ a {
       margin-left: -20%;
     }
 
+    @media screen and (min-width: 1280px) and (max-width: 1366px) and (orientation: landscape) {
+      margin-left: 28%;
+    }
+
     @media screen and (max-width: 500px) {
       margin-left: -30%;
       max-height: 35%;
@@ -296,6 +300,10 @@ a {
 
 .text-flicker-in-glow {
   animation: text-flicker-in-glow 4s linear both;
+}
+
+.pulsate {
+  animation: pulsate 0.8s linear alternate infinite;
 }
 
 .slide-left {

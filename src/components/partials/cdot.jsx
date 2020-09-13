@@ -41,7 +41,7 @@ const CDOT = ({ refsList }) => (
         </g>
       </svg>
       <p>
-        Under a rigorously inspiring team led by the esteemed <a
+        Under such an inspiring team led by the esteemed <a
           className="margin-0"
           href="https://blog.humphd.org/"
           rel="noopener noreferrer"
@@ -56,7 +56,7 @@ const CDOT = ({ refsList }) => (
         >
           Blogger posts
         </a>{" "}
-        created during my time on the project.
+        I created during my time on the project.
         <br /><br />
         It was one of the true pleasures of my fledgling career to have worked alongside
         such talent as &nbsp;
@@ -70,7 +70,7 @@ const CDOT = ({ refsList }) => (
         </a>
         , &nbsp;
         <a
-          href="https://twitter.com/theSedgeHammer"
+          href="https://www.linkedin.com/in/kieran-sedgwick-88ba0248/"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -78,14 +78,14 @@ const CDOT = ({ refsList }) => (
         </a>
         , and{" "}
         <a
-          href="https://twitter.com/alicoding"
+          href="https://www.linkedin.com/in/aldallalali/"
           rel="noopener noreferrer"
           target="_blank"
         >
           Ali Al Dallal
         </a>
         . I can say with confidence that I've never really felt like a
-        programmer until I became a part of this project.
+        developer until I became a part of this project.
       </p>
     </div>
   </div>
