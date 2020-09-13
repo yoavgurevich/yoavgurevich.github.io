@@ -85,7 +85,7 @@ const CDOT = ({ refsList }) => (
           Ali Al Dallal
         </a>
         . I can say with confidence that I've never really felt like a
-        developer until I became a part of this project.
+        developer until I became a part of this effort.
       </p>
     </div>
   </div>
