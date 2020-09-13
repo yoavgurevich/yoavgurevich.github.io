@@ -14,7 +14,7 @@ const Wellpad = ({ refsList }) => {
   const [innerSwiper, setInnerSwiper] = React.useState(null);
 
   const swiperParams = {
-    slidesPerView: innerWidth < 992 ? 1 : 3,
+    slidesPerView: 1,
     centeredSlides: true,
     navigation: {
       nextEl: ".swiper-button-next",
