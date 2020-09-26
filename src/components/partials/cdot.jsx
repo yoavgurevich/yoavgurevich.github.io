@@ -3,41 +3,13 @@ import React from "react";
 const CDOT = ({ refsList }) => (
   <div id="cdot" className="swiper-slide" ref={refsList.cdot}>
     <div className="slide-content">
-      <svg>
+      <svg viewBox="-100 -100 700 350">
         <g>
-          <text
-            dx="162"
-            dy="142"
-            className="svg-xxl eb-garamond"
-            fill="white"
-          >
-            CD
-          </text>
-          <circle cx="320" cy="115" r="35" fill="red" />
-          <circle
-            cx="327"
-            cy="114"
-            r="27"
-            fill="#400000"
-            stroke="white"
-            strokeWidth="3"
-          />
-          <circle
-            cx="330"
-            cy="113"
-            r="15"
-            fill="#EEEEEE"
-            stroke="red"
-            strokeWidth="2"
-          />
-          <text
-            dx="359"
-            dy="142"
-            className="svg-xxl eb-garamond"
-            fill="white"
-          >
-            T
-          </text>
+          <text dy="142" class="svg-xxl eb-garamond" fill="white" dx="-15">CD</text>
+          <circle fill="red" r="65" cx="320" cy="80"></circle>
+          <circle fill="#400000" stroke="white" r="50" cx="330" cy="75" stroke-width="7"></circle>
+          <circle fill="#EEEEEE" stroke="red" cy="74" stroke-width="3" r="30" cx="337"></circle>
+          <text dy="142" class="svg-xxl eb-garamond" fill="white" dx="385">T</text>
         </g>
       </svg>
       <p>

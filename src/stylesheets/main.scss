@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Aldrich&family=EB+Garamond:wght@800&family=Nanum+Gothic&family=Rouge+Script&family=Work+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&family=EB+Garamond:wght@800&family=Nanum+Gothic:wght@400;700&family=Rouge+Script&family=Work+Sans&display=swap");
 @import "./typography.scss";
 @import "./responsive.scss";
 @import "./animations.scss";
@@ -102,7 +102,8 @@ body {
 }
 
 a {
-  text-decoration: none;
+  color: cornsilk;
+  font-weight: 700;
 
   &:visited {
     color: grey;
@@ -174,6 +175,7 @@ a {
 .stateless-link-white,
 .stateless-link-white:visited {
   color: white;
+  text-decoration: none;
 }
 
 .h-9\/10 {
@@ -274,28 +276,16 @@ a {
   svg {
     width: 420px;
     display: block;
-    margin-left: 31%;
-    padding-bottom: 25px;
-    height: auto;
+    margin: 0 auto;
 
-    @media screen and (min-width: 401px) and (max-width: 767px) {
-      margin-left: -20%;
+    @media screen and (max-width: 374px) {
+      margin: 0 -8%;
     }
 
-    @media screen and (min-width: 1280px) and (max-width: 1366px) and (orientation: landscape) {
-      margin-left: 28%;
-    }
-
-    @media screen and (max-width: 400px) {
-      margin-left: -28%;
-      max-height: 35%;
-      overflow: visible !important;
+    @media screen and (min-width: 375px) and (max-width: 399px) {
+      margin: 0 -5%;
     }
   }
-}
-
-.no-glow {
-  opacity: 0.1 !important;
 }
 
 .text-flicker-in-glow {

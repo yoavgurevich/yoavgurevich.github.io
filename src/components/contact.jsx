@@ -43,7 +43,7 @@ const Contact = ({ refsList }) => {
       </header>
       <main className="text-center">
         <div>
-          <h1 className="no-glow font-weight-light">Let's connect!</h1>
+          <h1 className="font-weight-light">Let's connect...</h1>
           <div className="inline-flex">
             <a
               rel="noopener noreferrer"
