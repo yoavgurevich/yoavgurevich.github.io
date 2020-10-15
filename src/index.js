@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './components/App';
+import App from './pages/App';
 
 import 'swiper/css/swiper.min.css';
 import './stylesheets/main.scss'

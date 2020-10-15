@@ -1,80 +1,85 @@
 #skyline {
-  width: 100vw;
-  height: 50vh;
-  position: static;
-  top: 0;
-  animation: slide-in-blurred-top 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.5s both;
+	width: 100vw;
+	height: 50vh;
+	position: absolute;
+	top: 0;
+	animation: slide-in-blurred-top 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.5s both;
 }
 
 #skyline > image {
-  width: 100vw;
-  height: 60vh;
-  transform: scale(1.05) translateX(-2vw);
+	width: 100vw;
+	height: 60vh;
+	transform: scale(1.05) translateX(-2vw);
 
-  @media screen and (max-width: 1024px) {
-    transform: scale(1.3) translate(-20vw, -10vw);
-    height: 75vh;
-  }
+	@media screen and (max-width: 1024px) {
+		transform: scale(1.3) translate(-20vw, -10vw);
+		height: 75vh;
+	}
 }
 
 .landing-content {
-  max-height: 100vh;
   color: black;
-  margin-top: -15rem;
+  padding-top: 15rem;
 
-  blockquote {
-    line-height: 1.5;
-    width: 60vw;
-    min-height: fit-content;
-    text-align: justify;
-
-    p {
-      padding: 0 12%;
-    }
-
-    @media (max-width: 992px) {
-      width: 90vw;
-      margin-bottom: 10%;
-      max-height: 35vh;
-      overflow-y: scroll;
-    }
-
-    @media (min-width: 1024px) {
-      max-height: 33vh;
-    }
+  @media (max-width: 767px) {
+    padding-top: 6rem;
   }
 
-  .landing-img {
-    position: relative;
-    margin-top: 2.5rem;
-    height: 25vh;
-    width: 25vh;
-    border-radius: 50%;
-    overflow: hidden;
-
-    @media (max-width: 500px) and (orientation: portrait) {
-      margin-top: 0;
-    }
-
-    img {
-      opacity: 0;
-      position: absolute;
-      max-width: 100%;
-      transition: opacity 0.6s cubic-bezier(0.47, 0, 0.745, 0.715);
-    }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding-top: 10rem;
   }
 
-  .slide-link-container {
-    margin-top: -50px;
+  @media (min-width: 1080px) and (max-width: 1366px) and (orientation: 'landscape') {
+    padding-top: 10rem;
   }
+
+	blockquote {
+		line-height: 1.5;
+		min-height: fit-content;
+		text-align: justify;
+
+		p {
+			padding: 0 5%;
+		}
+
+		@media (max-width: 992px) {
+			margin-bottom: 10%;
+			max-height: 35vh;
+			overflow-y: scroll;
+		}
+
+		@media (min-width: 1024px) {
+			max-height: 33vh;
+		}
+	}
+
+	.landing-img {
+		position: relative;
+		margin-top: 1rem;
+		height: 25vh;
+		width: 25vh;
+		border-radius: 50%;
+		overflow: hidden;
+
+		@media (max-width: 500px) and (orientation: portrait) {
+			margin-top: 0;
+		}
+
+		img {
+			opacity: 0;
+			position: absolute;
+			max-width: 100%;
+			transition: opacity 0.6s cubic-bezier(0.47, 0, 0.745, 0.715);
+		}
+	}
 }
 
 .puff-in-center {
-  animation: puff-in-center 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-  animation-delay: 3.75s;
+	animation: puff-in-center 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+	animation-delay: 3.75s;
 }
 
 .image-active {
-  opacity: 1 !important;
-  transition: opacity 0.6s cubic-bezier(0.47, 0, 0.745, 0.715);
+	opacity: 1 !important;
+	transition: opacity 0.6s cubic-bezier(0.47, 0, 0.745, 0.715);
 }

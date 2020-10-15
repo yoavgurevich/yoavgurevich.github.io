@@ -9,7 +9,7 @@ import {
   faSass,
   faFontAwesomeFlag,
 } from "@fortawesome/free-brands-svg-icons";
-import ScrollButton from "./scrollButton";
+import ScrollButton from "../components/ScrollButton/ScrollButton";
 
 const Contact = ({ refsList }) => {
   return (

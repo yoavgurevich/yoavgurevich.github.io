@@ -6,7 +6,7 @@ import {
   faAngleDoubleRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-import ScrollButton from "./scrollButton";
+import ScrollButton from "../components/ScrollButton/ScrollButton";
 import Paytm from "./partials/paytm";
 import Engage from "./partials/engage";
 import Wellpad from "./partials/wellpad";

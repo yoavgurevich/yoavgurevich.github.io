@@ -1,5 +1,8 @@
 import React from "react";
-import ScrollButton from "./scrollButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode, faGuitar, faUserGraduate } from "@fortawesome/free-solid-svg-icons";
+import ScrollButton from "../components/ScrollButton/ScrollButton";
+import CountUpAnimation from "../components/CountUpAnimation/CountUpAnimation";
 
 import yg1 from "../assets/yg1.png";
 import yg2 from "../assets/yg2.png";
@@ -15,6 +18,7 @@ const Landing = ({ refsList }) => {
     { source: yg4, ref: React.useRef() },
     { source: yg5, ref: React.useRef() },
   ];
+  const currentYear = new Date().getFullYear();
 
   const [loaded, setLoaded] = React.useState(false);
 
@@ -47,24 +51,36 @@ const Landing = ({ refsList }) => {
             ))
           )}
         </div>
-        <blockquote className="puff-in-center">
+        <div className="w-1/2 sm:w-9/10 flex justify-space-between mt-6 mb-3">
+          <div className="w-1/3 text-center fade-up">
+            <h3 className="margin-0"><p className="margin-0"><FontAwesomeIcon icon={faUserGraduate} /></p><CountUpAnimation>2015</CountUpAnimation></h3>
+            <span>Seneca CPAC Alumnus</span>
+          </div>
+          <div className="w-1/3 text-center fade-up-250">
+            <h3 className="margin-0"><p className="margin-0"><FontAwesomeIcon icon={faCode} /></p><CountUpAnimation duration={500}>{currentYear - 2015}</CountUpAnimation>+</h3>
+            <span>Years of Industry Experience</span>
+          </div>
+          <div className="w-1/3 text-center fade-up-500">
+            <h3 className="margin-0"><p className="margin-0"><FontAwesomeIcon icon={faGuitar} /></p><CountUpAnimation duration={1000}>{currentYear - 2003}</CountUpAnimation>+</h3>
+            <span>Years of Axe Noodling</span>
+          </div>
+        </div>
+        <blockquote className="w-1/2 sm:w-9/10 puff-in-center margin-0">
           <p>
-            2015 Seneca College CPAC alumni. BSO mixology and wine council of
-            Ontario certifications before that. Audio engineering and
-            production dabbler before that. Guitar player for nigh on 15
-            years. In short, a big believer in the harmony between opposite
+            BSO Mixology & Wine Council of Ontario certified. Audio engineering and
+            production dabbler. In short, a big believer in inspiration from all
             schools of knowledge and experience.
           </p>
           <p>
-            The project overviews below highlight over 5 years of contributions to
+            The project overviews below highlight my career contributions to
             different teams and products. The two big takeaways I would pass on
             about web development so far? It has the power to be as
-            personal and unique as songwriting, and true passion is{" "}
+            personal as songwriting, and true passion is{" "}
             <i>very</i> contagious.
           </p>
         </blockquote>
-        <ScrollButton direction="down" refsList={refsList} currentElm="landing" />
       </div>
+      <ScrollButton direction="down" refsList={refsList} currentElm="landing" />
     </div>
   );
 };
