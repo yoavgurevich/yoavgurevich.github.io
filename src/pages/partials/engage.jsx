@@ -54,7 +54,8 @@ const Engage = () => {
                 </a>
               </div>
             </div>
-            <p className="md:max-h-1/3-screen">
+            <p className="sm:max-h-1/2-screen md:max-h-1/3-screen">
+              <h4 className="mt-0 sm:text-center">Full-Stack Developer</h4>
               Spending time on two of the loyalty powerhouse's flagship
               products Podium & Access (LRG) has helped hone a vast array of
               full stack web development skills.

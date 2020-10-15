@@ -12,8 +12,9 @@ const CDOT = ({ refsList }) => (
           <text dy="142" class="svg-xxl eb-garamond" fill="white" dx="385">T</text>
         </g>
       </svg>
-      <p>
-        Under such an inspiring team led by the esteemed <a
+      <p className="mt-0">
+        <h4 className="mt-0 sm:text-center">Research Assistant</h4>
+        Under a team led by the esteemed <a
           className="margin-0"
           href="https://blog.humphd.org/"
           rel="noopener noreferrer"

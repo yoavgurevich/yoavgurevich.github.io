@@ -42,6 +42,7 @@ const Paytm = () => {
               </a>
             </div>
             <p className="md:max-h-1/3-screen">
+              <h4 className="mt-0 sm:text-center">Web Developer</h4>
               Programming next to some of the brightest minds in the payment provider space,
               I seized the opportunity to hone secure frontend coding skills with{" "}
               <a

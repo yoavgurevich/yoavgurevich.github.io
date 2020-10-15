@@ -58,7 +58,8 @@ const Wellpad = ({ refsList }) => {
                 ))}
               </Swiper>
             </div>
-            <p className="md:max-h-1/6-screen">
+            <p className="sm:max-h-1/3-screen md:max-h-1/6-screen">
+              <h4 className="mt-0 sm:text-center">Front-End Developer</h4>
               This iPad-centric solution was commissioned in order to ameliorate
               an older system used for managing a health clinic's patient and
               staff data. It provides an intuitive survey platform, as well as
@@ -66,7 +67,7 @@ const Wellpad = ({ refsList }) => {
               trends in both new and returning patients.
               <br />
               <br />
-              My primary role for this project was front-end view and component
+              My primary role for this project was React view and component
               implementation for the patient-intake and follow-up surveys.
               Design mock-ups were issued our savvy team lead{" "}
               <a
