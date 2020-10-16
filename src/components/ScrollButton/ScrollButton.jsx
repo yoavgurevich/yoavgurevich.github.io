@@ -20,7 +20,7 @@ const ScrollButton = ({ direction, refsList, currentElm = "joblist" }) => {
 
   return (
     <div onClick={handleClick} className="slide-link-container text-center">
-      <h2>
+      <h2 aria-label={`Scroll ${direction} Button`}>
         <FontAwesomeIcon size="2x" icon={direction === "up" ? faAngleDoubleUp : faAngleDoubleDown} />
       </h2>
     </div>

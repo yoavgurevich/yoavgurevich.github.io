@@ -6,7 +6,7 @@ import React from 'react';
 const easeOutQuad = (t) => t * (2 - t);
 const frameDuration = 1000 / 60;
 
-const CountUpAnimation = ({ children, duration = 2000 }) => {
+const CountUpNumber = ({ children, duration = 2000 }) => {
 	const countTo = parseInt(children, 10);
 	const [ count, setCount ] = React.useState(0);
 
@@ -28,4 +28,4 @@ const CountUpAnimation = ({ children, duration = 2000 }) => {
 	return Math.floor(count);
 };
 
-export default CountUpAnimation;
+export default CountUpNumber;

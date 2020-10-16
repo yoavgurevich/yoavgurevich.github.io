@@ -3,7 +3,7 @@ import React from "react";
 const CDOT = ({ refsList }) => (
   <div id="cdot" className="swiper-slide" ref={refsList.cdot}>
     <div className="slide-content">
-      <svg viewBox="-100 -100 700 350">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-100 -100 700 350">
         <g>
           <text dy="142" className="svg-xxl eb-garamond" fill="white" dx="-15">CD</text>
           <circle fill="red" r="65" cx="320" cy="80"></circle>

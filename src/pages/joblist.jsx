@@ -56,6 +56,7 @@ const JobList = (props) => {
 
   return (
     <div
+      role="region"
       id="joblist"
       className="fsh font-cornsilk"
       ref={props.refsList.joblist}

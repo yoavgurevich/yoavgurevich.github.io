@@ -45,7 +45,7 @@ const Wellpad = ({ refsList }) => {
       <div className="slide-content">
         <div className="grid-content margin-bottom-40">
           <h1 className="rouge-script h0 text-center">Wellpad.io</h1>
-          <main>
+          <section>
             <div className="img-group">
               <Swiper {...swiperParams} getSwiper={setInnerSwiper}>
                 {wellpadImages.map((imageSource, idx) => (
@@ -91,7 +91,7 @@ const Wellpad = ({ refsList }) => {
                 maintained a unique and frenetic pace throughout every milestone.
               </p>
             </article>
-          </main>
+          </section>
         </div>
       </div>
     </div>
