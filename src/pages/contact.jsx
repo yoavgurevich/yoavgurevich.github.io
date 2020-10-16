@@ -10,6 +10,7 @@ import {
   faFontAwesomeFlag,
 } from "@fortawesome/free-brands-svg-icons";
 import ScrollButton from "../components/ScrollButton/ScrollButton";
+import "../stylesheets/contact.scss";
 
 const Contact = ({ refsList }) => {
   return (

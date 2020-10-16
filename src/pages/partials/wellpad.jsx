@@ -3,6 +3,8 @@ import Swiper from "react-id-swiper";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
+import "../../stylesheets/partials/wellpad.scss";
+
 import wellpad1 from "../../assets/wellpad1.png";
 import wellpad2 from "../../assets/wellpad2.png";
 import wellpad3 from "../../assets/wellpad3.png";
@@ -58,35 +60,37 @@ const Wellpad = ({ refsList }) => {
                 ))}
               </Swiper>
             </div>
-            <p className="sm:max-h-1/3-screen md:max-h-1/6-screen">
+            <article className="md:max-h-1/3-screen">
               <h4 className="mt-0 sm:text-center">Front-End Developer</h4>
-              This iPad-centric solution was commissioned in order to ameliorate
-              an older system used for managing a health clinic's patient and
-              staff data. It provides an intuitive survey platform, as well as
-              an administrative interface for viewing current information and
-              trends in both new and returning patients.
-              <br />
-              <br />
-              My primary role for this project was React view and component
-              implementation for the patient-intake and follow-up surveys.
-              Design mock-ups were issued our savvy team lead{" "}
-              <a
-                href="https://www.linkedin.com/in/leesaynor/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Lee Saynor
-              </a>
-              . Lead Developer{" "}
-              <a
-                href="https://twitter.com/tabakd_"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Daniel Tabak
-              </a>{" "}
-              maintained a unique and frenetic pace throughout every milestone.
-            </p>
+              <p>
+                This iPad-centric solution was commissioned in order to ameliorate
+                an older system used for managing a health clinic's patient and
+                staff data. It provides an intuitive survey platform, as well as
+                an administrative interface for viewing current information and
+                trends in both new and returning patients.
+              </p>
+              <p>
+                My primary role in this project was React view and component
+                implementation for the patient-intake and follow-up surveys.
+                Design mock-ups were issued our savvy team lead{" "}
+                <a
+                  href="https://www.linkedin.com/in/leesaynor/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Lee Saynor
+                </a>
+                . Lead Developer{" "}
+                <a
+                  href="https://twitter.com/tabakd_"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Daniel Tabak
+                </a>{" "}
+                maintained a unique and frenetic pace throughout every milestone.
+              </p>
+            </article>
           </main>
         </div>
       </div>

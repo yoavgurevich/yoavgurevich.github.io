@@ -3,9 +3,6 @@
 @import "./typography.scss";
 @import "./responsive.scss";
 @import "./animations.scss";
-@import "./contact.scss";
-@import "./landing.scss";
-@import "./partials/wellpad.scss";
 
 $color-collection: (
   "white": white,
@@ -64,7 +61,6 @@ a {
   width: max-content;
 }
 
-
 .stateless-link-white,
 .stateless-link-white:visited {
   color: white;
@@ -90,7 +86,7 @@ a {
 }
 
 .slide-content {
-  p {
+  article {
     text-align: justify;
     padding: 0 30%;
 
@@ -166,10 +162,6 @@ a {
       margin: 0 -5%;
     }
   }
-}
-
-.text-flicker-in-glow {
-  animation: text-flicker-in-glow 4s linear both;
 }
 
 .pulsate {

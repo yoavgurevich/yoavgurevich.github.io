@@ -1,5 +1,4 @@
 import React from "react";
-
 import PaiGrowthLogo from "../../assets/pai-growth-logo.svg";
 
 const Paytm = () => {
@@ -41,29 +40,31 @@ const Paytm = () => {
                 <img src={PaiGrowthLogo} alt="PAI Growth Logo" />
               </a>
             </div>
-            <p className="md:max-h-1/3-screen">
+            <article className="sm:max-h-1/2-screen md:max-h-1/3-screen">
               <h4 className="mt-0 sm:text-center">Web Developer</h4>
-              Programming next to some of the brightest minds in the payment provider space,
-              I seized the opportunity to hone secure frontend coding skills with{" "}
-              <a
-                className="margin-0"
-                href="https://github.com/sedge/opendojo/graphs/contributors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                PCI DSS principles
-              </a>
-              , contribute to their web developer hiring processes, and continue
-              strengthening my React and Vue.js experience.
-              <br />
-              <br />
-              Whether it was javascript SDKs, marketing campaign forms, or
-              simply elegant invoice layouts, everything was written with a diligent
-              effort to adhere to better practices in every part of the
-              lifecycle - more unit and end-to-end testing coverage, clean and
-              performant code with an eye towards refactoring conovluted and
-              legacy portions, better Gitflow, and more documentation.
-            </p>
+              <p>
+                Programming next to some of the brightest minds in the payment provider space,
+                I seized the opportunity to gain secure frontend coding skills with{" "}
+                <a
+                  className="margin-0"
+                  href="https://github.com/sedge/opendojo/graphs/contributors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  PCI DSS principles
+                </a>
+                , contribute to their web developer hiring processes, and continue
+                strengthening my React and Vue.js experience.
+              </p>
+              <p>
+                Whether it was javascript SDKs, marketing campaign forms, or
+                simply elegant invoice layouts, everything was written with a diligent
+                effort to adhere to better practices in every part of the
+                lifecycle - more unit and end-to-end testing coverage, clean and
+                performant code with an eye towards refactoring conovluted and
+                legacy portions, better Gitflow, and more documentation.
+              </p>
+            </article>
           </div>
         ) : (
           <div></div>

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './pages/App';
 
 import 'swiper/css/swiper.min.css';
-import './stylesheets/main.scss'
+import './stylesheets/main.scss';
 
 ReactDOM.render(
   <App />,

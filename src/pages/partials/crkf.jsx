@@ -27,30 +27,32 @@ export default class CRKF extends Component {
               >
                 <FontAwesomeIcon size="4x" icon={faYoutube} />
               </a>
-              <p className="sm:max-h-1/3-screen md:max-h-1/6-screen">
+              <article className="sm:max-h-1/3-screen md:max-h-1/6-screen">
                 <h4 className="mt-0 sm:text-center">Web Developer</h4>
-                <a
-                  className="margin-0"
-                  href="https://github.com/sedge/opendojo/graphs/contributors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  OpenDojo
-                </a>{" "}
-                is a now open-source codebase implemented to create a
-                no-nonsense CMS for a local karate club. Its features include
-                upcoming class reminders, a searchable/filterable student list
-                with individual profile views, belt rank and class creation,
-                group email notifications, and a tablet-friendly UI for 2FA
-                student login when attending classes.
-                <br />
-                <br />
-                Assuming multiple roles in this project, my contributions
-                involved initial server config and route setup using Node and
-                Express.js, implementing a front-to-back authentication module
-                using JSON Web Tokens, maintaining API documentation, and being
-                largely responsible for the front-end style guide and aesthetic.
-              </p>
+                <p>
+                  <a
+                    className="margin-0"
+                    href="https://github.com/sedge/opendojo/graphs/contributors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    OpenDojo
+                  </a>{" "}
+                  is a now open-source codebase implemented to create a
+                  no-nonsense CMS for a local karate club. Its features include
+                  upcoming class reminders, a searchable/filterable student list
+                  with individual profile views, belt rank and class creation,
+                  group email notifications, and a tablet-friendly UI for 2FA
+                  student login when attending classes.
+                </p>
+                <p>
+                  Assuming multiple roles in this project, my contributions
+                  involved initial server config and route setup using Node and
+                  Express.js, implementing a front-to-back authentication module
+                  using JSON Web Tokens, maintaining API documentation, and being
+                  largely responsible for the front-end style guide and aesthetic.
+                </p>
+              </article>
             </div>
           </div>
         </div>

@@ -102,6 +102,8 @@
 
   footer {
     display: flex;
+    justify-content: center;
+    text-align: center;
     flex-direction: column;
     padding-top: 10%;
 
@@ -110,19 +112,15 @@
     }
 
     div {
-      width: 17%;
+      width: 18%;
       display: flex;
+      align-self: center;
       justify-content: center;
       text-align: center;
 
       @media (max-width: 800px) {
         width: 100%;
       }
-    }
-
-    @media screen and (max-width: 800px) {
-      justify-content: center;
-      text-align: center;
     }
 
     h5 {

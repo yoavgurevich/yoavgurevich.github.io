@@ -10,6 +10,8 @@ import yg3 from "../assets/yg3.png";
 import yg4 from "../assets/yg4.png";
 import yg5 from "../assets/yg5.png";
 
+import "../stylesheets/landing.scss";
+
 const Landing = ({ refsList }) => {
   const picsCarousel = [
     { source: yg1, ref: React.useRef() },
